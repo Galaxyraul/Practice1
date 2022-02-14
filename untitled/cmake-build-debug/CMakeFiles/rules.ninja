@@ -42,7 +42,7 @@ rule CXX_EXECUTABLE_LINKER__untitled_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SC:\Users\cocol\Downloads\Usuarios\Raúl\POO\untitled -BC:\Users\cocol\Downloads\Usuarios\Raúl\POO\untitled\cmake-build-debug
+  command = C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SC:\Users\cocol\Practice1\untitled -BC:\Users\cocol\Practice1\untitled\cmake-build-debug
   description = Re-running CMake...
   generator = 1
 
