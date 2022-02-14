@@ -50,13 +50,30 @@ void kbRead(Vehicle *v){
     }while(v->Price <= 0);
 }
 
-void showOnScreen(Vehicle v){
+void showOnScreen(const Vehicle v){
     cout << "Brand:" << v.Brand << endl;
     cout << "Model:" << v.Model << endl;
     cout << "Plate:" << v.Plate << endl;
     cout << "Manufacturer year:" << v.ManufacturerYear << endl;
     cout << "Price:" << v.Price << endl;
 };
+
+void showOnScreen(const Vehicle &v){
+    cout << "Brand:" << v.Brand << endl;
+    cout << "Model:" << v.Model << endl;
+    cout << "Plate:" << v.Plate << endl;
+    cout << "Manufacturer year:" << v.ManufacturerYear << endl;
+    cout << "Price:" << v.Price << endl;
+};
+
+void showOnScreen(const Vehicle *v){
+    cout << "Brand:" << v->Brand << endl;
+    cout << "Model:" << v->Model << endl;
+    cout << "Plate:" << v->Plate << endl;
+    cout << "Manufacturer year:" << v->ManufacturerYear << endl;
+    cout << "Price:" << v->Price << endl;
+};
+
 
 int main() {
 
