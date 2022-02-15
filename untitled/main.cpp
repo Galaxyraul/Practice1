@@ -9,7 +9,8 @@ struct Vehicle{
     int ManufacturerYear = 0;
     float Price = 0;
 };
-void kbRead(Vehicle &v){
+
+void kbRead(Vehicle &v,const int size){
     do {
         cout << "Introduce the brand of the vehicle";
         cin >> v.Brand;
@@ -33,22 +34,22 @@ void kbRead(Vehicle &v){
 void kbRead(Vehicle *v,const int size){
     for(int i = 0; i < size; ++i){
         do {
-            cout << "Introduce the brand of the vehicle";
+            cout << "Introduce the brand of the vehicle:";
             cin >> v[i].Brand;
         } while ((v[i].Brand.length() < 3) || (v[i].Brand.length() > 20));
         do {
-            cout << "Introduce the model of the vehicle";
+            cout << "Introduce the model of the vehicle:";
             cin >> v[i].Model;
         } while ((v[i].Model.length() < 1) || (v[i].Model.length() > 30));
         do {
-            cout << "Introduce the plate of the vehicle";
+            cout << "Introduce the plate of the vehicle:";
             cin >> v[i].Plate;
         } while (v[i].Plate.length() != 6);
-        cout << "Introduce the manufacture year";
+        cout << "Introduce the manufacture year:";
         cin >>v[i].ManufacturerYear;
         do {
-            cout << "Introduce the price of the vehicle";
-            cin >> v[i].Model;
+            cout << "Introduce the price of the vehicle:";
+            cin >> v[i].Price;
         } while (v[i].Price <= 0);
     }
 }
@@ -68,7 +69,7 @@ void showOnScreen(const Vehicle *v,const int size){
         cout << "Plate:" << v[i].Plate << endl;
         cout << "Manufacturer year:" << v[i].ManufacturerYear << endl;
         cout << "Price:" << v[i].Price << endl;
-        cout << "";
+        cout << endl;
     }
 }
 
