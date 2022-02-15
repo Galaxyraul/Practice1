@@ -73,6 +73,7 @@ void showOnScreen(const Vehicle &v,int size){
         cout << "Plate:" << v.Plate << endl;
         cout << "Manufacturer year:" << v.ManufacturerYear << endl;
         cout << "Price:" << v.Price << endl;
+        cout << endl;
 }
 /**
  * @brief This function shows on screen the data of the vehicles inside a list
@@ -95,20 +96,56 @@ void showOnScreen(const Vehicle *v,const int size){
  * @param size [int] The size of the array
  * @return The position of the most expensive vehicle
  */
-int findMostExpensive(Vehicle *v,const int size){
+int findMostExpensive(const Vehicle *v,const int size){
     int posMostExpensive = 0;
     for (int i = 1; i < size;++i){
         posMostExpensive = (v[posMostExpensive].Price > v[i].Price)? posMostExpensive:i;
     }
     return posMostExpensive;
 }
+/**
+ * @brief This functions compares if the first and last character of the plate is the same and if so it shows its data
+ * @param v [in] Pointer to the array
+ * @param size [in] Size of the array
+ */
+void platesSECharacter (const Vehicle *v,const int size){
+    for(int i = 0; i < size;++i){
+        if(v[i].Plate.front() == v[i].Plate.back()){
+            showOnScreen(v[i],size);
+        }
+    }
+
+}
+/**
+ * @brief This functions check if the plate is written the same from right to left as from left to rigth
+ * @param v [in] Pointer to the array
+ * @param size [in] Size of the array
+ */
+void platesPalyndrome (const Vehicle *v,const int size){
+    int j = 0;
+    bool palyndrome = true;
+    for(int i = 0; i < size;++i){
+        while (palyndrome && (j < (v[i].Plate.length()))/2){
+            palyndrome = (v[i].Plate[j] == v[i].Plate[v[i].Plate.length()-1-j]);
+            ++j;
+        }
+        if (palyndrome){
+            showOnScreen(v[i],size);
+        }
+        palyndrome = true;
+        j = 0;
+    }
+
+}
 
 int main() {
-    int size = 0;
+    int size = 2;
     int posMostExpensive;
     Vehicle a = {"mercedes","hola","123456",1907,200};
     Vehicle list[MAX_VEHICLES];
-    do{
+    list[0] = {"mercedes","hola","123321",1907,200};
+    list[1] = {"mercedes","hola","123452",1907,200};
+    /*do{
         cout << "Introduce the number of vehicles:";
         cin >> size;
     }while(size > MAX_VEHICLES);
@@ -117,5 +154,7 @@ int main() {
     showOnScreen(list,size);
     cout << "The most expensive vehicle data is:" << endl;
     showOnScreen(list[posMostExpensive],size);
+    platesSECharacter(list,size);*/
+    platesPalyndrome(list,size);
     return 0;
 }
