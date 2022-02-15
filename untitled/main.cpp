@@ -10,6 +10,11 @@ struct Vehicle{
     float Price = 0;
 };
 
+/**
+ * @brief Asks the user for the data of a vehicle
+ * @param v [out] the vehicle to be filled
+ * @param size
+ */
 void kbRead(Vehicle &v,const int size){
     do {
         cout << "Introduce the brand of the vehicle";
@@ -30,7 +35,11 @@ void kbRead(Vehicle &v,const int size){
         cin >> v.Model;
     } while (v.Price <= 0);
 }
-
+/**
+ * @brief ASk the user for the data of the vehicles of a list and it fills it
+ * @param v [out] Pointer to the array of vehicles
+ * @param size [in] Size of the array so that we can end the loop
+ */
 void kbRead(Vehicle *v,const int size){
     for(int i = 0; i < size; ++i){
         do {
@@ -53,15 +62,23 @@ void kbRead(Vehicle *v,const int size){
         } while (v[i].Price <= 0);
     }
 }
-
-void showOnScreen(const Vehicle &v){
+/**
+ * @brief This function shows on screen the data of a vehicle
+ * @param v [in] The adress of the vehicle
+ * @param size [in]
+ */
+void showOnScreen(const Vehicle &v,int size){
         cout << "Brand:" << v.Brand << endl;
         cout << "Model:" << v.Model << endl;
         cout << "Plate:" << v.Plate << endl;
         cout << "Manufacturer year:" << v.ManufacturerYear << endl;
         cout << "Price:" << v.Price << endl;
 }
-
+/**
+ * @brief This function shows on screen the data of the vehicles inside a list
+ * @param v [in] The pointer to the array
+ * @param size [in] The size of the array
+ */
 void showOnScreen(const Vehicle *v,const int size){
     for(int i = 0; i < size; ++i ) {
         cout << "Brand:" << v[i].Brand << endl;
@@ -72,7 +89,12 @@ void showOnScreen(const Vehicle *v,const int size){
         cout << endl;
     }
 }
-
+/**
+ * @brief This functions goes through the array finding the greatest value among the prices
+ * @param v [in] The pointer to the array
+ * @param size [int] The size of the array
+ * @return The position of the most expensive vehicle
+ */
 int findMostExpensive(Vehicle *v,const int size){
     int posMostExpensive = 0;
     for (int i = 1; i < size;++i){
@@ -94,6 +116,6 @@ int main() {
     posMostExpensive = findMostExpensive(list,size);
     showOnScreen(list,size);
     cout << "The most expensive vehicle data is:" << endl;
-    showOnScreen(list[posMostExpensive]);
+    showOnScreen(list[posMostExpensive],size);
     return 0;
 }
