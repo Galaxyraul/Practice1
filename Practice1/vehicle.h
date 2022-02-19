@@ -16,11 +16,11 @@ private:
     int _manufacturerYear = 0;
     float _price = 0;
 public:
-    void setBrand (const string& brand);
-    void setModel (const string& model);
-    void setPlate (const string& plate);
-    void setManufacturerYear (const int& manufacturerYear);
-    void setPrice(const float& price);
+    void setBrand ();
+    void setModel ();
+    void setPlate ();
+    void setManufacturerYear ();
+    void setPrice();
 };
 
 
