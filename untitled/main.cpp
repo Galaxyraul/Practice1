@@ -32,7 +32,7 @@ void kbRead(Vehicle &v,const int size){
     cin >> v.ManufacturerYear;
     do {
         cout << "Introduce the price of the vehicle";
-        cin >> v.Model;
+        cin >> v.Price;
     } while (v.Price <= 0);
 }
 /**
