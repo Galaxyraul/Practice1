@@ -3,4 +3,4 @@ project(Practice1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Practice1 main.cpp)
+add_executable(Practice1 main.cpp vehicle.cpp vehicle.h)
