@@ -3,6 +3,6 @@
 
 int main() {
     vehicle v1;
-    v1.setParameters("Mercedes","a-20","123456",1990,200);
+    v1.setPrice();
     return 0;
 }

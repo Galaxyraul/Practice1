@@ -5,38 +5,43 @@
 #include "vehicle.h"
 #include <iostream>
 
-void vehicle::setBrand(const string &brand){
-    if((brand.length() > 3) && (brand.length() < 20)){
-        _brand = brand;
-    }else{
-        std::cout << "The brand length doesn't fit the standards";
-    }
+void vehicle::setBrand(){
+    string brand;
+    do {
+        cout << "Introduce the brand of the vehicle:";
+        cin >> brand;
+    } while ((brand.length() < 3) || (brand.length() > 20));
+    _brand = brand;
 }
 
-void vehicle::setModel(const string &model){
-    if((model.length() > 1) && (model.length() < 30)){
-        _model = model;
-    }else{
-        std::cout << "The model length doesn't fit the standards";
-    }
+void vehicle::setModel(){
+    string model;
+    do {
+        cout << "Introduce the model of the vehicle:";
+        cin >> model;
+    } while ((model.length() < 1) || (model.length() > 30));
+    _model = model;
 }
 
-void vehicle::setPlate(const string &Plate){
-    if(Plate.length() != 6){
-        _plate = Plate;
-    }else{
-        std::cout << "The plate length doesn't fit the standards";
-    }
+void vehicle::setPlate(){
+    string plate;
+    do {
+        cout << "Introduce the plate of the vehicle:";
+        cin >> plate;
+    } while (plate.length() != 6);
+    _plate = plate;
 }
 
-void vehicle::setManufacturerYear(const int &manufacturerYear){
-    _manufacturerYear = manufacturerYear;
+void vehicle::setManufacturerYear(){
+    cout << "Introduce the manufacture year:";
+    cin >> _manufacturerYear;
 }
 
-void vehicle::setPrice(const float &price){
-    if(price> 0){
-        _price = price;
-    } else{
-        std::cout << "The price can't be negative";
-    }
+void vehicle::setPrice(){
+    int price;
+    do {
+        cout << "Introduce the price of the vehicle:";
+        cin >> price;
+    } while (price <= 0);
+    _price = price;
 }
