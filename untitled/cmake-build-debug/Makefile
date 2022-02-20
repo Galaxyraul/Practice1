@@ -56,10 +56,10 @@ RM = C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\cocol\Practice0\untitled
+CMAKE_SOURCE_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\untitled
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\cocol\Practice0\untitled\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\untitled\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\cocol\Practice0\untitled\cmake-build-debug\CMakeFiles C:\Users\cocol\Practice0\untitled\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\untitled\cmake-build-debug\CMakeFiles C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\untitled\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\cocol\Practice0\untitled\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\untitled\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target

@@ -7,6 +7,15 @@
 #include <string>
 using namespace std;
 
+const int MAX_VEHICLES = 100;
+
+struct Vehicle{
+    string Brand ;
+    string Model ;
+    string Plate ;
+    int ManufacturerYear = 0;
+    float Price = 0;
+};
 
 class vehicle {
 private:
