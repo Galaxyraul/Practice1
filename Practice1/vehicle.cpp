@@ -5,56 +5,67 @@
 #include "vehicle.h"
 #include <iostream>
 
+using namespace v;
 /**
  * @brief Asks the user for the data of a vehicle
  * @param v [out] the vehicle to be filled
  * @param size
  */
-void kbRead(Vehicle &v,const int size){
-    do {
-        cout << "Introduce the brand of the vehicle";
-        cin >> v.Brand;
-    } while ((v.Brand.length() < 3) || (v.Brand.length() > 20));
-    do {
-        cout << "Introduce the model of the vehicle";
-        cin >> v.Model;
-    } while ((v.Model.length() < 1) || (v.Model.length() > 30));
-    do {
-        cout << "Introduce the plate of the vehicle";
-        cin >> v.Plate;
-    } while (v.Plate.length() != 6);
-    cout << "Introduce the manufacture year";
+void v::kbRead(Vehicle &v){
+    cout << "Introduce the brand of the vehicle:";
+    cin >> v.Brand;
+    if((v.Brand.length() < 3) || (v.Brand.length() > 20)) {
+        throw string("The brand length doesn't fit the standards");
+    }
+    cout << "Introduce the model of the vehicle:";
+    cin >> v.Model;
+    if((v.Model.length() < 1) || (v.Model.length() > 30)){
+        throw string("The model length doesn't fit the standards");
+    }
+
+    cout << "Introduce the plate of the vehicle:";
+    cin >> v.Plate;
+    if (v.Plate.length() != 6){
+        throw string("The plate length doesn't fit the standards");
+    }
+    cout << "Introduce the manufacture year:";
     cin >> v.ManufacturerYear;
-    do {
-        cout << "Introduce the price of the vehicle";
+        cout << "Introduce the price of the vehicle:";
         cin >> v.Price;
-    } while (v.Price <= 0);
+    if (v.Price <= 0){
+        throw string("The price can't be negative");
+    }
 }
 /**
  * @brief ASk the user for the data of the vehicles of a list and it fills it
  * @param v [out] Pointer to the array of vehicles
  * @param size [in] Size of the array so that we can end the loop
  */
-void kbRead(Vehicle *v,const int size){
+void v::kbRead(Vehicle *v,const int size){
     for(int i = 0; i < size; ++i){
-        do {
-            cout << "Introduce the brand of the vehicle:";
-            cin >> v[i].Brand;
-        } while ((v[i].Brand.length() < 3) || (v[i].Brand.length() > 20));
-        do {
-            cout << "Introduce the model of the vehicle:";
-            cin >> v[i].Model;
-        } while ((v[i].Model.length() < 1) || (v[i].Model.length() > 30));
-        do {
-            cout << "Introduce the plate of the vehicle:";
-            cin >> v[i].Plate;
-        } while (v[i].Plate.length() != 6);
+        cout << "Introduce the brand of the vehicle:";
+        cin >> v[i].Brand;
+        if((v[i].Brand.length() < 3) || (v[i].Brand.length() > 20)) {
+            throw string("The brand length doesn't fit the standards");
+        }
+
+        cout << "Introduce the model of the vehicle:";
+        cin >> v[i].Model;
+        if((v[i].Model.length() < 1) || (v[i].Model.length() > 30)){
+            throw string("The model length doesn't fit the standards");
+        }
+        cout << "Introduce the plate of the vehicle:";
+        cin >> v[i].Plate;
+        if(v[i].Plate.length() != 6){
+            throw string("The plate length doesn't fit the standards");
+        }
         cout << "Introduce the manufacture year:";
         cin >>v[i].ManufacturerYear;
-        do {
-            cout << "Introduce the price of the vehicle:";
-            cin >> v[i].Price;
-        } while (v[i].Price <= 0);
+        cout << "Introduce the price of the vehicle:";
+        cin >> v[i].Price;
+        if(v[i].Price <= 0){
+            throw string("The price can't be negative");
+        }
     }
 }
 /**
@@ -62,7 +73,7 @@ void kbRead(Vehicle *v,const int size){
  * @param v [in] The adress of the vehicle
  * @param size [in]
  */
-void showOnScreen(const Vehicle &v,int size){
+void v::showOnScreen(const Vehicle &v){
     cout << "Brand:" << v.Brand << endl;
     cout << "Model:" << v.Model << endl;
     cout << "Plate:" << v.Plate << endl;
@@ -75,7 +86,7 @@ void showOnScreen(const Vehicle &v,int size){
  * @param v [in] The pointer to the array
  * @param size [in] The size of the array
  */
-void showOnScreen(const Vehicle *v,const int size){
+void v::showOnScreen(const Vehicle *v,const int size){
     for(int i = 0; i < size; ++i ) {
         cout << "Brand:" << v[i].Brand << endl;
         cout << "Model:" << v[i].Model << endl;
@@ -91,7 +102,7 @@ void showOnScreen(const Vehicle *v,const int size){
  * @param size [int] The size of the array
  * @return The position of the most expensive vehicle
  */
-int findMostExpensive(const Vehicle *v,const int size){
+int v::findMostExpensive(const Vehicle *v,const int size){
     int posMostExpensive = 0;
     for (int i = 1; i < size;++i){
         posMostExpensive = (v[posMostExpensive].Price > v[i].Price)? posMostExpensive:i;
@@ -103,10 +114,10 @@ int findMostExpensive(const Vehicle *v,const int size){
  * @param v [in] Pointer to the array
  * @param size [in] Size of the array
  */
-void platesSECharacter (const Vehicle *v,const int size){
+void v::platesSECharacter (const Vehicle *v,const int size){
     for(int i = 0; i < size;++i){
         if(v[i].Plate.front() == v[i].Plate.back()){
-            showOnScreen(v[i],size);
+            showOnScreen(v[i]);//preguntar al profesor xq no funciona pero llamando a otro si
         }
     }
 
@@ -116,7 +127,7 @@ void platesSECharacter (const Vehicle *v,const int size){
  * @param v [in] Pointer to the array
  * @param size [in] Size of the array
  */
-void platesPalyndrome (const Vehicle *v,const int size){
+void v::platesPalyndrome (const Vehicle *v,const int size){
     int j = 0;
     bool palyndrome = true;
     for(int i = 0; i < size;++i){
@@ -125,7 +136,7 @@ void platesPalyndrome (const Vehicle *v,const int size){
             ++j;
         }
         if (palyndrome){
-            showOnScreen(v[i],size);
+            showOnScreen(v[i]);
         }
         palyndrome = true;
         j = 0;
@@ -133,44 +144,52 @@ void platesPalyndrome (const Vehicle *v,const int size){
 
 }
 
-
-void vehicle::setBrand(){
-    string brand;
-    do {
-        cout << "Introduce the brand of the vehicle:";
-        cin >> brand;
-    } while ((brand.length() < 3) || (brand.length() > 20));
-    _brand = brand;
+int v::fillVector(Vehicle v[],const int size){
+    string answer ="Y";
+    int i;
+    for(i = 0; (i < size) && (answer == "Y"); ++i) {
+        kbRead(v[i]);
+        cout <<"Would you like to add another vehicle?(Y/N)";
+        cin >> answer;
+    }
+    return i;
 }
 
-void vehicle::setModel(){
-    string model;
-    do {
-        cout << "Introduce the model of the vehicle:";
-        cin >> model;
-    } while ((model.length() < 1) || (model.length() > 30));
-    _model = model;
+void v::showOnScreen(Vehicle v[],const int size){
+    string answer ="Y";
+    for(int i = 0; (i < size) && (answer == "Y"); ++i ) {
+        showOnScreen(v[i]);
+        if((i+1)%5==0){
+            cout << "Press Y to show the next page";
+            cin >> answer;
+        }
+    }
 }
 
-void vehicle::setPlate(){
-    string plate;
-    do {
-        cout << "Introduce the plate of the vehicle:";
-        cin >> plate;
-    } while (plate.length() != 6);
-    _plate = plate;
+int v::maxPrice(const Vehicle v[],const int size){
+    int posMostExpensive = 0;
+    for (int i = 1; i < size;++i){
+        posMostExpensive = (v[posMostExpensive].Price > v[i].Price)? posMostExpensive:i;
+    }
+    return posMostExpensive;
 }
 
-void vehicle::setManufacturerYear(){
-    cout << "Introduce the manufacture year:";
-    cin >> _manufacturerYear;
+int v::searchByPlate (const std::string plateNumber,const Vehicle v[],const int size){
+    bool match = false;
+    int pos = 0;
+    for(int i = 0; i < size && !match;++i){
+        if (v[i].Plate == plateNumber){
+            match = true;
+            pos = i;
+        }
+    }
+    if (match){
+    return pos;
+    }else{
+        return -1;
+    }
+
 }
 
-void vehicle::setPrice(){
-    int price;
-    do {
-        cout << "Introduce the price of the vehicle:";
-        cin >> price;
-    } while (price <= 0);
-    _price = price;
-}
+
+
