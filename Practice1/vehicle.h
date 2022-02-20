@@ -7,15 +7,20 @@
 #include <string>
 using namespace std;
 
-const int MAX_VEHICLES = 100;
-
 struct Vehicle{
-    string Brand ;
-    string Model ;
-    string Plate ;
+    string Brand ="";
+    string Model ="";
+    string Plate ="" ;
     int ManufacturerYear = 0;
     float Price = 0;
 };
+void kbRead(Vehicle &v,int size);
+void kbRead(Vehicle *v,int size);
+void showOnScreen(const Vehicle &v,int size);
+void showOnScreen(const Vehicle *v,int size);
+int findMostExpensive(const Vehicle *v,int size);
+void platesSECharacter (const Vehicle *v,int size);
+void platesPalyndrome (const Vehicle *v,int size);
 
 class vehicle {
 private:
