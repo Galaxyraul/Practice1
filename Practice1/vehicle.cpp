@@ -143,7 +143,12 @@ void v::platesPalyndrome (const Vehicle *v,const int size){
     }
 
 }
-
+/**
+ * @brief Given the array of vehicles it fill its asking the user for the data
+ * @param v [in] array of vehicles
+ * @param size [in] dimension of the array
+ * @return The space used of the array
+ */
 int v::fillVector(Vehicle v[],const int size){
     string answer ="Y";
     int i;
@@ -154,7 +159,11 @@ int v::fillVector(Vehicle v[],const int size){
     }
     return i;
 }
-
+/**
+ * @brief given the array of vehicles it show its content in groups of five
+ * @param v [in]array of vehicles
+ * @param size [in] dimension of the array
+ */
 void v::showOnScreen(Vehicle v[],const int size){
     string answer ="Y";
     for(int i = 0; (i < size) && (answer == "Y"); ++i ) {
@@ -165,7 +174,12 @@ void v::showOnScreen(Vehicle v[],const int size){
         }
     }
 }
-
+/**
+ * @brief given the array of vehicles it returns the position of the most expensive
+ * @param v [in]array in which the vehicles are contained
+ * @param size [in]dimension of the array
+ * @return the position of the most expensive vehicle inside the array
+ */
 int v::maxPrice(const Vehicle v[],const int size){
     int posMostExpensive = 0;
     for (int i = 1; i < size;++i){
@@ -173,7 +187,13 @@ int v::maxPrice(const Vehicle v[],const int size){
     }
     return posMostExpensive;
 }
-
+/**
+ * @brief Given a plate number it returns the position inside the vector in which is contained
+ * @param plateNumber[in] data introduce by the user
+ * @param v [in]vector of vehicles
+ * @param size [in]dimension of the array
+ * @return The position of the vehicle which matches with the plateNumber
+ */
 int v::searchByPlate (const std::string plateNumber,const Vehicle v[],const int size){
     bool match = false;
     int pos = 0;
