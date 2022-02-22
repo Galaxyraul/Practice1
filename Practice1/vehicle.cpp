@@ -5,7 +5,6 @@
 #include "vehicle.h"
 #include <iostream>
 
-using namespace v;
 /**
  * @brief Asks the user for the data of a vehicle
  * @param v [out] the vehicle to be filled
@@ -15,25 +14,25 @@ void v::kbRead(Vehicle &v){
     cout << "Introduce the brand of the vehicle:";
     cin >> v.Brand;
     if((v.Brand.length() < 3) || (v.Brand.length() > 20)) {
-        throw string("The brand length doesn't fit the standards");
+        throw string("kbRead:The brand length doesn't fit the standards");
     }
     cout << "Introduce the model of the vehicle:";
     cin >> v.Model;
     if((v.Model.length() < 1) || (v.Model.length() > 30)){
-        throw string("The model length doesn't fit the standards");
+        throw string("kbRead:The model length doesn't fit the standards");
     }
 
     cout << "Introduce the plate of the vehicle:";
     cin >> v.Plate;
     if (v.Plate.length() != 6){
-        throw string("The plate length doesn't fit the standards");
+        throw string("kbRead:The plate length doesn't fit the standards");
     }
     cout << "Introduce the manufacture year:";
     cin >> v.ManufacturerYear;
         cout << "Introduce the price of the vehicle:";
         cin >> v.Price;
     if (v.Price <= 0){
-        throw string("The price can't be negative");
+        throw string("kbRead:The price can't be negative");
     }
 }
 /**
@@ -150,6 +149,9 @@ void v::platesPalyndrome (const Vehicle *v,const int size){
  * @return The space used of the array
  */
 int v::fillVector(Vehicle v[],const int size){
+    if (size < 0){
+        throw ("fillVector:The size cant be negative");
+    }
     string answer ="Y";
     int i;
     for(i = 0; (i < size) && (answer == "Y"); ++i) {
