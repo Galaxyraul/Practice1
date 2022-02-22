@@ -150,14 +150,14 @@ void v::platesPalyndrome (const Vehicle *v,const int size){
  */
 int v::fillVector(Vehicle v[],const int size){
     if (size < 0){
-        throw ("fillVector:The size cant be negative");
+        throw string ("fillVector:The size cant be negative");
     }
     string answer ="Y";
     int i;
     for(i = 0; (i < size) && (answer == "Y"); ++i) {
-        kbRead(v[i]);
-        cout <<"Would you like to add another vehicle?(Y/N)";
+        cout <<"Would you like to add a vehicle?(Y/N)";
         cin >> answer;
+        kbRead(v[i]);
     }
     return i;
 }
@@ -183,11 +183,20 @@ void v::showOnScreen(Vehicle v[],const int size){
  * @return the position of the most expensive vehicle inside the array
  */
 int v::maxPrice(const Vehicle v[],const int size){
-    int posMostExpensive = 0;
-    for (int i = 1; i < size;++i){
-        posMostExpensive = (v[posMostExpensive].Price > v[i].Price)? posMostExpensive:i;
+    int posMostExpensive1 = 0;
+    int posMostExpensive2 = size-1;
+    int j = size - 1;
+    for (int i = 0; i != j ;++i){
+        posMostExpensive1 = (v[posMostExpensive1].Price > v[i].Price)? posMostExpensive1:i;
+        posMostExpensive2 = (v[posMostExpensive2].Price > v[j-i].Price)? posMostExpensive2:j-i;
     }
-    return posMostExpensive;
+
+    if(posMostExpensive2 != posMostExpensive1){
+        throw string ("maxPrice:There are more than one vehicle with the greatest expensive");
+    }
+
+
+
 }
 /**
  * @brief Given a plate number it returns the position inside the vector in which is contained
