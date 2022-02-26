@@ -6,6 +6,11 @@
 #define PRACTICE2_GARITO_H
 #include <string>
 
+/**
+ * @brief This class will store the objects of the type garito
+ * @param _name Name of the garito
+ * @param _address Address of the garito
+ */
 class Garito {
 private:
     std::string _name = "";

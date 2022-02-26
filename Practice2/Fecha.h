@@ -5,7 +5,12 @@
 #ifndef PRACTICE2_FECHA_H
 #define PRACTICE2_FECHA_H
 
-
+/**
+ * @brief Class which stores a date
+ * @param _day Day of the date
+ * @param _month Month of the date
+ * @param _year Year of the date
+ */
 class Fecha {
 private:
     int _day = 26;
