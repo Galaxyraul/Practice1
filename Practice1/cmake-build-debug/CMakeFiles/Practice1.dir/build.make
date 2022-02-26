@@ -52,10 +52,10 @@ RM = C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1
+CMAKE_SOURCE_DIR = D:\Poo\Practices\Practice1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Poo\Practices\Practice1\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Practice1.dir/depend.make
@@ -71,30 +71,30 @@ include CMakeFiles/Practice1.dir/flags.make
 CMakeFiles/Practice1.dir/main.cpp.obj: CMakeFiles/Practice1.dir/flags.make
 CMakeFiles/Practice1.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Practice1.dir/main.cpp.obj: CMakeFiles/Practice1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Practice1.dir/main.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice1.dir/main.cpp.obj -MF CMakeFiles\Practice1.dir\main.cpp.obj.d -o CMakeFiles\Practice1.dir\main.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Practice1.dir/main.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice1.dir/main.cpp.obj -MF CMakeFiles\Practice1.dir\main.cpp.obj.d -o CMakeFiles\Practice1.dir\main.cpp.obj -c D:\Poo\Practices\Practice1\main.cpp
 
 CMakeFiles/Practice1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice1.dir/main.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\main.cpp > CMakeFiles\Practice1.dir\main.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice1\main.cpp > CMakeFiles\Practice1.dir\main.cpp.i
 
 CMakeFiles/Practice1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice1.dir/main.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\main.cpp -o CMakeFiles\Practice1.dir\main.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice1\main.cpp -o CMakeFiles\Practice1.dir\main.cpp.s
 
 CMakeFiles/Practice1.dir/vehicle.cpp.obj: CMakeFiles/Practice1.dir/flags.make
 CMakeFiles/Practice1.dir/vehicle.cpp.obj: ../vehicle.cpp
 CMakeFiles/Practice1.dir/vehicle.cpp.obj: CMakeFiles/Practice1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Practice1.dir/vehicle.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice1.dir/vehicle.cpp.obj -MF CMakeFiles\Practice1.dir\vehicle.cpp.obj.d -o CMakeFiles\Practice1.dir\vehicle.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\vehicle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Practice1.dir/vehicle.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice1.dir/vehicle.cpp.obj -MF CMakeFiles\Practice1.dir\vehicle.cpp.obj.d -o CMakeFiles\Practice1.dir\vehicle.cpp.obj -c D:\Poo\Practices\Practice1\vehicle.cpp
 
 CMakeFiles/Practice1.dir/vehicle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice1.dir/vehicle.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\vehicle.cpp > CMakeFiles\Practice1.dir\vehicle.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice1\vehicle.cpp > CMakeFiles\Practice1.dir\vehicle.cpp.i
 
 CMakeFiles/Practice1.dir/vehicle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice1.dir/vehicle.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\vehicle.cpp -o CMakeFiles\Practice1.dir\vehicle.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice1\vehicle.cpp -o CMakeFiles\Practice1.dir\vehicle.cpp.s
 
 # Object files for target Practice1
 Practice1_OBJECTS = \
@@ -110,7 +110,7 @@ Practice1.exe: CMakeFiles/Practice1.dir/build.make
 Practice1.exe: CMakeFiles/Practice1.dir/linklibs.rsp
 Practice1.exe: CMakeFiles/Practice1.dir/objects1.rsp
 Practice1.exe: CMakeFiles/Practice1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Practice1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Poo\Practices\Practice1\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Practice1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Practice1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -122,6 +122,6 @@ CMakeFiles/Practice1.dir/clean:
 .PHONY : CMakeFiles/Practice1.dir/clean
 
 CMakeFiles/Practice1.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1 C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1 C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\cmake-build-debug\CMakeFiles\Practice1.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Poo\Practices\Practice1 D:\Poo\Practices\Practice1 D:\Poo\Practices\Practice1\cmake-build-debug D:\Poo\Practices\Practice1\cmake-build-debug D:\Poo\Practices\Practice1\cmake-build-debug\CMakeFiles\Practice1.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Practice1.dir/depend
 
