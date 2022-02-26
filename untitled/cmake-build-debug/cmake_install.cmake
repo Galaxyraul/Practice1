@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/untitled
+# Install script for directory: D:/Poo/Practices/untitled
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Poo/Practices/untitled/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
