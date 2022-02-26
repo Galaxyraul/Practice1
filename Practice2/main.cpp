@@ -5,7 +5,6 @@
 #include "Temazo.h"
 
 
-
 int main() {
     bool end = false;
     int answer;
@@ -51,5 +50,4 @@ int main() {
                 break;
         }
     }
-
 }

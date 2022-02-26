@@ -6,6 +6,13 @@
 #define PRACTICE2_TEMAZO_H
 #include <string>
 
+/**
+ * @brief This class will store the data of a Temazo
+ * @param _title Title of the song
+ * @param _performer Singer or group who plays the song
+ * @param _lengthInSeconds Duration of the track in seconds
+ * @param _audienceScore Score that shows how appealing it is to the public
+ */
 class Temazo {
 private:
     std::string _title = "";
