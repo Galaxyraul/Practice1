@@ -1,3 +1,0 @@
-C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe -E rm -f CMakeFiles\Practice1.dir/objects.a
-C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\ar.exe qc CMakeFiles\Practice1.dir/objects.a @CMakeFiles\Practice1.dir\objects1.rsp
-C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\Practice1.dir/objects.a -Wl,--no-whole-archive -o Practice1.exe -Wl,--out-implib,libPractice1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Practice1.dir\linklibs.rsp
