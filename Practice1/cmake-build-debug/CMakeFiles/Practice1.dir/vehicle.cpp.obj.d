@@ -1,6 +1,6 @@
 CMakeFiles/Practice1.dir/vehicle.cpp.obj: \
- C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\vehicle.cpp \
- C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice1\vehicle.h \
+ D:\Poo\Practices\Practice1\vehicle.cpp \
+ D:\Poo\Practices\Practice1\vehicle.h \
  C:/Users/cocol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/string \
  C:/Users/cocol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \
  C:/Users/cocol/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/213.6777.58/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/os_defines.h \
