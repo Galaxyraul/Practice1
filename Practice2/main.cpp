@@ -15,4 +15,17 @@ int main() {
 
     Fecha f1;
     Fecha f2(13,4,2003);
+
+    showTemazo(t1);
+    showTemazo(t2);
+    showGarito(g1);
+    showGarito(g2);
+    showFecha(f1);
+    showFecha(f2);
+    try{
+        changeGarito(g2);
+        showGarito(g2);
+    }catch (std::string& e){
+        std::cerr << e;
+    }
 }
