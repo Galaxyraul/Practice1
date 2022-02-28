@@ -22,9 +22,6 @@ void showFecha(const Fecha& fecha );
 
 void changeGarito(Garito& garito);
 
-class djutils {
-
-};
 
 
 #endif //PRACTICE2_DJUTILS_H
