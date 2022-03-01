@@ -4,6 +4,8 @@
 
 #include "Fecha.h"
 #include <ctime>
+#include <string>
+
 /**
  * @brief Default constructor
  */
@@ -43,6 +45,12 @@ int Fecha::getDay() const {
  * @param day Value which will replaced the old one
  */
 void Fecha::setDay(int day) {
+    if(day > 31){
+        throw std::string ("Fecha::setDay:The day cannot be over 31");
+    }
+    if(day <= 0){
+        throw std::string ("Fecha::setDay:The day cannot be under 1");
+    }
     _day = day;
 }
 
@@ -59,6 +67,12 @@ int Fecha::getMonth() const {
  * @param month Value which will replaced the old one
  */
 void Fecha::setMonth(int month) {
+    if(month <= 0){
+        throw std::string ("Fecha::setMonth:The month cannot be negative");
+    }
+    if(month > 12){
+        throw std::string ("Fecha::setMonth:The month cannot be greater than twelve");
+    }
     _month = month;
 }
 
@@ -75,5 +89,8 @@ int Fecha::getYear() const {
  * @param year Value which will replaced the old one
  */
 void Fecha::setYear(int year) {
+    if(year < 0){
+        throw std::string ("Fecha::setYear:The year cannot be negative");
+    }
     _year = year;
 }
