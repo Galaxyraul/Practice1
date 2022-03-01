@@ -37,7 +37,7 @@ void showGarito(const Garito &garito) {
  * @param fecha object from which the data is shown
  */
 void showFecha(const Fecha &fecha) {
-    std::cout << "The date is " << fecha.getDay() << "/" << fecha.getMonth() << "/" << fecha.getYear() <<std::endl;
+    std::cout <<fecha.getDay() << "/" << fecha.getMonth() << "/" << fecha.getYear() <<std::endl;
     std::cout << "" << std::endl;
 }
 

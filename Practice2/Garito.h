@@ -5,6 +5,7 @@
 #ifndef PRACTICE2_GARITO_H
 #define PRACTICE2_GARITO_H
 #include <string>
+#include "Fecha.h"
 
 /**
  * @brief This class will store the objects of the type garito
@@ -15,6 +16,7 @@ class Garito {
 private:
     std::string _name = "";
     std::string _address = "";
+    Fecha _dateOfLastShow;
 public:
     Garito(const std::string &name, const std::string &address);
 
@@ -29,6 +31,10 @@ public:
     const std::string &getAddress() const;
 
     void setAddress(const std::string &address);
+
+    void setDateOfLastShow(int day,int month,int year);
+
+    const Fecha &getDateOfLastShow() const;
 
 };
 
