@@ -3,11 +3,18 @@
 //
 
 #include "Fecha.h"
-
+#include <ctime>
 /**
  * @brief Default constructor
  */
-Fecha::Fecha() {}
+Fecha::Fecha() {
+    std::time_t horaActual = std::time(0);
+    std::tm* presente = std::localtime(&horaActual);
+
+    _year = (presente->tm_year + 1900);
+    _month = (presente->tm_mon + 1);
+    _day = (presente->tm_mday);
+}
 
 /**
  * @brief Parameterized constructor

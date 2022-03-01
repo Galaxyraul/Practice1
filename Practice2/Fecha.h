@@ -13,9 +13,9 @@
  */
 class Fecha {
 private:
-    int _day = 26;
-    int _month = 2;
-    int _year = 2022;
+    int _day = 0;
+    int _month = 0;
+    int _year = 0;
 public:
     Fecha();
 
