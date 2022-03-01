@@ -50,9 +50,11 @@ void showFecha(const Fecha &fecha) {
 void changeGarito(Garito &garito) {
     std::string name;
     std::string address;
+    while(getchar() != '\n');
     std::cout << "Introduce the new name of the garito:";
     std::getline(std::cin,name);
     garito.setName(name);
+    while(getchar() != '\n');//Este bucle vacía el buffer que era la causa del problema
     std::cout << "Introduce the new address:";
     std::getline(std::cin,address);
     garito.setAddress(address);
