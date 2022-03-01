@@ -3,19 +3,20 @@
 //
 
 #include "Garito.h"
+#include "Fecha.h"
 
 /**
  * @brief Parameterized constructor
  * @param name string that will be the value of the _name field
  * @param address string that will be the value of the _address field
  */
-Garito::Garito(const std::string &name, const std::string &address) : _name(name), _address(address) {}
+Garito::Garito(const std::string &name, const std::string &address) : _name(name), _address(address),_dateOfLastShow() {}
 
 /**
  * @brief copy constructor
  * @param orig object from which the new object will be created
  */
-Garito::Garito(const Garito& orig) : _name(orig._name), _address(orig._address) {}
+Garito::Garito(const Garito& orig) : _name(orig._name), _address(orig._address),_dateOfLastShow(orig._dateOfLastShow) {}
 
 /**
  * @brief Destructor
@@ -62,6 +63,16 @@ void Garito::setAddress(const std::string &address) {
         throw std::string ("The address  cannot be the empty chain");
     }
     this->_address = address;
+}
+
+void Garito::setDateOfLastShow(int day, int month, int year) {
+    _dateOfLastShow.setDay(day);
+    _dateOfLastShow.setMonth(month);
+    _dateOfLastShow.setYear(year);
+}
+
+const Fecha &Garito::getDateOfLastShow() const {
+    return _dateOfLastShow;
 }
 
 

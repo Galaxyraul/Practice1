@@ -49,5 +49,13 @@ int main() {
                 end = true;
                 break;
         }
+        Garito g3("La Bernarda","Av.Andalucía");
+       try {
+           g3.setDateOfLastShow(30, 3, 2021);
+           std::cout << "The last day in which Segis performed was :";
+           showFecha(g3.getDateOfLastShow());
+       }catch (std::string& e){
+           std::cerr << e;
+       }
     }
 }
