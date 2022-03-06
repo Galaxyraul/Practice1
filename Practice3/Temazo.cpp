@@ -3,6 +3,7 @@
 //
 
 #include "Temazo.h"
+#include "Fecha.h"
 
 /**
  * @brief Default constructor
@@ -14,16 +15,21 @@ Temazo::Temazo() {}
  * @param title string that will be the value of the _title field
  * @param performer string that will be the value of the _performer field
  * @param lengthInSeconds int that will be the value of the _lengthInSeconds field
+ * @param nameOfLastClub string that will be the value of the _nameOfLastClub field
+ * @param day int that will be the value of the field _day in the _dateOfLastUse object
+ * @param month int that will be the value of the field _month in the _dateOfLastUse object
+ * @param year int that will be the value of the field _year in the _dateOfLastUse object
  */
-Temazo::Temazo(const std::string &title, const std::string &performer, int lengthInSeconds)
-:_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds) {}
+Temazo::Temazo(const std::string &title, const std::string &performer, const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year)
+:_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds),_nameOfLastClub(nameOfLastClub),_dateOfLastUse(day,month,year) {}
 
 /**
  * @brief copy constructor
  * @param orig object from which the new object will be created
  */
 Temazo::Temazo(const Temazo &orig)
-:_title(orig._title),_performer(orig._performer),_lengthInSeconds(orig._lengthInSeconds),_audienceScore(orig._audienceScore) {}
+:_title(orig._title),_performer(orig._performer),_lengthInSeconds(orig._lengthInSeconds),
+_audienceScore(orig._audienceScore),_nameOfLastClub(orig._nameOfLastClub),_dateOfLastUse(orig._dateOfLastUse) {}
 
 /**
  * @brief Destructor

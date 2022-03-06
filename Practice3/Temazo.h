@@ -5,6 +5,7 @@
 #ifndef PRACTICE2_TEMAZO_H
 #define PRACTICE2_TEMAZO_H
 #include <string>
+#include "Fecha.h"
 
 /**
  * @brief This class will store the data of a Temazo
@@ -12,6 +13,8 @@
  * @param _performer Singer or group who plays the song
  * @param _lengthInSeconds Duration of the track in seconds
  * @param _audienceScore Score that shows how appealing it is to the public
+ * @param _nameOfLastClub Name of the last place where it was used
+ * @param _dateOfLastUse Fecha object in which the date of the last use it is store
  */
 class Temazo {
 private:
@@ -19,10 +22,13 @@ private:
     std::string _performer ="";
     int _lengthInSeconds = 0;
     int _audienceScore = 0;
+    std::string _nameOfLastClub = "";
+    Fecha _dateOfLastUse;
 public:
     Temazo();
 
-    Temazo(const std::string &title, const std::string &performer, int lengthInSeconds);
+    Temazo(const std::string &title, const std::string &performer,
+           const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year);
 
     Temazo(const Temazo& orig);
 
