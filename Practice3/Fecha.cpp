@@ -127,3 +127,39 @@ bool Fecha::operator<(const Fecha &otro) {
 bool Fecha::operator==(const Fecha &otro) {
     return((_day == otro._day) && (_month == otro._month) && (_year == otro._year));
 }
+/**
+ * @brief This is and overload of the <= operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator<=(const Fecha &otro) {
+    return ((*this < otro) || (*this == otro));
+}
+/**
+ * @brief This is and overload of the >= operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator>=(const Fecha &otro) {
+    return (!(*this < otro) || (*this == otro));
+}
+/**
+ * @brief This is and overload of the > operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator>(const Fecha &otro) {
+    return !((*this < otro) || (*this == otro));
+}
+/**
+ * @brief This is and overload of the != operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator!=(const Fecha &otro) {
+    return !(*this == otro);
+}
+
+
+
+
