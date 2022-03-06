@@ -75,4 +75,6 @@ const Fecha &Garito::getDateOfLastShow() const {
     return _dateOfLastShow;
 }
 
+Garito::Garito() {}
+
 

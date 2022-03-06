@@ -22,6 +22,8 @@ void showFecha(const Fecha& fecha );
 
 void changeGarito(Garito& garito);
 
+void showPreviousTemazos(const Temazo t[] ,const int tam, Fecha f);
+
 
 
 #endif //PRACTICE2_DJUTILS_H
