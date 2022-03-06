@@ -65,12 +65,22 @@ void Garito::setAddress(const std::string &address) {
     this->_address = address;
 }
 
+/**
+ * @brief This method assigns the values to the fecha attribute in the garito
+ * @param day Value which will be assigned to the _day field of the fecha object
+ * @param month Value which will be assigned to the _month field of the fecha oject
+ * @param year Value which will be assigned to the _year field of the fecha object
+ */
 void Garito::setDateOfLastShow(int day, int month, int year) {
     _dateOfLastShow.setDay(day);
     _dateOfLastShow.setMonth(month);
     _dateOfLastShow.setYear(year);
 }
 
+/**
+ * @brief This method returns the attribute fecha of the class
+ * @return The object of type fecha in which it is store the last play of Segis
+ */
 const Fecha &Garito::getDateOfLastShow() const {
     return _dateOfLastShow;
 }
