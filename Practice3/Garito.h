@@ -18,6 +18,8 @@ private:
     std::string _address = "";
     Fecha _dateOfLastShow;
 public:
+    Garito();
+
     Garito(const std::string &name, const std::string &address);
 
     Garito(const Garito& orig);

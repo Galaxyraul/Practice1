@@ -34,6 +34,18 @@ public:
     int getYear() const;
 
     void setYear(int year);
+
+    bool operator <(const Fecha& otro);
+
+    bool operator >(const Fecha& otro);
+
+    bool operator ==(const Fecha& otro);
+
+    bool operator <=(const Fecha& otro);
+
+    bool operator >=(const Fecha& otro);
+
+    bool operator !=(const Fecha& otro);
 };
 
 

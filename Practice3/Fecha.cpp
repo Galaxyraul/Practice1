@@ -94,3 +94,72 @@ void Fecha::setYear(int year) {
     }
     _year = year;
 }
+
+/**
+ * @brief This is and overload of the < operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator<(const Fecha &otro) {
+    if(_year < otro._year){
+        return true;
+    } else if(_year == otro._year){
+        if(_month < otro._month){
+            return true;
+        } else if(_month == otro._month){
+            if (_day < otro._day){
+                return true;
+            } else{
+                return false;
+            }
+        } else{
+            return false;
+        }
+    } else{
+        return false;
+    }
+}
+/**
+ * @brief This is and overload of the == operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator==(const Fecha &otro) {
+    return((_day == otro._day) && (_month == otro._month) && (_year == otro._year));
+}
+/**
+ * @brief This is and overload of the <= operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator<=(const Fecha &otro) {
+    return ((*this < otro) || (*this == otro));
+}
+/**
+ * @brief This is and overload of the >= operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator>=(const Fecha &otro) {
+    return (!(*this < otro) || (*this == otro));
+}
+/**
+ * @brief This is and overload of the > operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator>(const Fecha &otro) {
+    return !((*this < otro) || (*this == otro));
+}
+/**
+ * @brief This is and overload of the != operator so that it works with fechas objects
+ * @param otro Object whose fields will be compare to the one who calls the method
+ * @return Boolean value
+ */
+bool Fecha::operator!=(const Fecha &otro) {
+    return !(*this == otro);
+}
+
+
+
+

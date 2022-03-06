@@ -33,6 +33,7 @@ public:
     Temazo(const Temazo& orig);
 
     ~Temazo();
+
     const std::string &getTitle() const;
 
     void setTitle(const std::string &title);
