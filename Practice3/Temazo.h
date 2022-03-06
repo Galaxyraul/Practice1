@@ -41,6 +41,14 @@ public:
 
     void setPerformer(const std::string &performer);
 
+    const std::string &getNameOfLastClub() const;
+
+    void setNameOfLastClub(const std::string &nameOfLastClub);
+
+    const Fecha &getDateOfLastUse() const;
+
+    void setDateOfLastUse(const Fecha &dateOfLastUse);
+
     int getLengthInSeconds() const;
 
     void setLengthInSeconds(int lengthInSeconds);
