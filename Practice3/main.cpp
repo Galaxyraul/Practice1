@@ -32,6 +32,7 @@ int main() {
     list[2].setLengthInSeconds(193);
     list[2].setDateOfLastUse({6,6,2015});
 
+    showPreviousTemazos(list,3,{20,02,2022});
     delete [] list;
     delete [] gList;
     delete pMiCasa;

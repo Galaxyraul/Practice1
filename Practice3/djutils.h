@@ -22,7 +22,7 @@ void showFecha(const Fecha& fecha );
 
 void changeGarito(Garito& garito);
 
-void showPreviousTemazos(const Temazo t[] ,const int tam, Fecha f);
+void showPreviousTemazos(const Temazo t[] , int tam, Fecha f);
 
 
 

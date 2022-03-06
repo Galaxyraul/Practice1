@@ -69,12 +69,13 @@ void changeGarito(Garito &garito) {
  * @param tam Size of the array used
  * @param f Fecha which will be usa as reference
  */
-void showPreviousTemazos(const Temazo *t, const int tam,  Fecha& f) {
+void showPreviousTemazos(const Temazo *t, int tam, Fecha f) {
     for (int i = 0; i < tam; ++i){
         if (f > t[i].getDateOfLastUse() ){
             showTemazo(t[i]);
         }
     }
 }
+
 
 
