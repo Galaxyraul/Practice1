@@ -15,6 +15,10 @@ Temazo::Temazo() {}
  * @param title string that will be the value of the _title field
  * @param performer string that will be the value of the _performer field
  * @param lengthInSeconds int that will be the value of the _lengthInSeconds field
+ * @param nameOfLastClub string that will be the value of the _nameOfLastClub field
+ * @param day int that will be the value of the field _day in the _dateOfLastUse object
+ * @param month int that will be the value of the field _month in the _dateOfLastUse object
+ * @param year int that will be the value of the field _year in the _dateOfLastUse object
  */
 Temazo::Temazo(const std::string &title, const std::string &performer, const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year)
 :_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds),_nameOfLastClub(nameOfLastClub),_dateOfLastUse(day,month,year) {}
