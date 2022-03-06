@@ -91,6 +91,34 @@ void Temazo::setLengthInSeconds(int lengthInSeconds) {
 int Temazo::getAudienceScore() const {
     return _audienceScore;
 }
+/**
+ * @brief Accesses to the field _nameOfLastClub
+ * @return the value of the _nameOfLastClub field of an object
+ */
+const std::string &Temazo::getNameOfLastClub() const {
+    return _nameOfLastClub;
+}
+/**
+ * @brief Changes the field _nameOfLastClub of an object
+ * @param nameOfLastClub Value which will replaced the old one
+ */
+void Temazo::setNameOfLastClub(const std::string &nameOfLastClub) {
+    _nameOfLastClub = nameOfLastClub;
+}
+/**
+ * @brief Accesses to the field _dateOfLastUse
+ * @return the value of the _dateOfLastUse field of an object
+ */
+const Fecha &Temazo::getDateOfLastUse() const {
+    return _dateOfLastUse;
+}
+/**
+ * @brief Changes the field _dateOfLastUse of an object
+ * @param dateOfLastUse Value which will replaced the old one
+ */
+void Temazo::setDateOfLastUse(const Fecha &dateOfLastUse) {
+    _dateOfLastUse = dateOfLastUse;
+}
 
 
 
