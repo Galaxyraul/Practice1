@@ -88,7 +88,7 @@ int searchClub(Garito **g, int tam, const std::string &name) {
         }
     }
     if (!match) {
-        throw std::string ("djutils:searchClub:No coincidence found");
+        throw std::string ("djutils:searchClub:No coincidence found\n");
     }
     return pos;
 }
