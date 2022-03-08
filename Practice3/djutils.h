@@ -24,6 +24,10 @@ void changeGarito(Garito& garito);
 
 void showPreviousTemazos(const Temazo t[] , int tam, Fecha f);
 
+int searchClub(Garito **g,int tam, const std::string& name);
+
+void showCombinedData (const Temazo t[], int tamT,Garito **g,int tamG);
+
 
 
 #endif //PRACTICE2_DJUTILS_H
