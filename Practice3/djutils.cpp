@@ -77,5 +77,37 @@ void showPreviousTemazos(const Temazo *t, int tam, Fecha f) {
     }
 }
 
+int searchClub(Garito **g, int tam, const std::string &name) {
+    int pos = 0;
+    bool match = false;
+    for(int i = 0; (i < tam) && !match;++i){
+        if(g[i] != nullptr) {
+
+            match = (g[i]->getName() == name);
+            if (match) pos = i;
+        }
+    }
+    if (!match) {
+        throw std::string ("djutils:searchClub:No coincidence found");
+    }
+    return pos;
+}
+
+void showCombinedData(const Temazo *t, int tamT, Garito **g, int tamG) {
+    int pos;
+    for(int i = 0; i < tamT;++i){
+        try {
+            pos = searchClub(g, tamG, t[i].getNameOfLastClub());
+            if(g[pos]->getName()!= "") {
+                std::cout << "The theme " + t[i].getTitle() + " was played for the last time at " + g[pos]->getName() +
+                             " in " + g[pos]->getAddress() << std::endl;
+            }
+        }catch (const std::string& e){
+            std::cout << e;
+        }
+    }
+
+}
+
 
 
