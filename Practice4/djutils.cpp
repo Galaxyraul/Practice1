@@ -18,6 +18,7 @@ void showTemazo(const Temazo &temazo) {
     << "The performer of this temazo is " + temazo.getPerformer() << std::endl
     << "The length of this temazo is " << temazo.getLengthInSeconds() << " s" << std::endl
     << "The audience score of this temazo is " << temazo.getAudienceScore() << std::endl
+    << "The Id of this temazo is:" << temazo.getIdTemazo() << std::endl
     << "The last name of the garito where it was played is:" << temazo.getNameOfLastClub() << std::endl
     << "The last time it was played was: ";
     showFecha(temazo.getDateOfLastUse()) ;
