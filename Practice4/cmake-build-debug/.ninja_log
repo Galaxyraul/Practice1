@@ -1,11 +1,10 @@
 # ninja log v5
 1	360	6687869512917599	CMakeFiles/Practice2.dir/Garito.cpp.obj	5aa3109f707a4558
 3	261	6687881225677915	CMakeFiles/Practice2.dir/NonValidParameter.cpp.obj	a626c12cbc88b47
-263	828	6687881231292929	Practice2.exe	933c548432f27e2b
+266	767	6687882431166955	Practice2.exe	85a8e0ac0c7730ba
 7	557	6687869513845351	CMakeFiles/Practice2.dir/Temazo.cpp.obj	8e525738148bb7ef
+46	206	6687883109653368	build.ninja	15140bce061c229b
 26	562	6687869513945084	CMakeFiles/Practice2.dir/Fecha.cpp.obj	3248c9f254126dca
 12	565	6687869514598450	CMakeFiles/Practice2.dir/main.cpp.obj	19049c8d1762ea1d
 33	583	6687869514647985	CMakeFiles/Practice2.dir/djutils.cpp.obj	a5a202ae8a222e4f
-46	206	6687882423159417	build.ninja	15140bce061c229b
 2	263	6687882426161982	CMakeFiles/Practice2.dir/nonValidParameter.cpp.obj	cfde48100d89ad1
-266	767	6687882431166955	Practice2.exe	85a8e0ac0c7730ba

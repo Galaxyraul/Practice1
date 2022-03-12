@@ -56,6 +56,8 @@ public:
 
     int getAudienceScore() const;
 
+    int increasePuntuation (const int extraPoints) const;
+
 };
 
 

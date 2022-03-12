@@ -4,6 +4,7 @@
 
 #include "Garito.h"
 #include "Fecha.h"
+#include "nonValidParameter.h"
 
 /**
  * @brief Parameterized constructor
@@ -40,7 +41,7 @@ const std::string &Garito::getName() const {
  */
 void Garito::setName(const std::string &name) {
     if (name == ""){
-        throw std::string ("The name cannot be the empty chain");
+        throw nonValidParameter ("Garito.cpp","setName","The empty string is not a valid parameter");
     }
     this->_name = name;
 }
@@ -60,7 +61,7 @@ const std::string &Garito::getAddress() const {
  */
 void Garito::setAddress(const std::string &address) {
     if (address == ""){
-        throw std::string ("The address  cannot be the empty chain");
+        throw nonValidParameter ("Garito.cpp","setName","The empty string is not a valid parameter");
     }
     this->_address = address;
 }
