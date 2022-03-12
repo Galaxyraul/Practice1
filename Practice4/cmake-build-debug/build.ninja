@@ -79,8 +79,8 @@ build CMakeFiles/Practice2.dir/djutils.cpp.obj: CXX_COMPILER__Practice2_Debug D$
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
 
-build CMakeFiles/Practice2.dir/NonValidParameter.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/cmake-build-debug/NonValidParameter.cpp || cmake_object_order_depends_target_Practice2
-  DEP_FILE = CMakeFiles\Practice2.dir\NonValidParameter.cpp.obj.d
+build CMakeFiles/Practice2.dir/nonValidParameter.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/nonValidParameter.cpp || cmake_object_order_depends_target_Practice2
+  DEP_FILE = CMakeFiles\Practice2.dir\nonValidParameter.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
@@ -93,7 +93,7 @@ build CMakeFiles/Practice2.dir/NonValidParameter.cpp.obj: CXX_COMPILER__Practice
 #############################################
 # Link the executable Practice2.exe
 
-build Practice2.exe: CXX_EXECUTABLE_LINKER__Practice2_Debug CMakeFiles/Practice2.dir/main.cpp.obj CMakeFiles/Practice2.dir/Temazo.cpp.obj CMakeFiles/Practice2.dir/Garito.cpp.obj CMakeFiles/Practice2.dir/Fecha.cpp.obj CMakeFiles/Practice2.dir/djutils.cpp.obj CMakeFiles/Practice2.dir/NonValidParameter.cpp.obj
+build Practice2.exe: CXX_EXECUTABLE_LINKER__Practice2_Debug CMakeFiles/Practice2.dir/main.cpp.obj CMakeFiles/Practice2.dir/Temazo.cpp.obj CMakeFiles/Practice2.dir/Garito.cpp.obj CMakeFiles/Practice2.dir/Fecha.cpp.obj CMakeFiles/Practice2.dir/djutils.cpp.obj CMakeFiles/Practice2.dir/nonValidParameter.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Practice2.dir

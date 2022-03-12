@@ -2,7 +2,7 @@
 // Created by cocol on 12/03/2022.
 //
 
-#include "NonValidParameter.h"
+#include "nonValidParameter.h"
 
 nonValidParameter::nonValidParameter(const std::string &file, const std::string &function,
                                      const std::string &description) : _File(file), _Function(function),
