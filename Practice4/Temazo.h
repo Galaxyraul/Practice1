@@ -64,6 +64,8 @@ public:
 
     int increasePuntuation (const int extraPoints) const;
 
+    const std::string toCSV() const;
+
 };
 
 

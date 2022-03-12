@@ -5,6 +5,8 @@
 #include "Temazo.h"
 #include "Fecha.h"
 #include "nonValidParameter.h"
+#include <sstream>
+
 
 /**
  * @brief Default constructor
@@ -133,6 +135,12 @@ int Temazo::increasePuntuation(const int extraPoints) const {
 
 int Temazo::getIdTemazo() const {
     return _idTemazo;
+}
+
+const std::string Temazo::toCSV() const {
+    std::stringstream ss;
+    ss << _title << ";" << _performer << ";" << _lengthInSeconds << ";" << _audienceScore << ";" << _nameOfLastClub <<";" << _dateOfLastUse.toCSV() << ";" << _idTemazo;
+    return ss.str();
 }
 
 

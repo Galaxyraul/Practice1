@@ -38,6 +38,8 @@ public:
 
     const Fecha &getDateOfLastShow() const;
 
+    const std::string toCSV() const;
+
 };
 
 

@@ -4,6 +4,7 @@
 
 #ifndef PRACTICE2_FECHA_H
 #define PRACTICE2_FECHA_H
+#include "string"
 
 /**
  * @brief Class which stores a date
@@ -46,6 +47,8 @@ public:
     bool operator >=(const Fecha& otro);
 
     bool operator !=(const Fecha& otro);
+
+    const std::string toCSV () const;
 };
 
 
