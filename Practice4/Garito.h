@@ -11,6 +11,7 @@
  * @brief This class will store the objects of the type garito
  * @param _name Name of the garito
  * @param _address Address of the garito
+ * @param _dateOfLastShow Date in which this garito was lastly used
  */
 class Garito {
 private:

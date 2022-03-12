@@ -126,17 +126,29 @@ const Fecha &Temazo::getDateOfLastUse() const {
 void Temazo::setDateOfLastUse(const Fecha &dateOfLastUse) {
     _dateOfLastUse = dateOfLastUse;
 }
-
-int Temazo::increasePuntuation(const int extraPoints) const {
+/**
+ * @brief Increases the value of _audienceScore
+ * @param extraPoints amount in which the field _audienceScore will be augmented
+ */
+void Temazo::increasePuntuation(const int extraPoints)  {
     if ((extraPoints > 10) || (extraPoints < -10)){
         throw nonValidParameter("Temazo.cpp","increasePuntuation","The puntuation is out of range" );
     }
+    _audienceScore += extraPoints;
 }
 
+/**
+ * @brief getter from the field _idTemazo
+ * @return The value of the field _idTemazo
+ */
 int Temazo::getIdTemazo() const {
     return _idTemazo;
 }
 
+/**
+ * @brief Turns all the values of each field and joins them into a single string
+ * @return The string with all the attributes values
+ */
 const std::string Temazo::toCSV() const {
     std::stringstream ss;
     ss << _title << ";" << _performer << ";" << _lengthInSeconds << ";" << _audienceScore << ";" << _nameOfLastClub <<";" << _dateOfLastUse.toCSV() << ";" << _idTemazo;

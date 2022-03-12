@@ -161,7 +161,10 @@ bool Fecha::operator>(const Fecha &otro) {
 bool Fecha::operator!=(const Fecha &otro) {
     return !(*this == otro);
 }
-
+/**
+ * @brief Turns all the values of each field and joins them into a single string
+ * @return The string with all the attributes values
+ */
 const std::string Fecha::toCSV() const {
     std:std::stringstream ss;
     ss << _day << ";" << _month << ";" <<_year;
