@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/Poo/Practices/Practice3/cmake-build-debug/
+cmake_ninja_workdir = D$:/Poo/Practices/Practice4/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Practice2
 
@@ -49,32 +49,38 @@ cmake_ninja_workdir = D$:/Poo/Practices/Practice3/cmake-build-debug/
 
 build cmake_object_order_depends_target_Practice2: phony || CMakeFiles/Practice2.dir
 
-build CMakeFiles/Practice2.dir/main.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice3/main.cpp || cmake_object_order_depends_target_Practice2
+build CMakeFiles/Practice2.dir/main.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/main.cpp || cmake_object_order_depends_target_Practice2
   DEP_FILE = CMakeFiles\Practice2.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
 
-build CMakeFiles/Practice2.dir/Temazo.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice3/Temazo.cpp || cmake_object_order_depends_target_Practice2
+build CMakeFiles/Practice2.dir/Temazo.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/Temazo.cpp || cmake_object_order_depends_target_Practice2
   DEP_FILE = CMakeFiles\Practice2.dir\Temazo.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
 
-build CMakeFiles/Practice2.dir/Garito.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice3/Garito.cpp || cmake_object_order_depends_target_Practice2
+build CMakeFiles/Practice2.dir/Garito.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/Garito.cpp || cmake_object_order_depends_target_Practice2
   DEP_FILE = CMakeFiles\Practice2.dir\Garito.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
 
-build CMakeFiles/Practice2.dir/Fecha.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice3/Fecha.cpp || cmake_object_order_depends_target_Practice2
+build CMakeFiles/Practice2.dir/Fecha.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/Fecha.cpp || cmake_object_order_depends_target_Practice2
   DEP_FILE = CMakeFiles\Practice2.dir\Fecha.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
 
-build CMakeFiles/Practice2.dir/djutils.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice3/djutils.cpp || cmake_object_order_depends_target_Practice2
+build CMakeFiles/Practice2.dir/djutils.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/djutils.cpp || cmake_object_order_depends_target_Practice2
   DEP_FILE = CMakeFiles\Practice2.dir\djutils.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\Practice2.dir
+  OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
+
+build CMakeFiles/Practice2.dir/NonValidParameter.cpp.obj: CXX_COMPILER__Practice2_Debug D$:/Poo/Practices/Practice4/cmake-build-debug/NonValidParameter.cpp || cmake_object_order_depends_target_Practice2
+  DEP_FILE = CMakeFiles\Practice2.dir\NonValidParameter.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\Practice2.dir
   OBJECT_FILE_DIR = CMakeFiles\Practice2.dir
@@ -87,7 +93,7 @@ build CMakeFiles/Practice2.dir/djutils.cpp.obj: CXX_COMPILER__Practice2_Debug D$
 #############################################
 # Link the executable Practice2.exe
 
-build Practice2.exe: CXX_EXECUTABLE_LINKER__Practice2_Debug CMakeFiles/Practice2.dir/main.cpp.obj CMakeFiles/Practice2.dir/Temazo.cpp.obj CMakeFiles/Practice2.dir/Garito.cpp.obj CMakeFiles/Practice2.dir/Fecha.cpp.obj CMakeFiles/Practice2.dir/djutils.cpp.obj
+build Practice2.exe: CXX_EXECUTABLE_LINKER__Practice2_Debug CMakeFiles/Practice2.dir/main.cpp.obj CMakeFiles/Practice2.dir/Temazo.cpp.obj CMakeFiles/Practice2.dir/Garito.cpp.obj CMakeFiles/Practice2.dir/Fecha.cpp.obj CMakeFiles/Practice2.dir/djutils.cpp.obj CMakeFiles/Practice2.dir/NonValidParameter.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Practice2.dir
@@ -102,7 +108,7 @@ build Practice2.exe: CXX_EXECUTABLE_LINKER__Practice2_Debug CMakeFiles/Practice2
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Poo\Practices\Practice3\cmake-build-debug && C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D D:\Poo\Practices\Practice4\cmake-build-debug && C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -113,7 +119,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D D:\Poo\Practices\Practice3\cmake-build-debug && C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SD:\Poo\Practices\Practice3 -BD:\Poo\Practices\Practice3\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\Poo\Practices\Practice4\cmake-build-debug && C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\cmake\win\bin\cmake.exe --regenerate-during-build -SD:\Poo\Practices\Practice4 -BD:\Poo\Practices\Practice4\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -131,7 +137,7 @@ build Practice2: phony Practice2.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/Poo/Practices/Practice3/cmake-build-debug
+# Folder: D:/Poo/Practices/Practice4/cmake-build-debug
 
 build all: phony Practice2.exe
 
