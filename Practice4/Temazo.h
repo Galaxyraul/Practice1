@@ -16,6 +16,8 @@
  * @param _nameOfLastClub Name of the last place where it was used
  * @param _dateOfLastUse Fecha object in which the date of the last use it is store
  */
+static int _numTemazos = 0;
+
 class Temazo {
 private:
     std::string _title = "";
@@ -24,11 +26,15 @@ private:
     int _audienceScore = 0;
     std::string _nameOfLastClub = "";
     Fecha _dateOfLastUse;
+    int _idTemazo = _numTemazos;
+public:
+    int getIdTemazo() const;
+
 public:
     Temazo();
 
     Temazo(const std::string &title, const std::string &performer,
-           const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year);
+           const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo);
 
     Temazo(const Temazo& orig);
 
@@ -57,6 +63,8 @@ public:
     int getAudienceScore() const;
 
     int increasePuntuation (const int extraPoints) const;
+
+    const std::string toCSV() const;
 
 };
 

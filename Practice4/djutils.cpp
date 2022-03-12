@@ -18,6 +18,7 @@ void showTemazo(const Temazo &temazo) {
     << "The performer of this temazo is " + temazo.getPerformer() << std::endl
     << "The length of this temazo is " << temazo.getLengthInSeconds() << " s" << std::endl
     << "The audience score of this temazo is " << temazo.getAudienceScore() << std::endl
+    << "The Id of this temazo is:" << temazo.getIdTemazo() << std::endl
     << "The last name of the garito where it was played is:" << temazo.getNameOfLastClub() << std::endl
     << "The last time it was played was: ";
     showFecha(temazo.getDateOfLastUse()) ;
@@ -75,6 +76,38 @@ void showPreviousTemazos(const Temazo *t, int tam, Fecha f) {
             showTemazo(t[i]);
         }
     }
+}
+
+int searchClub(Garito **g, int tam, const std::string &name) {
+    int pos = 0;
+    bool match = false;
+    for(int i = 0; (i < tam) && !match;++i){
+        if(g[i] != nullptr) {
+
+            match = (g[i]->getName() == name);
+            if (match) pos = i;
+        }
+    }
+    if (!match) {
+        throw std::string ("djutils:searchClub:No coincidence found\n");
+    }
+    return pos;
+}
+
+void showCombinedData(const Temazo *t, int tamT, Garito **g, int tamG) {
+    int pos;
+    for(int i = 0; i < tamT;++i){
+        try {
+            pos = searchClub(g, tamG, t[i].getNameOfLastClub());
+            if(g[pos]->getName()!= "") {
+                std::cout << "The theme " + t[i].getTitle() + " was played for the last time at " + g[pos]->getName() +
+                             " in " + g[pos]->getAddress() << std::endl;
+            }
+        }catch (const std::string& e){
+            std::cout << e;
+        }
+    }
+
 }
 
 

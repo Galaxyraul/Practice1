@@ -5,6 +5,8 @@
 #include "Garito.h"
 #include "Fecha.h"
 #include "nonValidParameter.h"
+#include <sstream>
+
 
 /**
  * @brief Parameterized constructor
@@ -77,5 +79,11 @@ const Fecha &Garito::getDateOfLastShow() const {
 }
 
 Garito::Garito() {}
+
+const std::string Garito::toCSV() const {
+    std::stringstream ss;
+    ss << _name << ";" << _address << ";" << _dateOfLastShow.toCSV();
+    return ss.str();
+}
 
 

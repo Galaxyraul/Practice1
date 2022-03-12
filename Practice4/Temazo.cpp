@@ -5,6 +5,8 @@
 #include "Temazo.h"
 #include "Fecha.h"
 #include "nonValidParameter.h"
+#include <sstream>
+
 
 /**
  * @brief Default constructor
@@ -21,8 +23,10 @@ Temazo::Temazo() {}
  * @param month int that will be the value of the field _month in the _dateOfLastUse object
  * @param year int that will be the value of the field _year in the _dateOfLastUse object
  */
-Temazo::Temazo(const std::string &title, const std::string &performer, const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year)
-:_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds),_nameOfLastClub(nameOfLastClub),_dateOfLastUse(day,month,year) {}
+Temazo::Temazo(const std::string &title, const std::string &performer, const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo)
+:_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds),_nameOfLastClub(nameOfLastClub),_dateOfLastUse(day,month,year),_idTemazo(idTemazo) {
+    ++_numTemazos;
+}
 
 /**
  * @brief copy constructor
@@ -30,7 +34,9 @@ Temazo::Temazo(const std::string &title, const std::string &performer, const std
  */
 Temazo::Temazo(const Temazo &orig)
 :_title(orig._title),_performer(orig._performer),_lengthInSeconds(orig._lengthInSeconds),
-_audienceScore(orig._audienceScore),_nameOfLastClub(orig._nameOfLastClub),_dateOfLastUse(orig._dateOfLastUse) {}
+_audienceScore(orig._audienceScore),_nameOfLastClub(orig._nameOfLastClub),_dateOfLastUse(orig._dateOfLastUse),_idTemazo(orig._idTemazo + 1) {
+    _numTemazos+=2;
+}
 
 /**
  * @brief Destructor
@@ -125,6 +131,16 @@ int Temazo::increasePuntuation(const int extraPoints) const {
     if ((extraPoints > 10) || (extraPoints < -10)){
         throw nonValidParameter("Temazo.cpp","increasePuntuation","The puntuation is out of range" );
     }
+}
+
+int Temazo::getIdTemazo() const {
+    return _idTemazo;
+}
+
+const std::string Temazo::toCSV() const {
+    std::stringstream ss;
+    ss << _title << ";" << _performer << ";" << _lengthInSeconds << ";" << _audienceScore << ";" << _nameOfLastClub <<";" << _dateOfLastUse.toCSV() << ";" << _idTemazo;
+    return ss.str();
 }
 
 

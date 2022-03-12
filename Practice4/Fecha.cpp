@@ -5,6 +5,8 @@
 #include "Fecha.h"
 #include <ctime>
 #include <string>
+#include <sstream>
+
 
 /**
  * @brief Default constructor
@@ -158,6 +160,12 @@ bool Fecha::operator>(const Fecha &otro) {
  */
 bool Fecha::operator!=(const Fecha &otro) {
     return !(*this == otro);
+}
+
+const std::string Fecha::toCSV() const {
+    std:std::stringstream ss;
+    ss << _day << ";" << _month << ";" <<_year;
+    return ss.str();
 }
 
 
