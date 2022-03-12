@@ -15,6 +15,7 @@
  * @param _audienceScore Score that shows how appealing it is to the public
  * @param _nameOfLastClub Name of the last place where it was used
  * @param _dateOfLastUse Fecha object in which the date of the last use it is store
+ * @param _idTemazo Identifier of each temazo assigned when it was created
  */
 static int _numTemazos = 0;
 
@@ -62,7 +63,7 @@ public:
 
     int getAudienceScore() const;
 
-    int increasePuntuation (const int extraPoints) const;
+    void increasePuntuation (const int extraPoints) ;
 
     const std::string toCSV() const;
 

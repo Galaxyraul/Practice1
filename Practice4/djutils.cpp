@@ -77,7 +77,13 @@ void showPreviousTemazos(const Temazo *t, int tam, Fecha f) {
         }
     }
 }
-
+/**
+ * @brief This function search among a vector for the one with the matching parameter
+ * @param g list of pointers to garito objects
+ * @param tam size of the list
+ * @param name reference parameter to compare
+ * @return The position in which the element is
+ */
 int searchClub(Garito **g, int tam, const std::string &name) {
     int pos = 0;
     bool match = false;
@@ -94,6 +100,13 @@ int searchClub(Garito **g, int tam, const std::string &name) {
     return pos;
 }
 
+/**
+ * @brief Shows on screen the data of a temazo and the garito where it was last played
+ * @param t list of temazo objects
+ * @param tamT size of the list
+ * @param g list of pointers to garito objects
+ * @param tamG size of the list
+ */
 void showCombinedData(const Temazo *t, int tamT, Garito **g, int tamG) {
     int pos;
     for(int i = 0; i < tamT;++i){

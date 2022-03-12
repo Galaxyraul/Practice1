@@ -68,18 +68,35 @@ void Garito::setAddress(const std::string &address) {
     this->_address = address;
 }
 
+/**
+ * @brief setter for the field _dateOfLastShow
+ * @param day int value which will be assigned to _dateOfLastShow.day
+ * @param month int value which will be assigned to _dateOfLastShow.month
+ * @param year int value which will be assigned to _dateOfLastShow.year
+ */
 void Garito::setDateOfLastShow(int day, int month, int year) {
     _dateOfLastShow.setDay(day);
     _dateOfLastShow.setMonth(month);
     _dateOfLastShow.setYear(year);
 }
 
+/**
+ * @brief getter of the field dateOfLastShow
+ * @return the object fecha stored in the field dateOfLastShow
+ */
 const Fecha &Garito::getDateOfLastShow() const {
     return _dateOfLastShow;
 }
 
+/**
+ * @brief Default constructor
+ */
 Garito::Garito() {}
 
+/**
+ * @brief Turns all the values of each field and joins them into a single string
+ * @return The string with all the attributes values
+ */
 const std::string Garito::toCSV() const {
     std::stringstream ss;
     ss << _name << ";" << _address << ";" << _dateOfLastShow.toCSV();
