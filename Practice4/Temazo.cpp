@@ -4,6 +4,7 @@
 
 #include "Temazo.h"
 #include "Fecha.h"
+#include "nonValidParameter.h"
 
 /**
  * @brief Default constructor
@@ -118,6 +119,12 @@ const Fecha &Temazo::getDateOfLastUse() const {
  */
 void Temazo::setDateOfLastUse(const Fecha &dateOfLastUse) {
     _dateOfLastUse = dateOfLastUse;
+}
+
+int Temazo::increasePuntuation(const int extraPoints) const {
+    if ((extraPoints > 10) || (extraPoints < -10)){
+        throw nonValidParameter("Temazo.cpp","increasePuntuation","The puntuation is out of range" );
+    }
 }
 
 
