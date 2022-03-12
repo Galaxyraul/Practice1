@@ -3,10 +3,11 @@
 #include "Fecha.h"
 #include "Garito.h"
 #include "Temazo.h"
+#include "nonValidParameter.h"
 
 
 int main() {
-    Temazo *list = new Temazo[20];
+    Temazo *list = new Temazo[5];
     Garito *pMiCasa = new Garito("My house","Av Barcelona");
     Garito *gList[10];
     for(int i = 0;i < 3;++i){
@@ -24,8 +25,9 @@ int main() {
     list[0].setTitle("Hoppípolla");
     list[0].setPerformer("Sigur Ros");
     list[0].setLengthInSeconds(268);
-    list[0].setNameOfLastClub(pMiCasa->getName());
+    list[0].setNameOfLastClub(gList[0]->getName());
     list[0].setDateOfLastUse({13,4,2003});
+
 
     list[1].setTitle("Boulevard of broken dreams");
     list[1].setNameOfLastClub(gList[1]->getName());
@@ -39,14 +41,24 @@ int main() {
     list[2].setLengthInSeconds(193);
     list[2].setDateOfLastUse({6,6,2015});
     //showPreviousTemazos(list,3,{20,02,2022});
-    showCombinedData(list,20,gList,10);
+    //showCombinedData(list,20,gList,10);
+
+    for(int i = 0; i < 10; ++i){
+        if(gList[i] != nullptr) {
+            std::cout << gList[i]->toCSV() << std::endl;
+        }
+    }
+
+    for(int i = 0; i < 5; ++i){
+        std::cout << list[i].toCSV() << std::endl;
+    }
 
     delete [] list;
     for (int i = 0; i < 10;++i){
         delete gList[i];
         gList [i] = nullptr;
     }
-    delete pMiCasa;
+    delete [] pMiCasa;
     pMiCasa = nullptr;
     list = nullptr;
 }
