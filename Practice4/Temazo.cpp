@@ -6,12 +6,14 @@
 #include "Fecha.h"
 #include "nonValidParameter.h"
 #include <sstream>
-
+int Temazo::_numTemazos = 0;
 
 /**
  * @brief Default constructor
  */
-Temazo::Temazo() {}
+Temazo::Temazo() {
+    ++_numTemazos;
+}
 
 /**
  * @brief Parameterized constructor
@@ -41,7 +43,9 @@ _audienceScore(orig._audienceScore),_nameOfLastClub(orig._nameOfLastClub),_dateO
 /**
  * @brief Destructor
  */
-Temazo::~Temazo() {}
+Temazo::~Temazo() {
+    --_numTemazos;
+}
 
 /**
  * @brief Accesses to the field _title

@@ -17,7 +17,6 @@
  * @param _dateOfLastUse Fecha object in which the date of the last use it is store
  * @param _idTemazo Identifier of each temazo assigned when it was created
  */
-static int _numTemazos = 0;
 
 class Temazo {
 private:
@@ -28,18 +27,19 @@ private:
     std::string _nameOfLastClub = "";
     Fecha _dateOfLastUse;
     int _idTemazo = _numTemazos;
+    static int _numTemazos;
 public:
     int getIdTemazo() const;
 
 public:
     Temazo();
 
+    virtual ~Temazo();
+
     Temazo(const std::string &title, const std::string &performer,
            const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo);
 
     Temazo(const Temazo& orig);
-
-    ~Temazo();
 
     const std::string &getTitle() const;
 

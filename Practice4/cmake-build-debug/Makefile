@@ -56,10 +56,10 @@ RM = C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Poo\Practices\Practice2
+CMAKE_SOURCE_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice4
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Poo\Practices\Practice2\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice4\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles D:\Poo\Practices\Practice2\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice4\cmake-build-debug\CMakeFiles C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice4\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice4\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -248,6 +248,30 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Practice2.dir\build.make CMakeFiles/Practice2.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+nonValidParameter.obj: nonValidParameter.cpp.obj
+.PHONY : nonValidParameter.obj
+
+# target to build an object file
+nonValidParameter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Practice2.dir\build.make CMakeFiles/Practice2.dir/nonValidParameter.cpp.obj
+.PHONY : nonValidParameter.cpp.obj
+
+nonValidParameter.i: nonValidParameter.cpp.i
+.PHONY : nonValidParameter.i
+
+# target to preprocess a source file
+nonValidParameter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Practice2.dir\build.make CMakeFiles/Practice2.dir/nonValidParameter.cpp.i
+.PHONY : nonValidParameter.cpp.i
+
+nonValidParameter.s: nonValidParameter.cpp.s
+.PHONY : nonValidParameter.s
+
+# target to generate assembly for a file
+nonValidParameter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Practice2.dir\build.make CMakeFiles/Practice2.dir/nonValidParameter.cpp.s
+.PHONY : nonValidParameter.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -272,6 +296,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... nonValidParameter.obj
+	@echo ... nonValidParameter.i
+	@echo ... nonValidParameter.s
 .PHONY : help
 
 

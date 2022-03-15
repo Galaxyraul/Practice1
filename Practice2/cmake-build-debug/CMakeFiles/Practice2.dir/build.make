@@ -52,10 +52,10 @@ RM = C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Poo\Practices\Practice2
+CMAKE_SOURCE_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Poo\Practices\Practice2\cmake-build-debug
+CMAKE_BINARY_DIR = C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Practice2.dir/depend.make
@@ -71,72 +71,72 @@ include CMakeFiles/Practice2.dir/flags.make
 CMakeFiles/Practice2.dir/main.cpp.obj: CMakeFiles/Practice2.dir/flags.make
 CMakeFiles/Practice2.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/Practice2.dir/main.cpp.obj: CMakeFiles/Practice2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Practice2.dir/main.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/main.cpp.obj -MF CMakeFiles\Practice2.dir\main.cpp.obj.d -o CMakeFiles\Practice2.dir\main.cpp.obj -c D:\Poo\Practices\Practice2\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Practice2.dir/main.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/main.cpp.obj -MF CMakeFiles\Practice2.dir\main.cpp.obj.d -o CMakeFiles\Practice2.dir\main.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\main.cpp
 
 CMakeFiles/Practice2.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice2.dir/main.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice2\main.cpp > CMakeFiles\Practice2.dir\main.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\main.cpp > CMakeFiles\Practice2.dir\main.cpp.i
 
 CMakeFiles/Practice2.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice2.dir/main.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice2\main.cpp -o CMakeFiles\Practice2.dir\main.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\main.cpp -o CMakeFiles\Practice2.dir\main.cpp.s
 
 CMakeFiles/Practice2.dir/Temazo.cpp.obj: CMakeFiles/Practice2.dir/flags.make
 CMakeFiles/Practice2.dir/Temazo.cpp.obj: ../Temazo.cpp
 CMakeFiles/Practice2.dir/Temazo.cpp.obj: CMakeFiles/Practice2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Practice2.dir/Temazo.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/Temazo.cpp.obj -MF CMakeFiles\Practice2.dir\Temazo.cpp.obj.d -o CMakeFiles\Practice2.dir\Temazo.cpp.obj -c D:\Poo\Practices\Practice2\Temazo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Practice2.dir/Temazo.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/Temazo.cpp.obj -MF CMakeFiles\Practice2.dir\Temazo.cpp.obj.d -o CMakeFiles\Practice2.dir\Temazo.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Temazo.cpp
 
 CMakeFiles/Practice2.dir/Temazo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice2.dir/Temazo.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice2\Temazo.cpp > CMakeFiles\Practice2.dir\Temazo.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Temazo.cpp > CMakeFiles\Practice2.dir\Temazo.cpp.i
 
 CMakeFiles/Practice2.dir/Temazo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice2.dir/Temazo.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice2\Temazo.cpp -o CMakeFiles\Practice2.dir\Temazo.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Temazo.cpp -o CMakeFiles\Practice2.dir\Temazo.cpp.s
 
 CMakeFiles/Practice2.dir/Garito.cpp.obj: CMakeFiles/Practice2.dir/flags.make
 CMakeFiles/Practice2.dir/Garito.cpp.obj: ../Garito.cpp
 CMakeFiles/Practice2.dir/Garito.cpp.obj: CMakeFiles/Practice2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Practice2.dir/Garito.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/Garito.cpp.obj -MF CMakeFiles\Practice2.dir\Garito.cpp.obj.d -o CMakeFiles\Practice2.dir\Garito.cpp.obj -c D:\Poo\Practices\Practice2\Garito.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Practice2.dir/Garito.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/Garito.cpp.obj -MF CMakeFiles\Practice2.dir\Garito.cpp.obj.d -o CMakeFiles\Practice2.dir\Garito.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Garito.cpp
 
 CMakeFiles/Practice2.dir/Garito.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice2.dir/Garito.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice2\Garito.cpp > CMakeFiles\Practice2.dir\Garito.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Garito.cpp > CMakeFiles\Practice2.dir\Garito.cpp.i
 
 CMakeFiles/Practice2.dir/Garito.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice2.dir/Garito.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice2\Garito.cpp -o CMakeFiles\Practice2.dir\Garito.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Garito.cpp -o CMakeFiles\Practice2.dir\Garito.cpp.s
 
 CMakeFiles/Practice2.dir/Fecha.cpp.obj: CMakeFiles/Practice2.dir/flags.make
 CMakeFiles/Practice2.dir/Fecha.cpp.obj: ../Fecha.cpp
 CMakeFiles/Practice2.dir/Fecha.cpp.obj: CMakeFiles/Practice2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Practice2.dir/Fecha.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/Fecha.cpp.obj -MF CMakeFiles\Practice2.dir\Fecha.cpp.obj.d -o CMakeFiles\Practice2.dir\Fecha.cpp.obj -c D:\Poo\Practices\Practice2\Fecha.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Practice2.dir/Fecha.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/Fecha.cpp.obj -MF CMakeFiles\Practice2.dir\Fecha.cpp.obj.d -o CMakeFiles\Practice2.dir\Fecha.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Fecha.cpp
 
 CMakeFiles/Practice2.dir/Fecha.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice2.dir/Fecha.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice2\Fecha.cpp > CMakeFiles\Practice2.dir\Fecha.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Fecha.cpp > CMakeFiles\Practice2.dir\Fecha.cpp.i
 
 CMakeFiles/Practice2.dir/Fecha.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice2.dir/Fecha.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice2\Fecha.cpp -o CMakeFiles\Practice2.dir\Fecha.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\Fecha.cpp -o CMakeFiles\Practice2.dir\Fecha.cpp.s
 
 CMakeFiles/Practice2.dir/djutils.cpp.obj: CMakeFiles/Practice2.dir/flags.make
 CMakeFiles/Practice2.dir/djutils.cpp.obj: ../djutils.cpp
 CMakeFiles/Practice2.dir/djutils.cpp.obj: CMakeFiles/Practice2.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Practice2.dir/djutils.cpp.obj"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/djutils.cpp.obj -MF CMakeFiles\Practice2.dir\djutils.cpp.obj.d -o CMakeFiles\Practice2.dir\djutils.cpp.obj -c D:\Poo\Practices\Practice2\djutils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Practice2.dir/djutils.cpp.obj"
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Practice2.dir/djutils.cpp.obj -MF CMakeFiles\Practice2.dir\djutils.cpp.obj.d -o CMakeFiles\Practice2.dir\djutils.cpp.obj -c C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\djutils.cpp
 
 CMakeFiles/Practice2.dir/djutils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Practice2.dir/djutils.cpp.i"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Poo\Practices\Practice2\djutils.cpp > CMakeFiles\Practice2.dir\djutils.cpp.i
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\djutils.cpp > CMakeFiles\Practice2.dir\djutils.cpp.i
 
 CMakeFiles/Practice2.dir/djutils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Practice2.dir/djutils.cpp.s"
-	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Poo\Practices\Practice2\djutils.cpp -o CMakeFiles\Practice2.dir\djutils.cpp.s
+	C:\Users\cocol\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\213.6777.58\bin\mingw\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\djutils.cpp -o CMakeFiles\Practice2.dir\djutils.cpp.s
 
 # Object files for target Practice2
 Practice2_OBJECTS = \
@@ -158,7 +158,7 @@ Practice2.exe: CMakeFiles/Practice2.dir/build.make
 Practice2.exe: CMakeFiles/Practice2.dir/linklibs.rsp
 Practice2.exe: CMakeFiles/Practice2.dir/objects1.rsp
 Practice2.exe: CMakeFiles/Practice2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Practice2.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Practice2.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Practice2.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/Practice2.dir/clean:
 .PHONY : CMakeFiles/Practice2.dir/clean
 
 CMakeFiles/Practice2.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Poo\Practices\Practice2 D:\Poo\Practices\Practice2 D:\Poo\Practices\Practice2\cmake-build-debug D:\Poo\Practices\Practice2\cmake-build-debug D:\Poo\Practices\Practice2\cmake-build-debug\CMakeFiles\Practice2.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2 C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2 C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug C:\Users\cocol\OneDrive\Escritorio\CLionProjects\Practices\Practice2\cmake-build-debug\CMakeFiles\Practice2.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Practice2.dir/depend
 
