@@ -27,6 +27,7 @@ private:
     std::string _nameOfLastClub = "";
     Fecha _dateOfLastUse;
     int _idTemazo = _numTemazos;
+    static int _maxScore;
     static int _numTemazos;
 public:
     int getIdTemazo() const;
@@ -37,11 +38,13 @@ public:
     virtual ~Temazo();
 
     Temazo(const std::string &title, const std::string &performer,
-           const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo);
+           const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo,int audienceScore);
 
     Temazo(const Temazo& orig);
 
     const std::string &getTitle() const;
+
+    void setAudienceScore(int audienceScore);
 
     void setTitle(const std::string &title);
 
@@ -59,6 +62,8 @@ public:
 
     int getLengthInSeconds() const;
 
+    static int getMaxScore();
+
     void setLengthInSeconds(int lengthInSeconds);
 
     int getAudienceScore() const;
@@ -66,6 +71,8 @@ public:
     void increasePuntuation (const int extraPoints) ;
 
     const std::string toCSV() const;
+
+    float relativePuntuation();
 
 };
 

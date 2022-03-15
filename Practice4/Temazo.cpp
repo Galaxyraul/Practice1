@@ -7,7 +7,7 @@
 #include "nonValidParameter.h"
 #include <sstream>
 int Temazo::_numTemazos = 0;
-
+int Temazo::_maxScore = 0;
 /**
  * @brief Default constructor
  */
@@ -25,9 +25,10 @@ Temazo::Temazo() {
  * @param month int that will be the value of the field _month in the _dateOfLastUse object
  * @param year int that will be the value of the field _year in the _dateOfLastUse object
  */
-Temazo::Temazo(const std::string &title, const std::string &performer, const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo)
-:_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds),_nameOfLastClub(nameOfLastClub),_dateOfLastUse(day,month,year),_idTemazo(idTemazo) {
+Temazo::Temazo(const std::string &title, const std::string &performer, const std::string& nameOfLastClub,int lengthInSeconds,int day,int month,int year, int idTemazo, int audienceScore)
+:_title(title),_performer(performer),_lengthInSeconds(lengthInSeconds),_nameOfLastClub(nameOfLastClub),_dateOfLastUse(day,month,year),_idTemazo(idTemazo),_audienceScore(audienceScore) {
     ++_numTemazos;
+    _maxScore =(_maxScore > _audienceScore)? _maxScore:_audienceScore;
 }
 
 /**
@@ -139,6 +140,8 @@ void Temazo::increasePuntuation(const int extraPoints)  {
         throw nonValidParameter("Temazo.cpp","increasePuntuation","The puntuation is out of range" );
     }
     _audienceScore += extraPoints;
+    _maxScore =(_maxScore > _audienceScore)? _maxScore:_audienceScore;
+
 }
 
 /**
@@ -157,6 +160,28 @@ const std::string Temazo::toCSV() const {
     std::stringstream ss;
     ss << _title << ";" << _performer << ";" << _lengthInSeconds << ";" << _audienceScore << ";" << _nameOfLastClub <<";" << _dateOfLastUse.toCSV() << ";" << _idTemazo;
     return ss.str();
+}
+/**
+ * @brief setter for the _audienceScore field
+ * @param audienceScore value which will be asigned to the _audienceScore field
+ */
+void Temazo::setAudienceScore(int audienceScore) {
+    _audienceScore = audienceScore;
+    _maxScore =(_maxScore > _audienceScore)? _maxScore:_audienceScore;
+}
+/**
+ * @brief getter for the static variable _maxScore
+ * @return The value of the field _maxScore
+ */
+int Temazo::getMaxScore() {
+    return _maxScore;
+}
+/**
+ * @brief Compares the value of the field _audienceScore with the _maxScore
+ * @return float with the value of the division
+ */
+float Temazo::relativePuntuation() {
+    return (float)_audienceScore/_maxScore;
 }
 
 

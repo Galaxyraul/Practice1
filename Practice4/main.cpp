@@ -10,10 +10,10 @@ int main() {
     Temazo *list = new Temazo[5];
     Garito *pMiCasa = new Garito("My house","Av Barcelona");
     Garito *gList[10];
-    for(int i = 0;i < 3;++i){
+    for(int i = 0;i < 2;++i){
         gList[i] = new Garito;
     }
-    for(int i = 3; i < 10; ++i){
+    for(int i = 2; i < 10; ++i){
         gList[i] = nullptr;
     }
     gList[0]->setAddress("Av andalucía");
@@ -27,6 +27,7 @@ int main() {
     list[0].setLengthInSeconds(268);
     list[0].setNameOfLastClub(gList[0]->getName());
     list[0].setDateOfLastUse({13,4,2003});
+    list[0].setAudienceScore(80);
 
 
     list[1].setTitle("Boulevard of broken dreams");
@@ -34,15 +35,23 @@ int main() {
     list[1].setPerformer("Green day");
     list[1].setLengthInSeconds(287);
     list[1].setDateOfLastUse({26,5,2018});
+    list[1].setAudienceScore(70);
 
     list[2].setTitle("Safe and sound");
     list[2].setNameOfLastClub(gList[2]->getName());
     list[2].setPerformer("Capital cities");
     list[2].setLengthInSeconds(193);
     list[2].setDateOfLastUse({6,6,2015});
+    list[2].setAudienceScore(65);
+    std::cout <<list[0].getMaxScore() << std::endl;
+    list[0].increasePuntuation(10);
+    std::cout <<list[0].getMaxScore() << std::endl;
+    std::cout <<list[0].relativePuntuation() << std::endl;
+    std::cout <<list[1].relativePuntuation() << std::endl;
+    std::cout <<list[2].relativePuntuation() << std::endl;
     //showPreviousTemazos(list,3,{20,02,2022});
     //showCombinedData(list,20,gList,10);
-
+    /*
     for(int i = 0; i < 10; ++i){
         if(gList[i] != nullptr) {
             std::cout << gList[i]->toCSV() << std::endl;
@@ -52,13 +61,13 @@ int main() {
     for(int i = 0; i < 5; ++i){
         std::cout << list[i].toCSV() << std::endl;
     }
+     */
 
     delete [] list;
     for (int i = 0; i < 10;++i){
         delete gList[i];
         gList [i] = nullptr;
     }
-    delete [] pMiCasa;
     pMiCasa = nullptr;
     list = nullptr;
 }
