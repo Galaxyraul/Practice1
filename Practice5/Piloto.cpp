@@ -9,26 +9,41 @@
 #include <sstream>
 
 #include "Piloto.h"
+#include "StarFighter.h"
 
 using std::string;
 
 int Piloto::_numPilotos = 0;
 
-Piloto::Piloto ( ): Piloto ( "" )
-{ }
+Piloto::Piloto ( )
+{
+    for(int i = _numberOfDroids; i < 10;++i){
+        support[i] = nullptr;
+    }
+}
 
-Piloto::Piloto ( string nombre ): _nombre (nombre)
+Piloto::Piloto ( string nombre,int numberOfDroids ): _nombre (nombre),_numberOfDroids(numberOfDroids)
 {
    _numPilotos++;
    _idP = _numPilotos;
+   for(int i = 0; i < numberOfDroids;++i){
+       support[i] = new Droide;
+   }
+    for(int i = _numberOfDroids; i < 10;++i){
+        support[i] = nullptr;
+    }
 }
 
 Piloto::Piloto ( const Piloto& orig ): _nombre(orig._nombre),
                                        _nacionalidad(orig._nacionalidad),
                                        _numMisiones(orig._numMisiones),
                                        _fechaUltimaMision(orig._fechaUltimaMision),
-                                       _incidenciasUltimaMision(orig._incidenciasUltimaMision)
+                                       _incidenciasUltimaMision(orig._incidenciasUltimaMision),
+                                       myStarFighter(orig.myStarFighter)
 {
+    for(int i = 0; i < 10;++i){
+        support[i] = orig.support[i];
+    }
    _numPilotos++;
    _idP = _numPilotos;
 }
@@ -134,4 +149,40 @@ Piloto& Piloto::operator = ( const Piloto& otro )
    }
    
    return ( *this );
+}
+
+const void Piloto::adquirirStarfighter(StarFighter *nuevo){
+    myStarFighter = nuevo;
+}
+
+const void Piloto::despegar(){
+    onService = true;
+}
+
+const void Piloto::aterrizar(){
+    onService = false;
+}
+
+const void Piloto::addDroid() {
+    int pos = 0;
+    bool match = false;
+    if (_numberOfDroids == 10){
+        throw std::string("Piloto.cpp:addDroid:You cannot have more droids");
+    }
+    for(int i = 0; i < 10 && !match; ++i){
+       if(support[i] == nullptr){
+           support[i] = new Droide;
+           match = true;
+       }
+    }
+    _numberOfDroids++;
+}
+
+const void Piloto::droidCasualty(int pos) {
+    if(_numberOfDroids == 0){
+        throw std::string ("Piloto.cpp:DroidCasualty:You have no droids to kill");
+    }
+    _numberOfDroids--;
+    delete support[pos];
+    support[pos] = nullptr;
 }
