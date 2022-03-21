@@ -27,11 +27,11 @@ class StarFighter
       StarFighter ( std::string marca, std::string modelo );
       StarFighter ( const StarFighter& orig );
       virtual ~StarFighter ( );
-      void setNumPlazas ( int numPlazas );
+      const StarFighter& setNumPlazas ( int numPlazas );
       int getNumPlazas ( ) const;
-      void setModelo ( std::string modelo );
+      const StarFighter& setModelo ( std::string modelo );
       std::string getModelo ( ) const;
-      void setMarca ( std::string marca );
+      const StarFighter& setMarca ( std::string marca );
       std::string getMarca ( ) const;
       int getIdSF ( ) const;
       std::string toCSV () const;

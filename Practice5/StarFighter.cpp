@@ -39,9 +39,10 @@ StarFighter::~StarFighter ( )
  * @todo Aquí hay que añadir la comprobación del parámetro y lanzar la excepción
  *       correspondiente. El número de plazas no puede ser <= 0
  */
-void StarFighter::setNumPlazas ( int numPlazas )
+const StarFighter& StarFighter::setNumPlazas ( int numPlazas )
 {
    this->_numPlazas = numPlazas;
+    return (*this);
 }
 
 int StarFighter::getNumPlazas ( ) const
@@ -49,9 +50,10 @@ int StarFighter::getNumPlazas ( ) const
    return _numPlazas;
 }
 
-void StarFighter::setModelo ( string modelo )
+const StarFighter& StarFighter::setModelo ( string modelo )
 {
    this->_modelo = modelo;
+    return (*this);
 }
 
 string StarFighter::getModelo ( ) const
@@ -59,9 +61,10 @@ string StarFighter::getModelo ( ) const
    return _modelo;
 }
 
-void StarFighter::setMarca ( string marca )
+const StarFighter& StarFighter::setMarca ( string marca )
 {
    this->_marca = marca;
+    return (*this);
 }
 
 string StarFighter::getMarca ( ) const

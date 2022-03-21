@@ -27,9 +27,9 @@ class Droide
       Droide ( const Droide& orig );
       virtual ~Droide ( );
       int getIdD ( ) const;
-      void setModelo ( std::string modelo );
+      const Droide&  setModelo ( std::string modelo );
       std::string getModelo ( ) const;
-      void setMarca ( std::string marca );
+      const Droide&  setMarca ( std::string marca );
       std::string getMarca ( ) const;
       std::string toCSV () const;
       Droide& operator= ( const Droide& otro );
