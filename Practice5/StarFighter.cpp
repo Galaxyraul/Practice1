@@ -13,7 +13,7 @@ using std::string;
 
 int StarFighter::_numStarFighters = 0;
 
-StarFighter::StarFighter ( ): StarFighter ( "", "" )
+StarFighter::StarFighter ( )
 { }
 
 StarFighter::StarFighter ( string marca, string modelo ): _marca (marca),
@@ -101,6 +101,7 @@ StarFighter& StarFighter::operator = (const StarFighter& otro)
 
 const void StarFighter::fromCSV(std::string CSV) {
     std::stringstream ss;
+    ss.str(CSV);
     std::getline(ss,_marca,';');
     std::getline(ss,_modelo,';');
     ss>>_numPlazas;

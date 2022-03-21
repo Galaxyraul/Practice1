@@ -81,6 +81,7 @@ Droide& Droide::operator = ( const Droide& otro )
 
 const void Droide::fromCSV(std::string CSV) {
     std::stringstream ss;
+    ss.str(CSV);
     std::getline(ss,_marca,';');
     std::getline(ss,_modelo,';');
 }

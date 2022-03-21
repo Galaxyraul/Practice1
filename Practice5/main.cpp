@@ -10,6 +10,9 @@
 #include <string>
 
 #include "Informe.h"
+#include "Piloto.h"
+#include "Droide.h"
+#include "StarFighter.h"
 
 using namespace std;
 
@@ -39,9 +42,15 @@ int main ( int argc, char** argv )
    i1.setIdPiloto (1)
      .setFechaEstelar (31521231)
      .setDatosInforme ("Sin novedad");
-   
+   Piloto pilotos[5];
+   StarFighter starFighters[5];
+   Droide droides[5];
+   for(int i = 0; i < 5; ++i){
+       pilotos[i].fromCSV(datosPilotos[i]);
+       droides[i].fromCSV(datosDroides[i]);
+       starFighters[i].fromCSV(datosNaves[i]);
+   }
 
-    
    return 0;
 }
 

@@ -181,6 +181,7 @@ const Informe Piloto::createReport() const {
     report.setIdPiloto(_idP);
     std::stringstream ss;
     ss << myStarFighter->getIdSF() <<";"<<supportDroid->getIdD()<<";"<<_incidenciasUltimaMision;
+    report.setDatosInforme(ss.str());
     return report;
 }
 
