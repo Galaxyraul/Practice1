@@ -66,13 +66,15 @@ class Piloto
 
       const Piloto& operator= ( const Piloto& otro );
 
-      const void adquirirStarfighter(StarFighter *nuevo);
+      const void newStarfighter(StarFighter *nuevo);
 
       const void despegar();
 
       const void aterrizar();
 
       const void newDroid();
+
+    const void newDroid(Droide &droid);
 
       const void droidCasualty();
 

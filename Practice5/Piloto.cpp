@@ -147,7 +147,7 @@ const Piloto& Piloto::operator = ( const Piloto& otro )
    return ( *this );
 }
 
-const void Piloto::adquirirStarfighter(StarFighter *nuevo){
+const void Piloto::newStarfighter(StarFighter *nuevo){
     myStarFighter = nuevo;
 }
 
@@ -199,4 +199,8 @@ const void Piloto::fromCSV(std::string CSV) {
     ss>>_fechaUltimaMision;
     ss.ignore(1);
     std::getline(ss,_incidenciasUltimaMision,';');
+}
+
+const void Piloto::newDroid(Droide &droid) {
+    supportDroid = &droid;
 }
