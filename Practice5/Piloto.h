@@ -11,6 +11,7 @@
 #include <string>
 #include "StarFighter.h"
 #include "Droide.h"
+#include "Informe.h"
 
 /**
  * @brief
@@ -27,7 +28,7 @@ class Piloto
       std::string _incidenciasUltimaMision; ///< Incidencias reportadas por el piloto en su última misión.
       StarFighter *myStarFighter = nullptr;
       bool onService = false;
-      Droide *support[10];
+      Droide *supportDroid = nullptr;
       int _numberOfDroids = 0;
 
    public:
@@ -71,9 +72,15 @@ class Piloto
 
       const void aterrizar();
 
-      const void addDroid();
+      const void newDroid();
 
-      const void droidCasualty(int pos);
+      const void droidCasualty();
+
+      const void replaceDroid();
+
+      const Informe createReport() const;
+
+      const void fromCSV(std::string CSV);
 
 };
 
