@@ -191,8 +191,6 @@ const void Piloto::replaceDroid() {
 const void Piloto::fromCSV(std::string CSV) {
     std::stringstream ss;
     ss.str(CSV);
-    ss>>_idP;
-    ss.ignore(1);
     std::getline(ss,_nombre,';');
     std::getline(ss,_nacionalidad,';');
     ss>>_numMisiones;
@@ -200,9 +198,4 @@ const void Piloto::fromCSV(std::string CSV) {
     ss>>_fechaUltimaMision;
     ss.ignore(1);
     std::getline(ss,_incidenciasUltimaMision,';');
-
-    ss>>onService;
-    ss.ignore(1);
-
-    ss>>_numberOfDroids;
 }

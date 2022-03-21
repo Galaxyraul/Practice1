@@ -23,16 +23,28 @@ class Droide
 
    public:
       Droide ( );
+
       Droide ( std::string marca, std::string modelo );
+
       Droide ( const Droide& orig );
+
       virtual ~Droide ( );
+
       int getIdD ( ) const;
+
       const Droide&  setModelo ( std::string modelo );
+
       std::string getModelo ( ) const;
+
       const Droide&  setMarca ( std::string marca );
+
       std::string getMarca ( ) const;
+
       std::string toCSV () const;
+
       Droide& operator= ( const Droide& otro );
+
+      const void fromCSV(std::string CSV);
 };
 
 #endif /* DROIDE_H */

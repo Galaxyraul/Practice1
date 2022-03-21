@@ -7,7 +7,6 @@
 
 #include <stdexcept>
 #include <sstream>
-
 #include "StarFighter.h"
 
 using std::string;
@@ -98,4 +97,13 @@ StarFighter& StarFighter::operator = (const StarFighter& otro)
    }
    
    return ( *this );
+}
+
+const void StarFighter::fromCSV(std::string CSV) {
+    std::stringstream ss;
+    std::getline(ss,_marca,';');
+    std::getline(ss,_modelo,';');
+    ss>>_numPlazas;
+    ss.ignore(1);
+
 }

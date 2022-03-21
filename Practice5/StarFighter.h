@@ -24,19 +24,35 @@ class StarFighter
 
    public:
       StarFighter ();
+
       StarFighter ( std::string marca, std::string modelo );
+
       StarFighter ( const StarFighter& orig );
+
       virtual ~StarFighter ( );
+
       const StarFighter& setNumPlazas ( int numPlazas );
+
       int getNumPlazas ( ) const;
+
       const StarFighter& setModelo ( std::string modelo );
+
       std::string getModelo ( ) const;
+
       const StarFighter& setMarca ( std::string marca );
+
       std::string getMarca ( ) const;
+
       int getIdSF ( ) const;
+
       std::string toCSV () const;
+
       StarFighter& operator= ( const StarFighter& otro );
+
+      const void fromCSV(std::string CSV);
 };
+
+
 
 #endif /* STARFIGHTER_H */
 
