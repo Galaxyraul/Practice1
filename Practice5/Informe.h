@@ -24,17 +24,29 @@ class Informe
 
    public:
       Informe ( );
+
       Informe ( long fecha );
+
       Informe ( const Informe& orig );
+
       virtual ~Informe ( );
+
       Informe& setDatosInforme ( std::string datosInforme );
+
       std::string getDatosInforme ( ) const;
+
       Informe& setFechaEstelar ( long fechaEstelar );
+
       long getFechaEstelar ( ) const;
+
       Informe& setIdPiloto ( int idPiloto );
+
       int getIdPiloto ( ) const;
+
       int getIdI ( ) const;
+
       std::string toCSV () const;
+
       Informe& operator= ( const Informe& otro );
 };
 

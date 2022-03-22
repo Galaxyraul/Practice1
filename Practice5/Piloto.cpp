@@ -46,9 +46,10 @@ Piloto::~Piloto ( )
  * @todo Aquí hay que añadir la comprobación del parámetro y lanzar la excepción
  *       correspondiente. El número de misiones no puede ser <= 0
  */
-void Piloto::setNumMisiones ( int numMisiones )
+const Piloto& Piloto::setNumMisiones ( int numMisiones )
 {
    this->_numMisiones = numMisiones;
+    return (*this);
 }
 
 int Piloto::getNumMisiones ( ) const
@@ -56,9 +57,10 @@ int Piloto::getNumMisiones ( ) const
    return _numMisiones;
 }
 
-void Piloto::setNacionalidad ( string nacionalidad )
+const Piloto& Piloto::setNacionalidad ( string nacionalidad )
 {
    this->_nacionalidad = nacionalidad;
+    return (*this);
 }
 
 string Piloto::getNacionalidad ( ) const
@@ -66,9 +68,10 @@ string Piloto::getNacionalidad ( ) const
    return _nacionalidad;
 }
 
-void Piloto::setNombre ( string nombre )
+const Piloto& Piloto::setNombre ( string nombre )
 {
    this->_nombre = nombre;
+    return (*this);
 }
 
 string Piloto::getNombre ( ) const
@@ -85,9 +88,10 @@ int Piloto::getIdP ( ) const
  * @todo Si el número de misiones del piloto es 0, no puede tener incidencias;
  *       haz esta comprobación y lanza la excepción correspondiente
  */
-void Piloto::setIncidenciasUltimaMision ( string incidenciasUltimaMision )
+const Piloto& Piloto::setIncidenciasUltimaMision ( string incidenciasUltimaMision )
 {
    this->_incidenciasUltimaMision = incidenciasUltimaMision;
+    return (*this);
 }
 
 string Piloto::getIncidenciasUltimaMision ( ) const
@@ -100,9 +104,10 @@ string Piloto::getIncidenciasUltimaMision ( ) const
  *       última misión; haz esta comprobación y lanza la excepción
  *       correspondiente
  */
-void Piloto::setFechaUltimaMision ( long fechaUltimaMision )
+const Piloto& Piloto::setFechaUltimaMision ( long fechaUltimaMision )
 {
    this->_fechaUltimaMision = fechaUltimaMision;
+    return (*this);
 }
 
 /**
@@ -128,7 +133,7 @@ string Piloto::toCSV () const
    return ( aux.str () );
 }
 
-Piloto& Piloto::operator = ( const Piloto& otro )
+const Piloto& Piloto::operator = ( const Piloto& otro )
 {
    if ( this != &otro )
    {
@@ -142,9 +147,10 @@ Piloto& Piloto::operator = ( const Piloto& otro )
    return ( *this );
 }
 
-const void Piloto::adquirirStarfighter(StarFighter *nuevo){
+const void Piloto::newStarfighter(StarFighter *nuevo){
     myStarFighter = nuevo;
 }
+
 
 const void Piloto::despegar(){
     onService = true;
@@ -175,6 +181,7 @@ const Informe Piloto::createReport() const {
     report.setIdPiloto(_idP);
     std::stringstream ss;
     ss << myStarFighter->getIdSF() <<";"<<supportDroid->getIdD()<<";"<<_incidenciasUltimaMision;
+    report.setDatosInforme(ss.str());
     return report;
 }
 
@@ -185,8 +192,6 @@ const void Piloto::replaceDroid() {
 const void Piloto::fromCSV(std::string CSV) {
     std::stringstream ss;
     ss.str(CSV);
-    ss>>_idP;
-    ss.ignore(1);
     std::getline(ss,_nombre,';');
     std::getline(ss,_nacionalidad,';');
     ss>>_numMisiones;
@@ -194,9 +199,8 @@ const void Piloto::fromCSV(std::string CSV) {
     ss>>_fechaUltimaMision;
     ss.ignore(1);
     std::getline(ss,_incidenciasUltimaMision,';');
+}
 
-    ss>>onService;
-    ss.ignore(1);
-
-    ss>>_numberOfDroids;
+const void Piloto::newDroid(Droide &droid) {
+    supportDroid = &droid;
 }

@@ -40,39 +40,41 @@ class Piloto
 
       virtual ~Piloto ( );
 
-      void setNumMisiones ( int numMisiones );
+      const Piloto& setNumMisiones ( int numMisiones ) ;
 
       int getNumMisiones ( ) const;
 
-      void setNacionalidad ( std::string nacionalidad );
+      const Piloto& setNacionalidad ( std::string nacionalidad );
 
       std::string getNacionalidad ( ) const;
 
-      void setNombre ( std::string nombre );
+      const Piloto& setNombre ( std::string nombre );
 
       std::string getNombre ( ) const;
 
       int getIdP ( ) const;
 
-      void setIncidenciasUltimaMision ( std::string incidenciasUltimaMision );
+      const Piloto& setIncidenciasUltimaMision ( std::string incidenciasUltimaMision );
 
       std::string getIncidenciasUltimaMision ( ) const;
 
-      void setFechaUltimaMision ( long fechaUltimaMision );
+      const Piloto& setFechaUltimaMision ( long fechaUltimaMision );
 
       long getFechaUltimaMision ( ) const;
 
       std::string toCSV () const;
-      
-      Piloto& operator= ( const Piloto& otro );
 
-      const void adquirirStarfighter(StarFighter *nuevo);
+      const Piloto& operator= ( const Piloto& otro );
+
+      const void newStarfighter(StarFighter *nuevo);
 
       const void despegar();
 
       const void aterrizar();
 
       const void newDroid();
+
+    const void newDroid(Droide &droid);
 
       const void droidCasualty();
 

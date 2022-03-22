@@ -36,9 +36,10 @@ int Droide::getIdD ( ) const
    return _idD;
 }
 
-void Droide::setModelo ( string modelo )
+const Droide&  Droide::setModelo ( string modelo )
 {
    this->_modelo = modelo;
+    return (*this);
 }
 
 string Droide::getModelo ( ) const
@@ -46,9 +47,10 @@ string Droide::getModelo ( ) const
    return _modelo;
 }
 
-void Droide::setMarca ( string marca )
+const Droide&  Droide::setMarca ( string marca )
 {
    this->_marca = marca;
+    return (*this);
 }
 
 string Droide::getMarca ( ) const
@@ -75,4 +77,11 @@ Droide& Droide::operator = ( const Droide& otro )
    }
    
    return ( *this );
+}
+
+const void Droide::fromCSV(std::string CSV) {
+    std::stringstream ss;
+    ss.str(CSV);
+    std::getline(ss,_marca,';');
+    std::getline(ss,_modelo,';');
 }
