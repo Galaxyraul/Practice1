@@ -57,10 +57,28 @@ int main ( int argc, char** argv )
     pilots[1].newStarfighter(&starFighters[3]);
     pilots[2].newDroid(droids[1]);
     pilots[2].newStarfighter(&starFighters[0]);
+    /*
     Informe p1 = pilots[0].createReport();
     Informe p2 = pilots[1].createReport();
     std::cout << p1.toCSV();
     std::cout << p2.toCSV();
+     */
+    std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
+    pilots[0].getSupportDroid()->newMission();
+    std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
+    string sol = pilots[0].getSupportDroid()->needsMaintenance()? "True":"False";
+    std::cout << sol << endl;
+    cout << "" << endl;
+
+    cout<< pilots[0].getNumMisiones() << endl;
+    cout<< pilots[0].getFechaUltimaMision() << endl;
+    cout<< pilots[0].getIncidenciasUltimaMision() << endl;
+    sol = pilots[0].newMission(13042003,"Hola q tal estas")? "True":"False";
+    cout<< pilots[0].getNumMisiones() << endl;
+    cout<< pilots[0].getFechaUltimaMision() << endl;
+    std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
+    cout<< pilots[0].getIncidenciasUltimaMision() << endl;
+    std::cout << sol << endl;
    return 0;
 }
 

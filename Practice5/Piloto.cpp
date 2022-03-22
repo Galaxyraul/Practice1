@@ -31,7 +31,7 @@ Piloto::Piloto ( const Piloto& orig ): _nombre(orig._nombre),
                                        _numMisiones(orig._numMisiones),
                                        _fechaUltimaMision(orig._fechaUltimaMision),
                                        _incidenciasUltimaMision(orig._incidenciasUltimaMision),
-                                       myStarFighter(orig.myStarFighter),
+                                       ship(orig.ship),
                                        supportDroid(orig.supportDroid)
 {
 
@@ -148,7 +148,7 @@ const Piloto& Piloto::operator = ( const Piloto& otro )
 }
 
 const void Piloto::newStarfighter(StarFighter *nuevo){
-    myStarFighter = nuevo;
+    ship = nuevo;
 }
 
 
@@ -180,7 +180,7 @@ const Informe Piloto::createReport() const {
     Informe report;
     report.setIdPiloto(_idP);
     std::stringstream ss;
-    ss << myStarFighter->getIdSF() <<";"<<supportDroid->getIdD()<<";"<<_incidenciasUltimaMision;
+    ss << ship->getIdSF() << ";" << supportDroid->getIdD() << ";" << _incidenciasUltimaMision;
     report.setDatosInforme(ss.str());
     return report;
 }
@@ -203,4 +203,20 @@ const void Piloto::fromCSV(std::string CSV) {
 
 const void Piloto::newDroid(Droide &droid) {
     supportDroid = &droid;
+}
+
+const bool Piloto::newMission(long date, const string &comments) {
+    _fechaUltimaMision = date;
+    _numMisiones++;
+    _incidenciasUltimaMision = comments;
+    supportDroid->newMission();
+    return supportDroid->needsMaintenance();
+}
+
+StarFighter *Piloto::getShip() const {
+    return ship;
+}
+
+Droide *Piloto::getSupportDroid() const {
+    return supportDroid;
 }
