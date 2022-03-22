@@ -13,16 +13,16 @@ using std::string;
 
 int Droide::_numDroides = 0;
 
-Droide::Droide ( ): Droide ( "", "" )
+Droide::Droide ( )
 { }
 
-Droide::Droide ( string marca, string modelo ): _marca (marca), _modelo (modelo)
+Droide::Droide ( string marca, string modelo,int numberOfMissions ): _marca (marca), _modelo (modelo),_numberOfMissions(numberOfMissions)
 {
    _numDroides++;
    _idD = _numDroides;
 }
 
-Droide::Droide ( const Droide& orig ): _marca(orig._marca), _modelo(orig._modelo)
+Droide::Droide ( const Droide& orig ): _marca(orig._marca), _modelo(orig._modelo),_numberOfMissions(orig.numberOfMissions)
 {
    _numDroides++;
    _idD = _numDroides;
@@ -63,7 +63,8 @@ string Droide::toCSV () const
    std::stringstream aux;
 
    aux << _marca << " ; "
-       << _modelo;
+       << _modelo <<" ; "
+       << _numberOfMissions;
 
    return ( aux.str () );
 }
@@ -74,6 +75,7 @@ Droide& Droide::operator = ( const Droide& otro )
    {
       _marca = otro._marca;
       _modelo = otro._modelo;
+      _numberOfMissions = otro._numberOfMissions;
    }
    
    return ( *this );
@@ -84,4 +86,21 @@ const void Droide::fromCSV(std::string CSV) {
     ss.str(CSV);
     std::getline(ss,_marca,';');
     std::getline(ss,_modelo,';');
+    ss>>_numberOfMissions;
+}
+
+int Droide::getNumberOfMissions() const {
+    return _numberOfMissions;
+}
+
+void Droide::setNumberOfMissions(int numberOfMissions) {
+    _numberOfMissions = numberOfMissions;
+}
+
+const void Droide::newMission() {
+    ++_numberOfMissions;
+}
+
+const bool Droide::needsMaintenance() {
+    return (_numberOfMissions%10 == 0);
 }
