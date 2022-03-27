@@ -73,6 +73,12 @@ build CMakeFiles/a.exe.dir/Piloto.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/P
   OBJECT_DIR = CMakeFiles\a.exe.dir
   OBJECT_FILE_DIR = CMakeFiles\a.exe.dir
 
+build CMakeFiles/a.exe.dir/Squad.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Practices/Practice6/Squad.cpp || cmake_object_order_depends_target_a.exe
+  DEP_FILE = CMakeFiles\a.exe.dir\Squad.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\a.exe.dir
+  OBJECT_FILE_DIR = CMakeFiles\a.exe.dir
+
 build CMakeFiles/a.exe.dir/StarFighter.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Practices/Practice6/StarFighter.cpp || cmake_object_order_depends_target_a.exe
   DEP_FILE = CMakeFiles\a.exe.dir\StarFighter.cpp.obj.d
   FLAGS = -g -std=gnu++20
@@ -93,7 +99,7 @@ build CMakeFiles/a.exe.dir/main.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Pra
 #############################################
 # Link the executable a.exe.exe
 
-build a.exe.exe: CXX_EXECUTABLE_LINKER__a.2eexe_Debug CMakeFiles/a.exe.dir/Droide.cpp.obj CMakeFiles/a.exe.dir/Informe.cpp.obj CMakeFiles/a.exe.dir/Part.cpp.obj CMakeFiles/a.exe.dir/Piloto.cpp.obj CMakeFiles/a.exe.dir/StarFighter.cpp.obj CMakeFiles/a.exe.dir/main.cpp.obj
+build a.exe.exe: CXX_EXECUTABLE_LINKER__a.2eexe_Debug CMakeFiles/a.exe.dir/Droide.cpp.obj CMakeFiles/a.exe.dir/Informe.cpp.obj CMakeFiles/a.exe.dir/Part.cpp.obj CMakeFiles/a.exe.dir/Piloto.cpp.obj CMakeFiles/a.exe.dir/Squad.cpp.obj CMakeFiles/a.exe.dir/StarFighter.cpp.obj CMakeFiles/a.exe.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\a.exe.dir
