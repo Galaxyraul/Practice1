@@ -42,7 +42,7 @@
 
       const Piloto& setNumMisiones ( int numMisiones ) ;
 
-      int getNumMisiones ( ) const;
+      int getNumMissions ( ) const;
 
       const Piloto& setNacionalidad ( std::string nacionalidad );
 

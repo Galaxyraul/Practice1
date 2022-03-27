@@ -39,6 +39,8 @@ public:
 
     Piloto *const *getMembers() const;
 
+    float averageNumberOfMissions();
+
 
 };
 

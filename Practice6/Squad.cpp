@@ -83,3 +83,13 @@ int Squad::getNumOfPilots() const {
 Piloto *const *Squad::getMembers() const {
     return _members;
 }
+
+float Squad::averageNumberOfMissions() {
+    float result = 0;
+    for(int i = 0; i < 50; ++i){
+        if(_members[i]!= nullptr) {
+            result += _members[i]->getNumMissions();
+        }
+    }
+    return result/_numOfPilots;
+}
