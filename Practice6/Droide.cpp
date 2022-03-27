@@ -22,7 +22,7 @@ Droide::Droide ( string marca, string modelo,int numberOfMissions ): _marca (mar
    _idD = _numDroides;
 }
 
-Droide::Droide ( const Droide& orig ): _marca(orig._marca), _modelo(orig._modelo),_numberOfMissions(orig.numberOfMissions)
+Droide::Droide ( const Droide& orig ): _marca(orig._marca), _modelo(orig._modelo),_numberOfMissions(orig._numberOfMissions)
 {
    _numDroides++;
    _idD = _numDroides;

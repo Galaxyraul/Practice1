@@ -9,30 +9,64 @@
 #include <sstream>
 #include "StarFighter.h"
 
+
 using std::string;
 
 int StarFighter::_numStarFighters = 0;
 
-StarFighter::StarFighter ( )
-{ }
+StarFighter::StarFighter ():_numOfComponents(20)
+{
+    for(int i = 0; i < 50; ++i){
+        if(i < _numOfComponents){
+            _components[i] = new Part();
+        } else{
+            _components[i] = nullptr;
+        }
+    }
+}
 
 StarFighter::StarFighter ( string marca, string modelo ): _marca (marca),
-                                                          _modelo(modelo)
+                                                          _modelo(modelo),
+                                                          _numOfComponents(20)
 {
+    for(int i = 0; i < 50; ++i){
+        if(i < _numOfComponents){
+            _components[i] = new Part();
+        } else{
+            _components[i] = nullptr;
+        }
+    }
    _numStarFighters++;
    _idSF = _numStarFighters;
 }
 
 StarFighter::StarFighter ( const StarFighter& orig ): _marca(orig._marca),
                                                       _modelo(orig._modelo),
-                                                      _numPlazas(orig._numPlazas)
+                                                      _numPlazas(orig._numPlazas),
+                                                      _numOfComponents(orig._numOfComponents)
 {
+
+    for(int i = 0; i < 50; ++i){
+        if(i < _numOfComponents){
+            _components[i] = new Part(*orig._components[i]);
+        } else{
+            _components[i] = nullptr;
+        }
+    }
+
    _numStarFighters++;
    _idSF = _numStarFighters;
 }
 
 StarFighter::~StarFighter ( )
-{ }
+{
+    for(int i = 0; i < 50; ++i){
+        if(_components[i]!= nullptr){
+            delete _components[i];
+            _components[i] = nullptr;
+        }
+    }
+}
 
 /**
  * @todo Aquí hay que añadir la comprobación del parámetro y lanzar la excepción
@@ -107,4 +141,32 @@ const void StarFighter::fromCSV(std::string CSV) {
     ss>>_numPlazas;
     ss.ignore(1);
 
+}
+
+const void StarFighter::NewPart(){
+    if(_numOfComponents == 50){
+        throw std::string ("StarFighter.cpp::NewPart:The starfighter cannot have more parts");
+    }
+    _components[_numOfComponents] = new Part();
+    _numOfComponents++;
+
+}
+
+const void StarFighter::ReplacePart(int pos) {
+    if(pos < 0 || pos > 49){
+        throw std::string ("StarFighter::ReplacePart:The values is out of bounds");
+    }
+    Part *aux = new Part(*_components[pos]);
+    delete _components[pos];
+    _components[pos] = aux;
+}
+
+const void StarFighter::RemovePart(int pos) {
+    if(pos < 0 || pos > 49){
+        throw std::string ("StarFighter::RemovePart:The values is out of bounds");
+    }
+    if(_components[pos] == nullptr){
+        throw std::string ("StarFighter::RemovePart:There is no part in that spot");
+    }
+    delete _components[pos];
 }
