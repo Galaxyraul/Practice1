@@ -14,6 +14,7 @@
 #include "Piloto.h"
 #include "Droide.h"
 #include "StarFighter.h"
+#include "Part.h"
 
 using namespace std;
 
@@ -22,6 +23,7 @@ using namespace std;
  */
 int main ( int argc, char** argv )
 {
+
     string datosPilotos[5] = {"Dameron Poe;Jakku;100;123456;---",
                              "Anakin Skywalker;Tatooine;133;126756;Derribados 3 cazas enemigos",
                              "Han Solo;Corellia;247;126786;Impacto en motor izquierdo",
@@ -63,6 +65,7 @@ int main ( int argc, char** argv )
     std::cout << p1.toCSV();
     std::cout << p2.toCSV();
      */
+
     std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
     pilots[0].getSupportDroid()->newMission();
     std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
@@ -79,6 +82,7 @@ int main ( int argc, char** argv )
     std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
     cout<< pilots[0].getIncidenciasUltimaMision() << endl;
     std::cout << sol << endl;
+
    return 0;
 }
 
