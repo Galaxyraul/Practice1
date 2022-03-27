@@ -19,11 +19,11 @@ public:
 
     Squad(const std::string &name, const std::string &base);
 
-    Squad(const std::string &name, int numOfPilots, const std::string &base, Piloto **members);
-
     virtual ~Squad();
 
     const void newRecruit();
+
+    const void newRecuit(Piloto& orig);
 
     const void casualty(int identifier);
 
