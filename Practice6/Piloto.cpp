@@ -52,7 +52,7 @@ const Piloto& Piloto::setNumMisiones ( int numMisiones )
     return (*this);
 }
 
-int Piloto::getNumMisiones ( ) const
+int Piloto::getNumMissions ( ) const
 {
    return _numMisiones;
 }

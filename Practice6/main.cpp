@@ -73,11 +73,11 @@ int main ( int argc, char** argv )
     std::cout << sol << endl;
     cout << "" << endl;
 
-    cout<< pilots[0].getNumMisiones() << endl;
+    cout << pilots[0].getNumMissions() << endl;
     cout<< pilots[0].getFechaUltimaMision() << endl;
     cout<< pilots[0].getIncidenciasUltimaMision() << endl;
     sol = pilots[0].newMission(13042003,"Hola q tal estas")? "True":"False";
-    cout<< pilots[0].getNumMisiones() << endl;
+    cout << pilots[0].getNumMissions() << endl;
     cout<< pilots[0].getFechaUltimaMision() << endl;
     std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
     cout<< pilots[0].getIncidenciasUltimaMision() << endl;
