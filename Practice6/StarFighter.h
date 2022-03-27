@@ -54,7 +54,9 @@ class StarFighter
 
       const void fromCSV(std::string CSV);
 
-      const void NewPart();
+      const void newPart();
+
+    const void newPart(const std::string& name,float weight);
 
       const void ReplacePart(int pos);
 

@@ -16,14 +16,6 @@ Squad::Squad(const std::string &name, const std::string &base) : _name(name), _b
     }
 }
 
-Squad::Squad(const std::string &name, int numOfPilots, const std::string &base, Piloto **members): _name(name),
-                                                                                                    _numOfPilots(numOfPilots),
-                                                                                                    _base(base){
-    for(int i = 0; i < 50; ++i){
-        _members[i]= members[i];
-    }
-}
-
 Squad::~Squad() {
     for(int i = 0; i < 50; ++i){
         if(_members[i]!= nullptr){
@@ -40,6 +32,19 @@ const void Squad::newRecruit() {
     for(int i = 0; i < 50 && !match;++i){
         if(_members[i]== nullptr){
             _members[i] = new Piloto();
+            match = true;
+        }
+    }
+    ++_numOfPilots;
+}
+const void Squad::newRecuit(Piloto &orig) {
+    if(_numOfPilots == 50){
+        throw std::string ("Squad.cpp::NewRecruit:This squad is full");
+    }
+    bool match = false;
+    for(int i = 0; i < 50 && !match;++i){
+        if(_members[i]== nullptr){
+            _members[i] = &orig;
             match = true;
         }
     }
@@ -93,3 +98,5 @@ float Squad::averageNumberOfMissions() {
     }
     return result/_numOfPilots;
 }
+
+

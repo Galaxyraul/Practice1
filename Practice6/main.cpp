@@ -15,6 +15,7 @@
 #include "Droide.h"
 #include "StarFighter.h"
 #include "Part.h"
+#include "Squad.h"
 
 using namespace std;
 
@@ -45,44 +46,43 @@ int main ( int argc, char** argv )
     i1.setIdPiloto (1)
      .setFechaEstelar (31521231)
      .setDatosInforme ("Sin novedad");
-    Piloto pilots[5];
-    StarFighter starFighters[5];
-    Droide droids[5];
+    Piloto *pilots[5];
     for(int i = 0; i < 5; ++i){
-       pilots[i].fromCSV(datosPilotos[i]);
-       droids[i].fromCSV(datosDroides[i]);
-       starFighters[i].fromCSV(datosNaves[i]);
+        pilots[i]=new Piloto;
     }
-    pilots[0].newDroid(droids[2]);
-    pilots[0].newStarfighter(&starFighters[1]);
-    pilots[1].newDroid(droids[0]);
-    pilots[1].newStarfighter(&starFighters[3]);
-    pilots[2].newDroid(droids[1]);
-    pilots[2].newStarfighter(&starFighters[0]);
-    /*
-    Informe p1 = pilots[0].createReport();
-    Informe p2 = pilots[1].createReport();
-    std::cout << p1.toCSV();
-    std::cout << p2.toCSV();
-     */
+    for(int i = 0; i < 5; ++i){
+       pilots[i]->fromCSV(datosPilotos[i]);
+    }
+    Squad s1 ("First squad","Tatooine");
+    Squad s2 ("Second squad","Mandalor");
+    s1.newRecuit(*pilots[0]);
+    s1.newRecuit(*pilots[1]);
+    s2.newRecuit(*pilots[2]);
+    s2.newRecuit(*pilots[3]);
+    s2.newRecuit(*pilots[4]);
+    std::cerr << "The squad " + s1.getName() + " has an average of :" << s1.averageNumberOfMissions() << " missions" <<std::endl;
+    std::cerr << "The squad " + s2.getName() + " has an average of :" << s2.averageNumberOfMissions() << " missions" <<std::endl;
+    StarFighter *sf1 = new StarFighter();
+    StarFighter *sf2 = new StarFighter();
 
-    std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
-    pilots[0].getSupportDroid()->newMission();
-    std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
-    string sol = pilots[0].getSupportDroid()->needsMaintenance()? "True":"False";
-    std::cout << sol << endl;
-    cout << "" << endl;
+    sf1->newPart("wing",200);
+    sf1->newPart("wheels",100);
+    sf1->newPart("capsule",800);
+    std::cerr << sf1->computeWeight()<<std::endl;
 
-    cout << pilots[0].getNumMissions() << endl;
-    cout<< pilots[0].getFechaUltimaMision() << endl;
-    cout<< pilots[0].getIncidenciasUltimaMision() << endl;
-    sol = pilots[0].newMission(13042003,"Hola q tal estas")? "True":"False";
-    cout << pilots[0].getNumMissions() << endl;
-    cout<< pilots[0].getFechaUltimaMision() << endl;
-    std::cout << pilots[0].getSupportDroid()->getNumberOfMissions() << endl;
-    cout<< pilots[0].getIncidenciasUltimaMision() << endl;
-    std::cout << sol << endl;
+    sf2->newPart("cannon",500);
+    sf2->newPart("console",200);
+    sf2->newPart("engine",1000);
+    std::cerr << sf2->computeWeight()<<std::endl;
 
-   return 0;
+    delete sf1;
+    sf1 = nullptr;
+    delete sf2;
+    sf2 = nullptr;
+    for(int i = 0; i < 5; ++i){
+        delete pilots[i];
+        pilots[i] = nullptr;
+    }
+    return 0;
 }
 

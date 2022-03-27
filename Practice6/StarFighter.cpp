@@ -14,27 +14,19 @@ using std::string;
 
 int StarFighter::_numStarFighters = 0;
 
-StarFighter::StarFighter ():_numOfComponents(20)
+StarFighter::StarFighter ()
 {
     for(int i = 0; i < 50; ++i){
-        if(i < _numOfComponents){
-            _components[i] = new Part();
-        } else{
-            _components[i] = nullptr;
-        }
+        _components[i] = nullptr;
     }
 }
 
 StarFighter::StarFighter ( string marca, string modelo ): _marca (marca),
-                                                          _modelo(modelo),
-                                                          _numOfComponents(20)
+                                                          _modelo(modelo)
+
 {
     for(int i = 0; i < 50; ++i){
-        if(i < _numOfComponents){
-            _components[i] = new Part();
-        } else{
-            _components[i] = nullptr;
-        }
+        _components[i] = nullptr;
     }
    _numStarFighters++;
    _idSF = _numStarFighters;
@@ -143,13 +135,20 @@ const void StarFighter::fromCSV(std::string CSV) {
 
 }
 
-const void StarFighter::NewPart(){
+const void StarFighter::newPart(){
     if(_numOfComponents == 50){
-        throw std::string ("StarFighter.cpp::NewPart:The starfighter cannot have more parts");
+        throw std::string ("StarFighter.cpp::newPart:The starfighter cannot have more parts");
     }
     _components[_numOfComponents] = new Part();
     _numOfComponents++;
 
+}
+const void StarFighter::newPart(const string &name, float weight) {
+    if(_numOfComponents == 50){
+        throw std::string ("StarFighter.cpp::newPart:The starfighter cannot have more parts");
+    }
+    _components[_numOfComponents] = new Part(name,weight);
+    _numOfComponents++;
 }
 
 const void StarFighter::ReplacePart(int pos) {
@@ -174,9 +173,11 @@ const void StarFighter::RemovePart(int pos) {
 float StarFighter::computeWeight() {
     float result = 0;
     for(int i = 0; i < 50; ++i){
-        if(_components!= nullptr){
+        if(_components[i]!= nullptr){
             result+=_components[i]->getWeight();
         }
     }
     return result;
 }
+
+
