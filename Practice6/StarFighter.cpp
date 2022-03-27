@@ -170,3 +170,13 @@ const void StarFighter::RemovePart(int pos) {
     }
     delete _components[pos];
 }
+
+float StarFighter::computeWeight() {
+    float result = 0;
+    for(int i = 0; i < 50; ++i){
+        if(_components!= nullptr){
+            result+=_components[i]->getWeight();
+        }
+    }
+    return result;
+}

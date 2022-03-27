@@ -20,5 +20,29 @@ Part::~Part() {
 Part::Part(const Part &orig) :_weight(orig._weight),_name(orig._name),_description(orig._description)
 {}
 
+const std::string &Part::getName() const {
+    return _name;
+}
+
+void Part::setName(const std::string &name) {
+    _name = name;
+}
+
+float Part::getWeight() const {
+    return _weight;
+}
+
+void Part::setWeight(float weight) {
+    _weight = weight;
+}
+
+const std::string &Part::getDescription() const {
+    return _description;
+}
+
+void Part::setDescription(const std::string &description) {
+    _description = description;
+}
+
 
 

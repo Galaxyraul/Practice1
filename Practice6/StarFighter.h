@@ -59,6 +59,8 @@ class StarFighter
       const void ReplacePart(int pos);
 
       const void RemovePart(int pos);
+
+      float computeWeight();
 };
 
 

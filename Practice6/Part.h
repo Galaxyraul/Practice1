@@ -23,6 +23,18 @@ public:
     Part(const Part& orig);
 
     virtual ~Part();
+
+    const std::string &getName() const;
+
+    void setName(const std::string &name);
+
+    float getWeight() const;
+
+    void setWeight(float weight);
+
+    const std::string &getDescription() const;
+
+    void setDescription(const std::string &description);
 };
 
 
