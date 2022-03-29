@@ -53,6 +53,8 @@ int main ( int argc, char** argv )
     for(int i = 0; i < 5; ++i){
        pilots[i]->fromCSV(datosPilotos[i]);
     }
+    Droide d1("Hola","R2-D2",0);
+    pilots[0]->newDroid(d1);
     Squad s1 ("First squad","Tatooine");
     Squad s2 ("Second squad","Mandalor");
     s1.newRecuit(*pilots[0]);
@@ -75,6 +77,14 @@ int main ( int argc, char** argv )
     sf2->newPart("engine",1000);
     std::cerr << sf2->computeWeight()<<std::endl;
 
+    *sf2 = *sf1;
+    s2 = s1;
+    cout << s2.getName() << endl;
+    cout << s1.getName() << endl;
+    cout<< sf1->computeWeight()<<std::endl;
+    cout<< sf2->computeWeight()<<std::endl;
+    Piloto &p = s1.partnerOfDroid(d1);
+    cout << p.toCSV()<<endl;
     delete sf1;
     sf1 = nullptr;
     delete sf2;
