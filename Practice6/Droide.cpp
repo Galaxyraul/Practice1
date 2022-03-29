@@ -104,3 +104,10 @@ const void Droide::newMission() {
 const bool Droide::needsMaintenance() {
     return (_numberOfMissions%10 == 0);
 }
+
+bool Droide::operator==(const Droide &rhs) const {
+    return _idD == rhs._idD &&
+           _marca == rhs._marca &&
+           _modelo == rhs._modelo &&
+           _numberOfMissions == rhs._numberOfMissions;
+}

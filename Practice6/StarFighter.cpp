@@ -113,15 +113,34 @@ string StarFighter::toCSV () const
    return ( aux.str () );
 }
 
-StarFighter& StarFighter::operator = (const StarFighter& otro)
+StarFighter& StarFighter::operator= (const StarFighter& otro)
 {
    if ( this != &otro )
    {
       _marca = otro._marca;
       _modelo = otro._modelo;
       _numPlazas = otro._numPlazas;
+      if(_numOfComponents > 0){
+          for(int i = 0; i < 50; ++i){
+              if(_components[i]!= nullptr){
+                  delete _components[i];
+              }
+          }
+      }
+      try {
+          for (int i = 0; i < 50; ++i) {
+              if (i < otro._numOfComponents) {
+                  _components[i] = new Part (*otro._components[i]);
+              } else {
+                  _components[i] = nullptr;
+              }
+          }
+          _numOfComponents=otro._numOfComponents;
+      }catch ( std::bad_alloc &ex )
+      {
+          throw ex;
+      }
    }
-   
    return ( *this );
 }
 
@@ -179,5 +198,9 @@ float StarFighter::computeWeight() {
     }
     return result;
 }
+
+
+
+
 
 

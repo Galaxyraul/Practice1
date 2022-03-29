@@ -56,13 +56,14 @@ class StarFighter
 
       const void newPart();
 
-    const void newPart(const std::string& name,float weight);
+     const void newPart(const std::string& name,float weight);
 
       const void ReplacePart(int pos);
 
       const void RemovePart(int pos);
 
       float computeWeight();
+
 };
 
 

@@ -19,6 +19,8 @@ public:
 
     Squad(const std::string &name, const std::string &base);
 
+    Squad (const Squad& otro );
+
     virtual ~Squad();
 
     const void newRecruit();
@@ -40,6 +42,10 @@ public:
     Piloto *const *getMembers() const;
 
     float averageNumberOfMissions();
+
+    const Squad& operator= (const Squad& otro);
+
+     Piloto& partnerOfDroid(const Droide& which) const;
 
 
 };

@@ -54,6 +54,8 @@ public:
       const void newMission();
 
       const bool needsMaintenance();
+
+      bool operator==(const Droide &rhs) const;
 };
 
 #endif /* DROIDE_H */
