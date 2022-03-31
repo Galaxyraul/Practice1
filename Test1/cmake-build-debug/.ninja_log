@@ -1,0 +1,10 @@
+# ninja log v5
+0	280	6704652425228350	CMakeFiles/Test1.dir/main.cpp.obj	e82eb3ac177815fb
+282	404	6704652426416598	Test1.exe	52fc050228b8db67
+5	269	6704658617924127	CMakeFiles/Test1.dir/Drone.cpp.obj	b6f9c50a84a6ecd8
+11	353	6704658618761865	CMakeFiles/Test1.dir/ControlTower.cpp.obj	7cd26647dcfa7d0
+16	371	6704658618948433	CMakeFiles/Test1.dir/Parcel.cpp.obj	d24abba3a1d46181
+2	372	6704658618958433	CMakeFiles/Test1.dir/main.cpp.obj	e82eb3ac177815fb
+372	489	6704658620097314	Test1.exe	d587267729249b7b
+3	302	6704659546077525	CMakeFiles/Test1.dir/ControlTower.cpp.obj	7cd26647dcfa7d0
+303	405	6704659547072998	Test1.exe	d587267729249b7b
