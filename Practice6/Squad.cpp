@@ -99,4 +99,47 @@ float Squad::averageNumberOfMissions() {
     return result/_numOfPilots;
 }
 
+const Squad &Squad::operator = (const Squad &otro){
+    if(this!=&otro){
+        _name = otro._name;
+        _numOfPilots = otro._numOfPilots;
+        _base = otro._base;
+        for(int i = 0; i < 50; ++i){
+            if(i < _numOfPilots){
+                _members[i] = otro._members[i];
+            } else{
+                _members[i] = nullptr;
+            }
+        }
+
+    }
+    return (*this);
+}
+
+Squad::Squad(const Squad &otro):_base(otro._base),_numOfPilots(otro._numOfPilots),_name(otro._name) {
+    for(int i = 0; i < 50; ++i){
+        if(i < _numOfPilots){
+            _members[i] = otro._members[i];
+        } else{
+            _members[i] = nullptr;
+        }
+    }
+
+}
+
+Piloto &Squad::partnerOfDroid(const Droide &which) const{
+    int pos;
+    bool  match;
+    for(int i = 0;  i < 50 && !match; ++i){
+        if(_members[i]!= nullptr) {
+            match = &which == _members[i]->getSupportDroid();
+            pos = (match) ? i : 50;
+        }
+    }
+    if (pos == 50){
+        throw std::string ("Squad.cpp::PartnerOfDroid:The droid does not belong to any of the pilots");
+    }
+    return *_members[pos];
+}
+
 

@@ -89,10 +89,11 @@ const void ControlTower::addDrone(  Drone &n)  {
 
 Drone *ControlTower::bestDrone() {
     int posBest = 0;
-    for(int i = 0; i <_MAXSIZE;++i) {
+    int k = _numberOfDrones;
+    for(int i = 0; i <_MAXSIZE && k > 0;++i) {
         if (drones[i] != nullptr){
             posBest = (drones[i]->getMaximumLoad() > drones[posBest]->getMaximumLoad()) ? i : posBest;
-
+            k--;
         }
     }
     return drones[posBest];
