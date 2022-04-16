@@ -10,6 +10,9 @@
 
 #include "Power.h"
 #include <string>
+#include "Power.h"
+#include "MentalPower.h"
+#include "PhysicalPower.h"
 
 using std::string;
 
@@ -54,6 +57,10 @@ public:
     void erasePower(int which);
 
     float totalDestructiveCapacity ();
+
+    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD ));
+
+    void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD ));
 private:
     string _nombreReal = "---";
     string _apodo = "---";

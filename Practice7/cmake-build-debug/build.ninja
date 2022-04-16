@@ -55,8 +55,20 @@ build CMakeFiles/a.exe.dir/EquipoMutante.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$
   OBJECT_DIR = CMakeFiles\a.exe.dir
   OBJECT_FILE_DIR = CMakeFiles\a.exe.dir
 
+build CMakeFiles/a.exe.dir/MentalPower.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Practices/Practice7/MentalPower.cpp || cmake_object_order_depends_target_a.exe
+  DEP_FILE = CMakeFiles\a.exe.dir\MentalPower.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\a.exe.dir
+  OBJECT_FILE_DIR = CMakeFiles\a.exe.dir
+
 build CMakeFiles/a.exe.dir/Mutante.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Practices/Practice7/Mutante.cpp || cmake_object_order_depends_target_a.exe
   DEP_FILE = CMakeFiles\a.exe.dir\Mutante.cpp.obj.d
+  FLAGS = -g -std=gnu++20
+  OBJECT_DIR = CMakeFiles\a.exe.dir
+  OBJECT_FILE_DIR = CMakeFiles\a.exe.dir
+
+build CMakeFiles/a.exe.dir/PhysicalPower.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Practices/Practice7/PhysicalPower.cpp || cmake_object_order_depends_target_a.exe
+  DEP_FILE = CMakeFiles\a.exe.dir\PhysicalPower.cpp.obj.d
   FLAGS = -g -std=gnu++20
   OBJECT_DIR = CMakeFiles\a.exe.dir
   OBJECT_FILE_DIR = CMakeFiles\a.exe.dir
@@ -81,7 +93,7 @@ build CMakeFiles/a.exe.dir/main.cpp.obj: CXX_COMPILER__a.2eexe_Debug D$:/Poo/Pra
 #############################################
 # Link the executable a.exe.exe
 
-build a.exe.exe: CXX_EXECUTABLE_LINKER__a.2eexe_Debug CMakeFiles/a.exe.dir/EquipoMutante.cpp.obj CMakeFiles/a.exe.dir/Mutante.cpp.obj CMakeFiles/a.exe.dir/Power.cpp.obj CMakeFiles/a.exe.dir/main.cpp.obj
+build a.exe.exe: CXX_EXECUTABLE_LINKER__a.2eexe_Debug CMakeFiles/a.exe.dir/EquipoMutante.cpp.obj CMakeFiles/a.exe.dir/MentalPower.cpp.obj CMakeFiles/a.exe.dir/Mutante.cpp.obj CMakeFiles/a.exe.dir/PhysicalPower.cpp.obj CMakeFiles/a.exe.dir/Power.cpp.obj CMakeFiles/a.exe.dir/main.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\a.exe.dir
