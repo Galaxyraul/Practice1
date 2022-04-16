@@ -85,5 +85,6 @@ int main(int argc, char** argv)
     showParcelId(packages[1]);
     showParcelId(packages[2]);
     cout << t2.bestDrone()->getPlateNumber() << endl;
+
     return 0;
 }

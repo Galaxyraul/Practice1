@@ -57,7 +57,6 @@ ControlTower::ControlTower(const ControlTower &orig):_towerId(orig._towerId),
             k++;
         }
     }
-
 }
 
 const Drone &ControlTower::getDrone(int which) const {

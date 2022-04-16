@@ -15,19 +15,37 @@ Mutante::Mutante(string nombre, string apodo, int fechaN, string nacionalidad)
       _fechaDeNacimiento(fechaN),
       _nacionalidad(nacionalidad)
       {
-    
+          for(int i = 0; i < MAX_PODERES;++i){
+              _power[i]= nullptr;
+          }
 }
 
 Mutante::Mutante(const Mutante& orig)
     : _nombreReal(orig._nombreReal),
     _apodo(orig._apodo),
     _fechaDeNacimiento(orig._fechaDeNacimiento),
-    _nacionalidad(orig._nacionalidad)
+    _nacionalidad(orig._nacionalidad),
+    _numOfPowers(orig._numOfPowers)
  {
-    
+    int k = 0;
+     for(int i = 0; i < MAX_PODERES;++i){
+         _power[i] = nullptr;
+         if(orig._power[i]!= nullptr){
+             _power[k] = new Power (*orig._power[i]);
+             k++;
+         }
+     }
 }
 
 Mutante::~Mutante() {
+    int k = _numOfPowers;
+    for(int i = 0; i < MAX_PODERES && k > 0;++i){
+        if(_power[i]!= nullptr){
+            delete _power[i];
+            _power[i]= nullptr;
+            --k;
+        }
+    }
 }
 
 void Mutante::setNombreReal(string nombreReal) {
@@ -81,9 +99,60 @@ Mutante& Mutante::operator=(const Mutante& orig) {
         _apodo = orig._apodo;
         _fechaDeNacimiento = orig._fechaDeNacimiento;
         _nacionalidad = orig._nacionalidad;
+        int k = 0;
+        for(int i = 0; i < MAX_PODERES;++i){
+            delete _power[i];
+            _power[i] = nullptr;
+            if(orig._power[i]!=nullptr){
+                _power[k] = new Power(*orig._power[i]);
+            }
 
+        }
     }
-
     return  *this;
 }
+
+Mutante::Mutante() {
+    for(int i = 0; i < MAX_PODERES;++i){
+        _power[i]= nullptr;
+    }
+}
+
+void
+Mutante::addPower(const string &name, const std::string description, const std::string effectiveOn, float capacityOfD) {
+    if(_numOfPowers>=MAX_PODERES){
+        throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
+    }
+    for(int i = 0; i < MAX_PODERES;++i){
+        if(_power[i]== nullptr){
+            _power[i] = new Power(name,description,effectiveOn,capacityOfD);
+            _numOfPowers++;
+        }
+    }
+}
+
+void Mutante::erasePower(int which) {
+    if(_power[which-1] == nullptr){
+        throw std::string ("Mutant.cpp::erasePower:The position does not have a power");
+    }
+    if(which-1 <= 0 || which - 1 >= 10 ){
+        throw std::invalid_argument ("Mutant.cpp::erasePower:The value is not valid");
+    }
+    delete _power[which - 1];
+    _power[which - 1] = nullptr;
+}
+
+float Mutante::totalDestructiveCapacity(){
+    float result = 0;
+    int k = _numOfPowers;
+    for(int i = 0; i < MAX_PODERES && k > 0;++i){
+        if(_power[i]!= nullptr){
+            result+=_power[i]->getDestructiveCapacity();
+            --k;
+        }
+    }
+    return result;
+}
+
+
 
