@@ -127,6 +127,7 @@ Mutante::addPower(const string &name, const std::string description, const std::
         if(_power[i]== nullptr){
             _power[i] = new Power(name,description,effectiveOn,capacityOfD);
             _numOfPowers++;
+            break;
         }
     }
 }
@@ -163,6 +164,7 @@ void Mutante::addMentalPower(const string &name, const std::string description, 
         if(_power[i]== nullptr){
             _power[i] = new MentalPower(name,description,effectiveOn,capacityOfD);
             _numOfPowers++;
+            break;
         }
     }
 }
@@ -176,6 +178,7 @@ void Mutante::addPhysicalPower(const string &name, const std::string description
         if(_power[i]== nullptr){
             _power[i] = new PhysicalPower(name,description,effectiveOn,capacityOfD);
             _numOfPowers++;
+            break;
         }
     }
 }
@@ -188,6 +191,7 @@ void Mutante::addPower(const Power &orig) {
         if(_power[i]== nullptr){
             _power[i] = new Power(orig);
             _numOfPowers++;
+            break;
         }
     }
 }
@@ -200,6 +204,7 @@ void Mutante::addPower(const MentalPower &orig) {
         if(_power[i]== nullptr){
             _power[i] = new MentalPower(orig);
             _numOfPowers++;
+            break;
         }
     }
 }
@@ -212,12 +217,13 @@ void Mutante::addPower(const PhysicalPower &orig) {
         if(_power[i]== nullptr){
             _power[i] = new PhysicalPower(orig);
             _numOfPowers++;
+            break;
         }
     }
 }
 
 Power *Mutante::getPower(int which) const {
-    if(which - 1 < 0 || which-1>=10){
+    if(which< 0 || which>=10){
         throw std::invalid_argument("Mutant.cpp::getPower:The value is not suitable");
     }
     return _power[which];

@@ -63,7 +63,7 @@ Power Power::operator=(const Power &orig) {
 
 std::string Power::toCSV() const {
     std::stringstream s;
-    s<<_name <<";"<<_description<<";"<<_description<<";"<<_effectiveOn<<";"<<_destructiveCapacity;
+    s<<_name <<";"<<_description<<";"<<_effectiveOn<<";"<<_destructiveCapacity;
     return s.str();
 }
 
