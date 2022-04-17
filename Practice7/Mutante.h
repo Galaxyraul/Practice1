@@ -58,9 +58,15 @@ public:
 
     float totalDestructiveCapacity ();
 
-    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD ));
+    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD );
 
-    void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD ));
+    void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD );
+
+    void addPower (const Power& orig);
+
+    void addPower (const MentalPower& orig);
+
+    void addPower (const PhysicalPower& orig);
 private:
     string _nombreReal = "---";
     string _apodo = "---";

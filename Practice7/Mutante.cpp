@@ -180,6 +180,42 @@ void Mutante::addPhysicalPower(const string &name, const std::string description
     }
 }
 
+void Mutante::addPower(const Power &orig) {
+    if(_numOfPowers>=MAX_PODERES){
+        throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
+    }
+    for(int i = 0; i < MAX_PODERES;++i){
+        if(_power[i]== nullptr){
+            _power[i] = new Power(orig);
+            _numOfPowers++;
+        }
+    }
+}
+
+void Mutante::addPower(const MentalPower &orig) {
+    if(_numOfPowers>=MAX_PODERES){
+        throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
+    }
+    for(int i = 0; i < MAX_PODERES;++i){
+        if(_power[i]== nullptr){
+            _power[i] = new MentalPower(orig);
+            _numOfPowers++;
+        }
+    }
+}
+
+void Mutante::addPower(const PhysicalPower &orig) {
+    if(_numOfPowers>=MAX_PODERES){
+        throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
+    }
+    for(int i = 0; i < MAX_PODERES;++i){
+        if(_power[i]== nullptr){
+            _power[i] = new PhysicalPower(orig);
+            _numOfPowers++;
+        }
+    }
+}
+
 
 
 
