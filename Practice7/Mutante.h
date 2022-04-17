@@ -67,6 +67,11 @@ public:
     void addPower (const MentalPower& orig);
 
     void addPower (const PhysicalPower& orig);
+
+    Power *getPower(int which) const;
+
+    int getNumOfPowers() const;
+
 private:
     string _nombreReal = "---";
     string _apodo = "---";
@@ -74,6 +79,8 @@ private:
     string _nacionalidad = "---";
     int _numOfPowers = 0;
     Power *_power[MAX_PODERES];
+
+
 
 };
 
