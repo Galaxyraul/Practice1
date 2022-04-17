@@ -1,0 +1,18 @@
+# ninja log v5
+31	878	6695900348997810	CMakeFiles/a.exe.dir/main.cpp.obj	6b1377d1cdeaf0ab
+8	1099	6695900350272973	CMakeFiles/a.exe.dir/Informe.cpp.obj	9c6be56986e179e0
+1	1111	6695900351121220	CMakeFiles/a.exe.dir/Droide.cpp.obj	3fbd86eefff56b6a
+15	1113	6695900351112281	CMakeFiles/a.exe.dir/StarFighter.cpp.obj	d047a5acd56af6ca
+23	1116	6695900351171130	CMakeFiles/a.exe.dir/Piloto.cpp.obj	dc921bd3c8cc44c8
+1117	1641	6695900356603283	a.exe.exe	24a479db8282d6c4
+4	522	6695902098949907	CMakeFiles/a.exe.dir/main.cpp.obj	6b1377d1cdeaf0ab
+523	1011	6695902103801766	a.exe.exe	24a479db8282d6c4
+6	530	6695903414498854	CMakeFiles/a.exe.dir/main.cpp.obj	6b1377d1cdeaf0ab
+3	661	6695903415795154	CMakeFiles/a.exe.dir/Droide.cpp.obj	3fbd86eefff56b6a
+662	1177	6695903420929279	a.exe.exe	24a479db8282d6c4
+4	597	6695904023307473	CMakeFiles/a.exe.dir/StarFighter.cpp.obj	d047a5acd56af6ca
+598	1088	6695904028197774	a.exe.exe	24a479db8282d6c4
+9	538	6695906957942080	CMakeFiles/a.exe.dir/main.cpp.obj	6b1377d1cdeaf0ab
+6	748	6695906960040060	CMakeFiles/a.exe.dir/StarFighter.cpp.obj	d047a5acd56af6ca
+3	770	6695906960259463	CMakeFiles/a.exe.dir/Piloto.cpp.obj	dc921bd3c8cc44c8
+771	1346	6695906965997415	a.exe.exe	24a479db8282d6c4
