@@ -18,33 +18,45 @@ using std::string;
  */
 class EquipoMutante
 {
-   public:
-      static const int _MAX_MIEMBROS_ = 10;
+public:
+    static const int _MAX_MIEMBROS_ = 10;
 
-   public:
-      EquipoMutante();
-      EquipoMutante ( string nombre, string base );
-      EquipoMutante ( const EquipoMutante& orig );
-      virtual ~EquipoMutante ( );
-      void setNombre ( string nombre );
-      string getNombre ( ) const;
-      void setBase ( string base );
-      string getBase ( ) const;
+private:
+    string _nombre = "---";
+    string _base = "---";
+    Mutante* _miembros[_MAX_MIEMBROS_];
+    int _numMiembros = 0;
 
-      string toCSV ();
-      EquipoMutante& operator= ( const EquipoMutante& orig );
+public:
+    EquipoMutante();
 
-      void addMutante ( Mutante *m );
-      int getNumMiembros ( ) const;
-      Mutante* getMutante ( int cual );
-      Mutante* sacaMutante(int cual);
+    EquipoMutante ( string nombre, string base );
 
-    private:
-      string _nombre = "---";
-      string _base = "---";
-      Mutante* _miembros[_MAX_MIEMBROS_];
-      int _numMiembros = 0;
-          
+    EquipoMutante ( const EquipoMutante& orig );
+
+    virtual ~EquipoMutante ( );
+
+    void setNombre ( string nombre );
+
+    string getNombre ( ) const;
+
+    void setBase ( string base );
+
+    string getBase ( ) const;
+
+
+    string toCSV ();
+
+    EquipoMutante& operator= ( const EquipoMutante& orig );
+
+    void addMutante ( Mutante *m );
+
+    int getNumMiembros ( ) const;
+
+    Mutante* getMutante ( int cual );
+
+    Mutante* sacaMutante(int cual);
+
 };
 
 #endif /* EQUIPOMUTANTE_H */

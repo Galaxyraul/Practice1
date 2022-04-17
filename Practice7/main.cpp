@@ -6,7 +6,10 @@
 
 #include <iostream>
 #include "EquipoMutante.h"
-
+#include "Power.h"
+#include "PhysicalPower.h"
+#include "MentalPower.h"
+#include "fstream"
 using namespace std;
 
 /***@brief Visualiza la información completa de un mutante*/
@@ -14,7 +17,14 @@ void visualiza( Mutante& m) {
     std::cout << "MUTANTE: " 
               << m.toCSV() << std::endl;
     std::cout << "  Poderes : " << std::endl;
-    //ToDo, Mostrar los poderes del mutante
+    int k = m.getNumOfPowers();
+    for(int i = 0; i < m.MAX_PODERES && k>0; ++i){
+        if(m.getPower(i)!= nullptr){
+            cout << m.getPower(i)->toCSV() << endl;
+            --k;
+        }
+    }
+
 
 }
 /***@brief Visualiza los datos de todos los miembros de un equipo mutante*/
@@ -23,11 +33,29 @@ void visualiza( EquipoMutante& eq) {
               << " (Base: " << eq.getBase()<< ")" <<std::endl
               << "============================"
               << std::endl;
-    //ToDo, Mostrar los mutantes del equipo (usar función anterior)
+    int k = eq.getNumMiembros();
+    for(int i = 0; i < eq._MAX_MIEMBROS_ && k > 0;++i){
+        if(eq.getMutante(i)!= nullptr){
+            visualiza(*eq.getMutante(i));
+            k--;
+        }
+    }
 
 }
 
-//ToDo, Método para almacenar un vector de punteros a mutantes
+void StoreMutants(Mutante* v[], int tamV, std::string fileName){
+    ofstream f;
+    f.open(fileName.c_str());
+    if(f.good()){
+        for(int i = 0; i < tamV;++i){
+            if(v[i] != nullptr){
+                f<<v[i]->toCSV() << endl;
+            }
+        }
+        f.close();
+    }
+}
+
 //almacenaMutantesCSV()
 
 

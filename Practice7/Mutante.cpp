@@ -216,6 +216,17 @@ void Mutante::addPower(const PhysicalPower &orig) {
     }
 }
 
+Power *Mutante::getPower(int which) const {
+    if(which - 1 < 0 || which-1>=10){
+        throw std::invalid_argument("Mutant.cpp::getPower:The value is not suitable");
+    }
+    return _power[which];
+}
+
+int Mutante::getNumOfPowers() const {
+    return _numOfPowers;
+}
+
 
 
 
