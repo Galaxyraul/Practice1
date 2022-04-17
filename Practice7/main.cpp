@@ -9,6 +9,7 @@
 #include "Power.h"
 #include "PhysicalPower.h"
 #include "MentalPower.h"
+#include "fstream"
 using namespace std;
 
 /***@brief Visualiza la información completa de un mutante*/
@@ -40,6 +41,19 @@ void visualiza( EquipoMutante& eq) {
         }
     }
 
+}
+
+void StoreMutants(Mutante* v[], int tamV, std::string fileName){
+    ofstream f;
+    f.open(fileName.c_str());
+    if(f.good()){
+        for(int i = 0; i < tamV;++i){
+            if(v[i] != nullptr){
+                f<<v[i]->toCSV() << endl;
+            }
+        }
+        f.close();
+    }
 }
 
 //almacenaMutantesCSV()
