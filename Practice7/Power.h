@@ -12,11 +12,12 @@ private:
     std::string _description = "";
     std::string _effectiveOn = "";
     float _destructiveCapacity = 0;
+    bool _inhibited = false;
 public:
     Power();
 
     Power(const std::string &name, const std::string &description, const std::string &effectiveOn,
-          float destructiveCapacity);
+          float destructiveCapacity,bool  inhibited);
 
     Power(const Power& orig);
 
@@ -39,6 +40,8 @@ public:
     Power operator = (const Power& orig);
 
     std::string toCSV () const;
+
+    void inhibitPower();
 
     virtual ~Power();
 };

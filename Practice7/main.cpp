@@ -24,8 +24,18 @@ void visualiza( Mutante& m) {
             --k;
         }
     }
-
-
+}
+string mutantToString( Mutante& m) {
+    string result = "";
+    result+= "MUTANTE: " + m.toCSV() + "\n" + "  Poderes : " +" \n";
+    int k = m.getNumOfPowers();
+    for(int i = 0; i <= m.MAX_PODERES && k>0; ++i){
+        if(m.getPower(i)!= nullptr){
+           result += m.getPower(i)->toCSV() + "\n";
+            --k;
+        }
+    }
+    return result;
 }
 /***@brief Visualiza los datos de todos los miembros de un equipo mutante*/
 void visualiza( EquipoMutante& eq) {
@@ -40,7 +50,6 @@ void visualiza( EquipoMutante& eq) {
             k--;
         }
     }
-
 }
 
 void storeMutants(Mutante* v[], int tamV, std::string fileName){
@@ -50,6 +59,25 @@ void storeMutants(Mutante* v[], int tamV, std::string fileName){
         for(int i = 0; i < tamV;++i){
             if(v[i] != nullptr){
                 f<<v[i]->toCSV() << endl;
+            }
+        }
+        f.close();
+    }
+}
+
+void storeMutantTeam(EquipoMutante& eq,string fileName){
+    ofstream f;
+    f.open(fileName.c_str());
+    if(f.good()){
+        f<< "EQUIPO: " << eq.getNombre()
+         << " (Base: " << eq.getBase()<< ")" <<std::endl
+         << "============================"
+         << std::endl;
+        int k = eq.getNumMiembros();
+        for(int i = 0; i < eq._MAX_MIEMBROS_ && k > 0;++i){
+            if(eq.getMutante(i)!= nullptr){
+                f << mutantToString(*eq.getMutante(i));
+                k--;
             }
         }
         f.close();
@@ -90,16 +118,21 @@ int main(int argc, char** argv) {
    v[4]->setFechaDeNacimiento(15082005);
    v[4]->setNacionalidad("American");
    v[4]->setNombreReal("Peggy");
-
+    Power p1("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100,true);
+    Power p2("WaterBending","Ability to control water","Effective on fire related mutants",75,false);
    try{
-       v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100);
-       v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75);
-       v[2]->addPower("Invisibility","Ability to become invisible to humans","Effective every mutant but tracking related",2);
-       v[3]->addPower("Teleportation","Ability to appear in whichever place the user wants","Effective on no mutant",0);
-       v[4]->addPower("Flight","Ability to fly ","Effective on no mutant",20);
+       v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100,false);
+       v[0]->addPower(p1);
+       v[0]->addPower(p2);
+       v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75,false);
+       v[2]->addPower("Invisibility","Ability to become invisible to humans","Effective every mutant but tracking related",2,true);
+       v[3]->addPower("Teleportation","Ability to appear in whichever place the user wants","Effective on no mutant",0,false);
+       v[4]->addPower("Flight","Ability to fly ","Effective on no mutant",20,false);
    }catch (std::string &e){
        cerr << e;
    }
+   cout << v[0]->totalDestructiveCapacity();
+
    EquipoMutante t1;
    EquipoMutante t2;
    try{
@@ -120,10 +153,12 @@ try {
     cerr << e.what();
 }
     storeMutants(v,5,"List.csv");
+    storeMutantTeam(t1,"Team.CSV");
     
     
    // Destruye todos los objetos creados en memoria dinámica antes de la
    // finalización del programa
+
 
     for(int i = 0 ; i  < 5; ++i){
         delete v[i];

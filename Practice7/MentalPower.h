@@ -11,7 +11,7 @@ public:
     MentalPower();
 
     MentalPower(const std::string &name, const std::string &description, const std::string &effectiveOn,
-                float destructiveCapacity);
+                float destructiveCapacity,bool inhibited);
 
     MentalPower(const Power &orig);
 
