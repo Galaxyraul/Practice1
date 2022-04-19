@@ -24,8 +24,18 @@ void visualiza( Mutante& m) {
             --k;
         }
     }
-
-
+}
+string mutantToString( Mutante& m) {
+    string result = "";
+    result+= "MUTANTE: " + m.toCSV() + "\n" + "  Poderes : " +" \n";
+    int k = m.getNumOfPowers();
+    for(int i = 0; i <= m.MAX_PODERES && k>0; ++i){
+        if(m.getPower(i)!= nullptr){
+           result += m.getPower(i)->toCSV() + "\n";
+            --k;
+        }
+    }
+    return result;
 }
 /***@brief Visualiza los datos de todos los miembros de un equipo mutante*/
 void visualiza( EquipoMutante& eq) {
@@ -40,7 +50,6 @@ void visualiza( EquipoMutante& eq) {
             k--;
         }
     }
-
 }
 
 void storeMutants(Mutante* v[], int tamV, std::string fileName){
@@ -50,6 +59,25 @@ void storeMutants(Mutante* v[], int tamV, std::string fileName){
         for(int i = 0; i < tamV;++i){
             if(v[i] != nullptr){
                 f<<v[i]->toCSV() << endl;
+            }
+        }
+        f.close();
+    }
+}
+
+void storeMutantTeam(EquipoMutante& eq,string fileName){
+    ofstream f;
+    f.open(fileName.c_str());
+    if(f.good()){
+        f<< "EQUIPO: " << eq.getNombre()
+         << " (Base: " << eq.getBase()<< ")" <<std::endl
+         << "============================"
+         << std::endl;
+        int k = eq.getNumMiembros();
+        for(int i = 0; i < eq._MAX_MIEMBROS_ && k > 0;++i){
+            if(eq.getMutante(i)!= nullptr){
+                f << mutantToString(*eq.getMutante(i));
+                k--;
             }
         }
         f.close();
@@ -125,6 +153,7 @@ try {
     cerr << e.what();
 }
     storeMutants(v,5,"List.csv");
+    storeMutantTeam(t1,"Team.CSV");
     
     
    // Destruye todos los objetos creados en memoria dinámica antes de la
