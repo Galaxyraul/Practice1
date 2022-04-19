@@ -12,7 +12,7 @@ public:
     PhysicalPower();
 
     PhysicalPower(const std::string &name, const std::string &description, const std::string &effectiveOn,
-                  float destructiveCapacity);
+                  float destructiveCapacity,bool inhibited);
 
     PhysicalPower(const Power &orig);
 

@@ -7,7 +7,7 @@
 MentalPower::MentalPower():Power() {}
 
 MentalPower::MentalPower(const std::string &name, const std::string &description, const std::string &effectiveOn,
-                         float destructiveCapacity) : Power(name, description, effectiveOn, destructiveCapacity)
+                         float destructiveCapacity,bool inhibited) : Power(name, description, effectiveOn, destructiveCapacity,inhibited)
                          {}
 
 MentalPower::MentalPower(const Power &orig) : Power(orig) {}

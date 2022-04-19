@@ -119,13 +119,13 @@ Mutante::Mutante() {
 }
 
 void
-Mutante::addPower(const string &name, const std::string description, const std::string effectiveOn, float capacityOfD) {
+Mutante::addPower(const string &name, const std::string description, const std::string effectiveOn, float capacityOfD,bool inhibited ) {
     if(_numOfPowers>=MAX_PODERES){
         throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
     }
     for(int i = 0; i < MAX_PODERES;++i){
         if(_power[i]== nullptr){
-            _power[i] = new Power(name,description,effectiveOn,capacityOfD);
+            _power[i] = new Power(name,description,effectiveOn,capacityOfD,inhibited);
             _numOfPowers++;
             break;
         }
@@ -156,13 +156,13 @@ float Mutante::totalDestructiveCapacity(){
 }
 
 void Mutante::addMentalPower(const string &name, const std::string description, const std::string effectiveOn,
-                             float capacityOfD) {
+                             float capacityOfD,bool inhibited ) {
     if(_numOfPowers>=MAX_PODERES){
         throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
     }
     for(int i = 0; i < MAX_PODERES;++i){
         if(_power[i]== nullptr){
-            _power[i] = new MentalPower(name,description,effectiveOn,capacityOfD);
+            _power[i] = new MentalPower(name,description,effectiveOn,capacityOfD,inhibited);
             _numOfPowers++;
             break;
         }
@@ -170,13 +170,13 @@ void Mutante::addMentalPower(const string &name, const std::string description, 
 }
 
 void Mutante::addPhysicalPower(const string &name, const std::string description, const std::string effectiveOn,
-                               float capacityOfD) {
+                               float capacityOfD,bool inhibited ) {
     if(_numOfPowers>=MAX_PODERES){
         throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
     }
     for(int i = 0; i < MAX_PODERES;++i){
-        if(_power[i]== nullptr){
-            _power[i] = new PhysicalPower(name,description,effectiveOn,capacityOfD);
+        if(_power[i] == nullptr){
+            _power[i] = new PhysicalPower(name,description,effectiveOn,capacityOfD,inhibited);
             _numOfPowers++;
             break;
         }

@@ -8,11 +8,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/Practice2/Fecha.cpp" "CMakeFiles/Practice2.dir/Fecha.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/Fecha.cpp.obj.d"
-  "C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/Practice2/Garito.cpp" "CMakeFiles/Practice2.dir/Garito.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/Garito.cpp.obj.d"
-  "C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/Practice2/Temazo.cpp" "CMakeFiles/Practice2.dir/Temazo.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/Temazo.cpp.obj.d"
-  "C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/Practice2/djutils.cpp" "CMakeFiles/Practice2.dir/djutils.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/djutils.cpp.obj.d"
-  "C:/Users/cocol/OneDrive/Escritorio/CLionProjects/Practices/Practice2/main.cpp" "CMakeFiles/Practice2.dir/main.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/main.cpp.obj.d"
+  "C:/Users/cocol/OneDrive/Escritorio/Practices/Practice2/Fecha.cpp" "CMakeFiles/Practice2.dir/Fecha.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/Fecha.cpp.obj.d"
+  "C:/Users/cocol/OneDrive/Escritorio/Practices/Practice2/Garito.cpp" "CMakeFiles/Practice2.dir/Garito.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/Garito.cpp.obj.d"
+  "C:/Users/cocol/OneDrive/Escritorio/Practices/Practice2/Temazo.cpp" "CMakeFiles/Practice2.dir/Temazo.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/Temazo.cpp.obj.d"
+  "C:/Users/cocol/OneDrive/Escritorio/Practices/Practice2/djutils.cpp" "CMakeFiles/Practice2.dir/djutils.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/djutils.cpp.obj.d"
+  "C:/Users/cocol/OneDrive/Escritorio/Practices/Practice2/main.cpp" "CMakeFiles/Practice2.dir/main.cpp.obj" "gcc" "CMakeFiles/Practice2.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
