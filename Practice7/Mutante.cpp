@@ -133,14 +133,14 @@ Mutante::addPower(const string &name, const std::string description, const std::
 }
 
 void Mutante::erasePower(int which) {
-    if(_power[which-1] == nullptr){
+    if(_power[which] == nullptr){
         throw std::string ("Mutant.cpp::erasePower:The position does not have a power");
     }
-    if(which-1 <= 0 || which - 1 >= 10 ){
+    if(which < 0 || which >= 10 ){
         throw std::invalid_argument ("Mutant.cpp::erasePower:The value is not valid");
     }
-    delete _power[which - 1];
-    _power[which - 1] = nullptr;
+    delete _power[which];
+    _power[which] = nullptr;
 }
 
 float Mutante::totalDestructiveCapacity(){
