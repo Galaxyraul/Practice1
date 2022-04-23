@@ -18,7 +18,10 @@ MentalPower::MentalPower(const std::string &name, const std::string &description
                              _lucidity = lucidity;
                          }
 //Preguntar si se puede modificar
-MentalPower::MentalPower(const Power &orig) : Power(orig){}
+MentalPower::MentalPower(const MentalPower &orig) : Power(orig){
+    _lucidity = orig._lucidity;
+
+}
 
 MentalPower &MentalPower::operator=(const MentalPower &orig) {
     if(this != &orig){
@@ -53,6 +56,6 @@ void MentalPower::setDestructiveCapacity(float destructiveCapacity) {
     Power::setDestructiveCapacity(destructiveCapacity*_lucidity);
 }
 
-bool MentalPower::operator<(const Power &orig) {
+bool MentalPower::operator<(const MentalPower &orig) {
     return this->getDestructiveCapacity() < orig.getDestructiveCapacity();
 }
