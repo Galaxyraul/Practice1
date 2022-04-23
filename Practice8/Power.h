@@ -32,7 +32,7 @@ public:
 
     void setEffectiveOn(const std::string &effectiveOn);
 
-    float getDestructiveCapacity() const;
+    virtual float getDestructiveCapacity() const;
 
     void setDestructiveCapacity(float destructiveCapacity);
 
