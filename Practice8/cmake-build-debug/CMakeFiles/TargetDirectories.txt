@@ -1,0 +1,3 @@
+D:/Poo/Practices/Practice7/cmake-build-debug/CMakeFiles/a.exe.dir
+D:/Poo/Practices/Practice7/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Poo/Practices/Practice7/cmake-build-debug/CMakeFiles/rebuild_cache.dir
