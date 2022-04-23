@@ -240,6 +240,19 @@ bool Mutante::operator<(Mutante &orig){
     return false;
 }
 
+void Mutante::fromCSV(const string &orig) {
+    std::stringstream aux;
+    aux.str(orig);
+    std::getline(aux,_nombreReal,';');
+    std::getline(aux,_apodo,';');
+    aux>>_fechaDeNacimiento;
+    aux.ignore(1);
+    std::getline(aux,_nacionalidad,';');
+    aux>>_numOfPowers;
+    aux.ignore(1);
+
+}
+
 
 
 

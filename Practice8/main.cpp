@@ -56,7 +56,22 @@ void storeMutants(Mutante* v[], int tamV, std::string fileName){
     }
 }
 
-//almacenaMutantesCSV()
+int retrieveMutant (Mutante* v[],int tamV, const std::string& fileName){
+    ifstream f;
+    string mutant = "";
+    int count = 0;
+    f.open(fileName.c_str());
+    if(f.good()){
+        while(!f.eof() && count <= tamV ){
+            getline(f,mutant);
+            if(mutant != ""){
+                v[count++]->fromCSV(mutant);
+                mutant = "";
+            }
+        }
+    }
+    return count;
+}
 
 
 int main(int argc, char** argv) {

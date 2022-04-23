@@ -72,7 +72,10 @@ public:
 
     int getNumOfPowers() const;
 
-    bool operator <(Mutante& orig) ;
+    bool operator <(Mutante& orig);
+
+    void fromCSV (const std::string& orig);
+
 
 private:
     string _nombreReal = "---";
