@@ -6,7 +6,15 @@
 #define PRUEBA_MENTALPOWER_H
 #include "Power.h"
 
+
 class MentalPower: public Power{
+private:
+    float _lucidity = 0;
+public:
+    float getLucidity() const;
+
+    void setLucidity(float lucidity);
+
 public:
     MentalPower();
 
@@ -16,6 +24,8 @@ public:
     MentalPower(const Power &orig);
 
     MentalPower &operator= (const MentalPower& orig);
+
+    virtual float getDestructiveCapacity() const override;
 
 };
 

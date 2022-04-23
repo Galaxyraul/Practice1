@@ -3,6 +3,8 @@
 //
 
 #include "MentalPower.h"
+#include "string"
+#include <iostream>
 
 MentalPower::MentalPower():Power() {}
 
@@ -17,4 +19,19 @@ MentalPower &MentalPower::operator=(const MentalPower &orig) {
         this->operator=(orig);
     }
     return *this;
+}
+
+float MentalPower::getLucidity() const {
+    return _lucidity;
+}
+
+void MentalPower::setLucidity(float lucidity) {
+    if(lucidity < 0 || lucidity > 1){
+        throw std::invalid_argument("MentalPower.cpp::setLucidity:The value is not suitable");
+    }
+    _lucidity = lucidity;
+}
+
+float MentalPower::getDestructiveCapacity() const {
+    return Power::getDestructiveCapacity()*_lucidity;
 }
