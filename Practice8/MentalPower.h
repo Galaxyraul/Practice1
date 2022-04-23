@@ -30,6 +30,7 @@ public:
 
     virtual void setDestructiveCapacity(float destructiveCapacity) override;
 
+    bool operator<(const Power& orig);
 };
 
 

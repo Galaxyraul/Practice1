@@ -41,6 +41,8 @@ public:
     virtual std::string toCSV () const;
 
     virtual ~Power();
+
+
 };
 
 

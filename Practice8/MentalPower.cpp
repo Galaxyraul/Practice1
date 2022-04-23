@@ -52,3 +52,7 @@ std::string MentalPower::toCSV() const {
 void MentalPower::setDestructiveCapacity(float destructiveCapacity) {
     Power::setDestructiveCapacity(destructiveCapacity*_lucidity);
 }
+
+bool MentalPower::operator<(const Power &orig) {
+    return this->getDestructiveCapacity() < orig.getDestructiveCapacity();
+}
