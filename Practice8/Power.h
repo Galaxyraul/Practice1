@@ -7,7 +7,7 @@
 #include "String"
 
 class Power {
-private:
+protected:
     std::string _name = "";
     std::string _description = "";
     std::string _effectiveOn = "";

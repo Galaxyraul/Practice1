@@ -10,6 +10,7 @@
 #include "PhysicalPower.h"
 #include "MentalPower.h"
 #include "fstream"
+#include "Ordena.h"
 using namespace std;
 
 /***@brief Visualiza la información completa de un mutante*/
@@ -24,8 +25,6 @@ void visualiza( Mutante& m) {
             --k;
         }
     }
-
-
 }
 /***@brief Visualiza los datos de todos los miembros de un equipo mutante*/
 void visualiza( EquipoMutante& eq) {
@@ -42,7 +41,15 @@ void visualiza( EquipoMutante& eq) {
     }
 
 }
-
+void visualiza( Mutante* v[],int tamV){
+    for(int i = 0; i < tamV;++i) {
+        if (v[i] != nullptr) {
+            std::cout << "MUTANTE: "
+                      << v[i]->toCSV() << std::endl;
+            std::cout << "  Poderes : " << std::endl;
+        }
+    }
+}
 void storeMutants(Mutante* v[], int tamV, std::string fileName){
     ofstream f;
     f.open(fileName.c_str());
@@ -76,11 +83,22 @@ int retrieveMutant (Mutante* v[],int tamV, const std::string& fileName){
 
 int main(int argc, char** argv) {
 
-    
+
    Mutante* v[5];
    for (int i = 0; i < 5; ++i){
        v[i] = new Mutante ();
    }
+    cout << retrieveMutant(v,5,"List.CSV");
+    visualiza(v,5);
+    MentalPower *p1 = new MentalPower("Choking","","Biological beings",600,0.75);
+   cout << v[0]->totalDestructiveCapacity() << endl;
+   try{
+       v[0]->addPower(*p1);
+   }catch (std::string &e){
+       cerr << e;
+   }
+    cout << v[0]->totalDestructiveCapacity() << endl;
+    /*
    v[0]->setApodo("Larry");
    v[0]->setFechaDeNacimiento(13042003);
    v[0]->setNacionalidad("Spanish");
@@ -105,7 +123,7 @@ int main(int argc, char** argv) {
    v[4]->setFechaDeNacimiento(15082005);
    v[4]->setNacionalidad("American");
    v[4]->setNombreReal("Peggy");
-
+*/
    try{
        v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100);
        v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75);
@@ -115,6 +133,13 @@ int main(int argc, char** argv) {
    }catch (std::string &e){
        cerr << e;
    }
+    visualiza(v,5);
+    cout << "\n";
+    cout << "\n";
+    ordena(v,5);
+    visualiza(v,5);
+
+/*
    EquipoMutante t1;
    EquipoMutante t2;
    try{
@@ -139,7 +164,7 @@ try {
     
    // Destruye todos los objetos creados en memoria dinámica antes de la
    // finalización del programa
-
+*/
     for(int i = 0 ; i  < 5; ++i){
         delete v[i];
         v[i] = nullptr;

@@ -16,7 +16,7 @@ public:
     MentalPower(const std::string &name, const std::string &description, const std::string &effectiveOn,
                 float destructiveCapacity,float lucidity);
 
-    MentalPower(const Power &orig);
+    MentalPower(const MentalPower &orig);
 
     MentalPower &operator= (const MentalPower& orig);
 
@@ -30,7 +30,7 @@ public:
 
     virtual void setDestructiveCapacity(float destructiveCapacity) override;
 
-    bool operator<(const Power& orig);
+    bool operator<(const MentalPower& orig);
 };
 
 
