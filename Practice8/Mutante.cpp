@@ -156,13 +156,13 @@ float Mutante::totalDestructiveCapacity(){
 }
 
 void Mutante::addMentalPower(const string &name, const std::string description, const std::string effectiveOn,
-                             float capacityOfD) {
+                             float capacityOfD,float lucidity) {
     if(_numOfPowers>=MAX_PODERES){
         throw std::string ("Mutant.cpp::addPower:The mutant cannot have more powers");
     }
     for(int i = 0; i < MAX_PODERES;++i){
         if(_power[i]== nullptr){
-            _power[i] = new MentalPower(name,description,effectiveOn,capacityOfD);
+            _power[i] = new MentalPower(name,description,effectiveOn,capacityOfD,lucidity);
             _numOfPowers++;
             break;
         }
@@ -231,6 +231,13 @@ Power *Mutante::getPower(int which) const {
 
 int Mutante::getNumOfPowers() const {
     return _numOfPowers;
+}
+
+bool Mutante::operator<(Mutante &orig){
+    if(this != &orig){
+        return (this->totalDestructiveCapacity() < orig.totalDestructiveCapacity());
+    }
+    return false;
 }
 
 

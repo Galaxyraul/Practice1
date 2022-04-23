@@ -58,7 +58,7 @@ public:
 
     float totalDestructiveCapacity ();
 
-    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD );
+    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,float lucidity );
 
     void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD );
 
@@ -71,6 +71,8 @@ public:
     Power *getPower(int which) const;
 
     int getNumOfPowers() const;
+
+    bool operator <(Mutante& orig) ;
 
 private:
     string _nombreReal = "---";
