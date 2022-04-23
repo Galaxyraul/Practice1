@@ -123,6 +123,7 @@ int main(int argc, char** argv) {
    v[4]->setFechaDeNacimiento(15082005);
    v[4]->setNacionalidad("American");
    v[4]->setNombreReal("Peggy");
+    storeMutants(v,5,"List.csv");
 */
    try{
        v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100);
@@ -138,33 +139,6 @@ int main(int argc, char** argv) {
     cout << "\n";
     ordena(v,5);
     visualiza(v,5);
-
-/*
-   EquipoMutante t1;
-   EquipoMutante t2;
-   try{
-       for(int i = 0; i < 5;++i){
-           if(i%2 == 0){
-               t1.addMutante(v[i]);
-           } else{
-               t2.addMutante(v[i]);
-           }
-       }
-   }catch (std::length_error &e){
-       cerr << e.what();
-   }
-try {
-    visualiza(t1);
-    visualiza(t2);
-}catch (std::invalid_argument &e){
-    cerr << e.what();
-}
-    storeMutants(v,5,"List.csv");
-    
-    
-   // Destruye todos los objetos creados en memoria dinámica antes de la
-   // finalización del programa
-*/
     for(int i = 0 ; i  < 5; ++i){
         delete v[i];
         v[i] = nullptr;
