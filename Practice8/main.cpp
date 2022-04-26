@@ -11,6 +11,8 @@
 #include "MentalPower.h"
 #include "fstream"
 #include "Ordena.h"
+#include "AstralMutant.h"
+#include "Templates.h"
 using namespace std;
 
 /***@brief Visualiza la información completa de un mutante*/
@@ -83,67 +85,72 @@ int retrieveMutant (Mutante* v[],int tamV, const std::string& fileName){
 
 int main(int argc, char** argv) {
 
-
-   Mutante* v[5];
-   for (int i = 0; i < 5; ++i){
-       v[i] = new Mutante ();
-   }
-    cout << retrieveMutant(v,5,"List.CSV");
-    visualiza(v,5);
-    MentalPower *p1 = new MentalPower("Choking","","Biological beings",600,false,0.75);
-   cout << v[0]->totalDestructiveCapacity() << endl;
-   try{
-       v[0]->addPower(*p1);
-   }catch (std::string &e){
-       cerr << e;
-   }
-    cout << v[0]->totalDestructiveCapacity() << endl;
-    /*
-   v[0]->setApodo("Larry");
-   v[0]->setFechaDeNacimiento(13042003);
-   v[0]->setNacionalidad("Spanish");
-   v[0]->setNombreReal("Pepe");
-
-   v[1]->setApodo("B.I.G");
-   v[1]->setFechaDeNacimiento(01042003);
-   v[1]->setNacionalidad("Spanish");
-   v[1]->setNombreReal("Antonio");
-
-   v[2]->setApodo("N");
-   v[2]->setFechaDeNacimiento(07042003);
-   v[2]->setNacionalidad("French");
-   v[2]->setNombreReal("Engolo");
-
-   v[3]->setApodo("NightK");
-   v[3]->setFechaDeNacimiento(18509300);
-   v[3]->setNacionalidad("Japanese");
-   v[3]->setNombreReal("Yumiko");
-
-   v[4]->setApodo("CaptainSun");
-   v[4]->setFechaDeNacimiento(15082005);
-   v[4]->setNacionalidad("American");
-   v[4]->setNombreReal("Peggy");
-    storeMutants(v,5,"List.csv");
-*/
-   try{
-       v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100,
-                      true);
-       v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75,true);
-       v[2]->addPower("Invisibility","Ability to become invisible to humans","Effective every mutant but tracking related",2,false);
-       v[3]->addPower("Teleportation","Ability to appear in whichever place the user wants","Effective on no mutant",0,true);
-       v[4]->addPower("Flight","Ability to fly ","Effective on no mutant",20,true);
-   }catch (std::string &e){
-       cerr << e;
-   }
-    visualiza(v,5);
-    cout << "\n";
-    cout << "\n";
-    ordena(v,5);
-    visualiza(v,5);
-    for(int i = 0 ; i  < 5; ++i){
-        delete v[i];
-        v[i] = nullptr;
+    MentalPower p ("grito mortal","","",20, false,0.2);
+    AstralMutant am1("","Banshee",0,"", false,0);
+    Power p3;
+    try{
+        am1.addPower(p);
+        am1.addPower(p);
+    }catch (std::out_of_range &e){
+        cerr << e.what()<<endl;
     }
+    try{
+        cout << am1.totalDestructiveCapacity()<<endl;
+        cout << am1.totalDestructiveCapacity()<<endl;
+    }catch (std::out_of_range &e){
+        cerr << e.what()<<endl;
+    }
+    try{
+        am1.addPower(p3);
+    }catch (invalid_argument &e){
+       cerr << e.what() << endl;
+    }
+    Mutante* v[5];
+    for (int i = 0; i < 5; ++i){
+        v[i] = new Mutante ();
+    }
+    Mutante magneto("","",0,"");
+    MentalPower magnetism("Magnetism","","",false,100,1);
+    magneto.addPower(magnetism);
+    v[0]->setApodo("Larry");
+    v[0]->setFechaDeNacimiento(13042003);
+    v[0]->setNacionalidad("Spanish");
+    v[0]->setNombreReal("Pepe");
+
+    v[1]->setApodo("B.I.G");
+    v[1]->setFechaDeNacimiento(01042003);
+    v[1]->setNacionalidad("Spanish");
+    v[1]->setNombreReal("Antonio");
+
+    v[2]->setApodo("N");
+    v[2]->setFechaDeNacimiento(07042003);
+    v[2]->setNacionalidad("French");
+    v[2]->setNombreReal("Engolo");
+
+    v[3]->setApodo("NightK");
+    v[3]->setFechaDeNacimiento(18509300);
+    v[3]->setNacionalidad("Japanese");
+    v[3]->setNombreReal("Yumiko");
+
+    v[4]->setApodo("CaptainSun");
+    v[4]->setFechaDeNacimiento(15082005);
+    v[4]->setNacionalidad("American");
+    v[4]->setNombreReal("Peggy");
+    Power p1("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100,true);
+    Power p2("WaterBending","Ability to control water","Effective on fire related mutants",75,false);
+    try{
+        v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100,false);
+        v[0]->addPower(p1);
+        v[0]->addPower(p2);
+        v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75,false);
+        v[2]->addPower("Invisibility","Ability to become invisible to humans","Effective every mutant but tracking related",2,true);
+        v[3]->addPower("Teleportation","Ability to appear in whichever place the user wants","Effective on no mutant",0,false);
+        v[4]->addPower("Flight","Ability to fly ","Effective on no mutant",20,false);
+    }catch (std::string &e){
+        cerr << e;
+    }
+    cout << superiorMutants(v,magneto,5);
+
     
     return 0;
 }
