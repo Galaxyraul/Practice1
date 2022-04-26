@@ -52,21 +52,21 @@ public:
 
     Mutante& operator=(const Mutante& orig);
 
-    void addPower (const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited );
+    virtual void addPower (const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited );
 
     void erasePower(int which);
 
-    float totalDestructiveCapacity ();
+    virtual float totalDestructiveCapacity ();
 
-    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited,float lucidity );
+    virtual void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited,float lucidity );
 
-    void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited);
+    virtual void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited);
 
-    void addPower (const Power& orig);
+    virtual void addPower (const Power& orig);
 
-    void addPower (const MentalPower& orig);
+    virtual void addPower (const MentalPower& orig);
 
-    void addPower (const PhysicalPower& orig);
+    virtual void addPower (const PhysicalPower& orig);
 
     Power *getPower(int which) const;
 
