@@ -38,12 +38,11 @@ Mutante::Mutante(const Mutante& orig)
 }
 
 Mutante::~Mutante() {
-    int k = _numOfPowers;
-    for(int i = 0; i < MAX_PODERES && k > 0;++i){
+    for(int i = 0; i < MAX_PODERES && _numOfPowers > 0;++i){
         if(_power[i]!= nullptr){
             delete _power[i];
             _power[i]= nullptr;
-            --k;
+            --_numOfPowers;
         }
     }
 }
