@@ -90,7 +90,7 @@ int main(int argc, char** argv) {
    }
     cout << retrieveMutant(v,5,"List.CSV");
     visualiza(v,5);
-    MentalPower *p1 = new MentalPower("Choking","","Biological beings",600,0.75);
+    MentalPower *p1 = new MentalPower("Choking","","Biological beings",600,false,0.75);
    cout << v[0]->totalDestructiveCapacity() << endl;
    try{
        v[0]->addPower(*p1);
@@ -126,11 +126,12 @@ int main(int argc, char** argv) {
     storeMutants(v,5,"List.csv");
 */
    try{
-       v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100);
-       v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75);
-       v[2]->addPower("Invisibility","Ability to become invisible to humans","Effective every mutant but tracking related",2);
-       v[3]->addPower("Teleportation","Ability to appear in whichever place the user wants","Effective on no mutant",0);
-       v[4]->addPower("Flight","Ability to fly ","Effective on no mutant",20);
+       v[0]->addPower("PyroKinesis","Ability to control fire","Effective on almost every mutant but water related",100,
+                      true);
+       v[1]->addPower("WaterBending","Ability to control water","Effective on fire related mutants",75,true);
+       v[2]->addPower("Invisibility","Ability to become invisible to humans","Effective every mutant but tracking related",2,false);
+       v[3]->addPower("Teleportation","Ability to appear in whichever place the user wants","Effective on no mutant",0,true);
+       v[4]->addPower("Flight","Ability to fly ","Effective on no mutant",20,true);
    }catch (std::string &e){
        cerr << e;
    }

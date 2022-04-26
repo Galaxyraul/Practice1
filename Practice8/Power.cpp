@@ -40,7 +40,7 @@ void Power::setEffectiveOn(const std::string &effectiveOn) {
 }
 
 float Power::getDestructiveCapacity() const {
-    return _destructiveCapacity;
+    return _inhibited? 0:_destructiveCapacity;
 }
 
 void Power::setDestructiveCapacity(float destructiveCapacity) {
@@ -48,8 +48,8 @@ void Power::setDestructiveCapacity(float destructiveCapacity) {
 }
 
 Power::Power(const std::string &name, const std::string &description, const std::string &effectiveOn,
-             float destructiveCapacity) : _name(name), _description(description), _effectiveOn(effectiveOn),
-                                          _destructiveCapacity(destructiveCapacity) {}
+             float destructiveCapacity,bool inhibited) : _name(name), _description(description), _effectiveOn(effectiveOn),
+                                          _destructiveCapacity(destructiveCapacity),_inhibited(inhibited) {}
 
 Power Power::operator=(const Power &orig) {
     if(this != &orig){
@@ -57,6 +57,7 @@ Power Power::operator=(const Power &orig) {
         _name = orig._name;
         _description = orig._description;
         _destructiveCapacity = orig._destructiveCapacity;
+        _inhibited = orig._inhibited;
     }
     return *this;
 }
@@ -69,4 +70,7 @@ std::string Power::toCSV() const {
 
 Power::~Power() {
 
+}
+void Power::inhibitPower() {
+    _inhibited = true;
 }

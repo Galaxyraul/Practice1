@@ -7,7 +7,7 @@
 PhysicalPower::PhysicalPower() {}
 
 PhysicalPower::PhysicalPower(const std::string &name, const std::string &description, const std::string &effectiveOn,
-                             float destructiveCapacity) : Power(name, description, effectiveOn, destructiveCapacity) {}
+                             float destructiveCapacity,bool inhibited) : Power(name, description, effectiveOn, destructiveCapacity,inhibited) {}
 
 PhysicalPower::PhysicalPower(const Power &orig) : Power(orig) {}
 
