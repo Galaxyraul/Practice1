@@ -10,7 +10,7 @@
 MentalPower::MentalPower():Power() {}
 
 MentalPower::MentalPower(const std::string &name, const std::string &description, const std::string &effectiveOn,
-                         float destructiveCapacity,float lucidity) : Power(name, description, effectiveOn, destructiveCapacity)
+                         float destructiveCapacity,bool inhibited,float lucidity) : Power(name, description, effectiveOn, destructiveCapacity,inhibited)
                          {
                              if(lucidity < 0 || lucidity > 1){
                                  throw std::invalid_argument("MentalPower.cpp::setLucidity:The value is not suitable");

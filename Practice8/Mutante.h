@@ -52,15 +52,15 @@ public:
 
     Mutante& operator=(const Mutante& orig);
 
-    void addPower (const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD );
+    void addPower (const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited );
 
     void erasePower(int which);
 
     float totalDestructiveCapacity ();
 
-    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,float lucidity );
+    void addMentalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited,float lucidity );
 
-    void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD );
+    void addPhysicalPower(const std::string &name, const std::string description, const std::string effectiveOn,float capacityOfD,bool inhibited);
 
     void addPower (const Power& orig);
 
@@ -84,9 +84,6 @@ private:
     string _nacionalidad = "---";
     int _numOfPowers = 0;
     Power *_power[MAX_PODERES];
-
-
-
 };
 
 #endif /* MUTANTE_H */
