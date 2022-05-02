@@ -45,6 +45,9 @@ int Cofre::cuantosCaben() {
 }
 
 void Cofre::mete(Item* item) {
+    if(item == nullptr){
+        throw std::invalid_argument("Cofre.cpp::mete:You cannot introduce nothenig to a chest");
+    }
     if (_numItems==_maxItems)
         throw std::out_of_range("[Cofre::mete] No caben más elementos en el cofre");
     _items[_numItems++]=item;
@@ -64,6 +67,9 @@ Item& Cofre::consulta(int cual) {
  * @return Extrae del cofre y devuelve el puntero al Item indicado
    @throw std::out_of_range si el elemento no exist*/
 Item* Cofre::saca(int cual) {
+    if(_numItems == 0){
+        throw EmptyContainer("Cofre.cpp::saca:You cannot recover items from an empy container");
+    }
     if (cual<=0 || cual >_numItems)
         throw std::out_of_range("[Cofre::mete] El elemento indicado no existe");
     Item* elemento = _items[cual-1];
