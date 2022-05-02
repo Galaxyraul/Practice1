@@ -10,6 +10,9 @@
 
 #include "Cofre.h"
 #include "Item.h"
+#include "Steak.h"
+#include "Sword.h"
+#include "Block.h"
 using namespace std;
 
 /**Inicializa el vector de items inicial
@@ -19,11 +22,11 @@ using namespace std;
 int inicializaItems(Item* v[], int tamv) {
     int numItems=0;
 
-    v[numItems++] = new Item("Bloque de tierra (5)");
-    v[numItems++] = new Item("Bloque de tierra (8)");
-    v[numItems++] = new Item("Bloque de tierra (1)");    
-    v[numItems++] = new Item("Espada de madera");   
-    v[numItems++] = new Item("Muslo de pollo");       
+    v[numItems++] = new Steak;
+    v[numItems++] = new Sword;
+    v[numItems++] = new Block;
+    v[numItems++] = new Steak;
+    v[numItems++] = new Block;
 
     //Asigna nullptr el resto de posiciones no ocupadas
     for (int i = numItems; i < tamv; i++) {
@@ -45,7 +48,7 @@ void visualiza(Cofre &c) {
               << "===================" << std::endl;
     for (int i = 1; i <= c.cuantosHay(); i++) {
         std::cout << i <<".- "
-                  << c.consulta(i).getDescripcion() << std::endl;
+                  << c.consulta(i).getDescription() << std::endl;
     }
 
 }
