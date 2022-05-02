@@ -6,19 +6,3 @@
  */
 
 #include "Item.h"
-
-Item::Item(std::string descripcion)
-    :_descripcion(descripcion){
-}
-
-Item::~Item() {
-}
-
-void Item::setDescripcion(std::string descripcion) {
-    this->_descripcion = descripcion;
-}
-
-std::string Item::getDescripcion() const {
-    return _descripcion;
-}
-
