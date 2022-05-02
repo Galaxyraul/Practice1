@@ -9,3 +9,5 @@ std::string Steak::getDescription() {
 }
 
 Steak::Steak() {}
+
+Steak::Steak(const std::string &description) : _description(description) {}

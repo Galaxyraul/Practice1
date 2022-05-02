@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <stdexcept>
 
 #include "Cofre.h"
 #include "Item.h"
@@ -59,25 +60,21 @@ void visualiza(Cofre &c) {
  */
 int main(int argc, char** argv) {
 
-    const int MAXITEMS=10;
-    Item* objetos[MAXITEMS];
-
-    //Inicializamos algunos objetos de prueba
-    int numObjetos=inicializaItems(objetos,MAXITEMS);
-
-    Cofre c; //Creamos un cofre con 27 posiciones
-    
-    //Metemos todos los objetos en el cofre
-    
-    for (int i = 0; i < numObjetos; i++) {
-         c.mete(objetos[i]);
+    Cofre c1;
+    try{
+        Block b1("dirt",8),b2("stone",5),b3("Diamond",1);
+        c1.mete(&b1);
+        c1.mete(&b2);
+        c1.mete(&b3);
+        visualiza(c1);
+    }catch (std::out_of_range &e){
+        cerr<<e.what()<<std::endl;
+    }catch (EmptyContainer &e){
+        cerr<<e.what()<<std::endl;
+    }catch (std::exception &e){
+        cerr<<e.what()<<std::endl;
     }
 
-    visualiza(c);    
-    
-    //Liberamos recursos
-    liberaItems(objetos,numObjetos);
-    
     return 0;
 }
 

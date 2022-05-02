@@ -12,11 +12,14 @@ private:
 public:
     int getNumberOfPiledElements();
 
+    ItemApilable();
+
+    ItemApilable(int numberOfElements);
+
     void increaseStack (int amount);
 
     void decreaseStack (int amount);
 
-    virtual std::string getDescription()=0;
 
 };
 

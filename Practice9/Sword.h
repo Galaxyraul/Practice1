@@ -8,6 +8,11 @@
 
 
 class Sword: public Item{
+private:
+    std::string _description = "";
+public:
+    Sword(const std::string &description);
+
 public:
     std::string getDescription() override;
 

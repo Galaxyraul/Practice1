@@ -26,3 +26,12 @@ void ItemApilable::decreaseStack(int amount) {
     }
     _numberOfElements-=amount;
 }
+
+ItemApilable::ItemApilable(int numberOfElements) {
+    if(numberOfElements > 64 || numberOfElements < 1){
+        throw std::out_of_range("ItemApilable.cpp::ItemApilable:the value is not suitable");
+    }
+    _numberOfElements = numberOfElements;
+}
+
+ItemApilable::ItemApilable() {}

@@ -3,9 +3,20 @@
 //
 
 #include "Block.h"
+#include "sstream"
 
 std::string Block::getDescription() {
-    return "A building block";
+    std::stringstream ss;
+    ss<< getNumberOfPiledElements();
+    std::string a = "Building block (" + ss.str() +')';
+    return a;
 }
 
-Block::Block() {}
+Block::Block(): ItemApilable() {}
+
+Block::Block(int numberOfElements) : ItemApilable(numberOfElements) {}
+
+Block::Block(const std::string &description) : _description(description) {}
+
+Block::Block(const std::string &description,int numberOfElements ) : ItemApilable(numberOfElements),
+                                                                     _description(description) {}

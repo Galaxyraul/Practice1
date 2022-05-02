@@ -4,13 +4,22 @@
 
 #ifndef PRUEBA_BLOCK_H
 #define PRUEBA_BLOCK_H
-#include "Item.h"
+#include "ItemApilable.h"
 
-class Block: public Item {
-    std::string getDescription() override;
+class Block: public ItemApilable {
+private:
+    std::string _description = "";
 
 public:
     Block();
+
+    Block(int numberOfElements);
+
+    std::string getDescription() override;
+
+    Block(const std::string &description,int numberOfElements );
+
+    Block(const std::string &description);
 };
 
 

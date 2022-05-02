@@ -9,3 +9,5 @@ std::string Sword::getDescription() {
 }
 
 Sword::Sword() {}
+
+Sword::Sword(const std::string &description) : _description(description) {}
