@@ -7,6 +7,9 @@
 #include "Item.h"
 
 class Steak: public Item {
+public:
+    virtual ~Steak();
+
 private:
     std::string _description = "";
 public:

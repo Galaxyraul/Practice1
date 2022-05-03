@@ -16,9 +16,13 @@ public:
 
     ItemApilable(int numberOfElements);
 
+    virtual std::string getDescription() = 0;
+
     void increaseStack (int amount);
 
     void decreaseStack (int amount);
+
+    virtual ~ItemApilable();
 
 
 };

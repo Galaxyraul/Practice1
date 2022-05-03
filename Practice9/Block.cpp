@@ -20,3 +20,7 @@ Block::Block(const std::string &description) : _description(description) {}
 
 Block::Block(const std::string &description,int numberOfElements ) : ItemApilable(numberOfElements),
                                                                      _description(description) {}
+
+Block::~Block() {
+
+}

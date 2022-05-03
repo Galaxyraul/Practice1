@@ -20,6 +20,8 @@ public:
     Block(const std::string &description,int numberOfElements );
 
     Block(const std::string &description);
+
+    virtual ~Block();
 };
 
 

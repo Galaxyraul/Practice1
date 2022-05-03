@@ -10,9 +10,21 @@
 
 class ItemApilableArrojable: public ItemApilable,public ItemArrojable{
 private:
-    float damage = 0;
+    float _damage = 0;
 public:
-    void std::string getDescription() override;
+     virtual std::string getDescription() = 0;
+
+     virtual float lanzar() = 0;
+
+    float getDamage() const;
+
+    void setDamage(float damage);
+
+    ItemApilableArrojable(int numberOfElements,int damage);
+
+    ItemApilableArrojable();
+
+    virtual ~ItemApilableArrojable();
 };
 
 

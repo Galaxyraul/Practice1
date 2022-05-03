@@ -13,6 +13,8 @@
 class Item {
 public:
     virtual std::string getDescription()=0;
+
+    virtual ~Item()=default;
 };
 
 #endif /* ITEM_H */
