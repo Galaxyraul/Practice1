@@ -80,7 +80,7 @@ int main(int argc, char** argv) {
     ItemApilableArrojable &i1 = *s1;
     for(int i = 0; i < 20;++i){
         try{
-            i1.lanzar();
+            cout << i1.lanzar() << " ";
             cout<< i1.getDescription() << endl;
         }catch (std::out_of_range& e){
             cerr<<e.what();
