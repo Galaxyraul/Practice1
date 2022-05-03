@@ -35,3 +35,7 @@ ItemApilable::ItemApilable(int numberOfElements) {
 }
 
 ItemApilable::ItemApilable() {}
+
+ItemApilable::~ItemApilable() {
+
+}

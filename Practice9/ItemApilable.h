@@ -20,6 +20,8 @@ public:
 
     void decreaseStack (int amount);
 
+    virtual ~ItemApilable();
+
 
 };
 

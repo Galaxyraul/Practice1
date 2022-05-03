@@ -9,5 +9,7 @@
 class ItemArrojable:public Item{
 public:
     virtual float lanzar()=0;
+
+    virtual ~ItemArrojable()=default;
 };
 #endif //PRUEBA_ITEMARROJABLE_H
