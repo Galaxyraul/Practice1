@@ -5,11 +5,12 @@
  */
 
 #include <iostream>
+#include <string>
 #include "EquipoMutante.h"
 #include "Power.h"
 #include "PhysicalPower.h"
 #include "MentalPower.h"
-#include "fstream"
+#include <fstream>
 #include "Ordena.h"
 #include "AstralMutant.h"
 #include "Templates.h"

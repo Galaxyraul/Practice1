@@ -3,9 +3,9 @@
 //
 
 #include "MentalPower.h"
-#include "string"
+#include <string>
 #include <iostream>
-#include "sstream"
+#include <sstream>
 
 MentalPower::MentalPower():Power() {}
 

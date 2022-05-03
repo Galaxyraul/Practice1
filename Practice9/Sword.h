@@ -13,7 +13,6 @@ private:
 public:
     Sword(const std::string &description);
 
-public:
     std::string getDescription() override;
 
     Sword();
