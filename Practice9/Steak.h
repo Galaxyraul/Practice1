@@ -7,15 +7,14 @@
 #include "Item.h"
 
 class Steak: public Item {
-public:
-    Steak(const std::string &description);
-
 private:
     std::string _description = "";
 public:
     Steak();
 
     std::string getDescription() override;
+
+    Steak(const std::string &description);
 
 };
 
