@@ -5,11 +5,20 @@
 #include "ItemApilableArrojable.h"
 #include <iostream>
 
-float ItemApilableArrojable::lanzar() {
-    try{
-        decreaseStack(1);
-    }catch (std::out_of_range& e){
-        std::cerr<<e.what();
-    }
+
+ItemApilableArrojable::ItemApilableArrojable(int numberOfElements,int damage) : ItemApilable(numberOfElements),_damage(damage) {}
+
+ItemApilableArrojable::ItemApilableArrojable() {}
+
+ItemApilableArrojable::~ItemApilableArrojable() {
+
+}
+
+float ItemApilableArrojable::getDamage() const {
     return _damage;
 }
+
+void ItemApilableArrojable::setDamage(float damage) {
+    _damage = damage;
+}
+

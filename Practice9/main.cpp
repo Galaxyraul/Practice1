@@ -14,6 +14,7 @@
 #include "Steak.h"
 #include "Sword.h"
 #include "Block.h"
+#include "SnowBall.h"
 using namespace std;
 
 /**Inicializa el vector de items inicial
@@ -74,6 +75,19 @@ int main(int argc, char** argv) {
     }catch (std::exception &e){
         cerr<<e.what()<<std::endl;
     }
+    SnowBall *s1 = new SnowBall(20);
+
+    ItemApilableArrojable &i1 = *s1;
+    for(int i = 0; i < 20;++i){
+        try{
+            i1.lanzar();
+            cout<< i1.getDescription() << endl;
+        }catch (std::out_of_range& e){
+            cerr<<e.what();
+        }
+    }
+    delete s1;
+    s1 = nullptr;
 
     return 0;
 }

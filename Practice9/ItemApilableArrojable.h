@@ -14,7 +14,17 @@ private:
 public:
      virtual std::string getDescription() = 0;
 
-     float lanzar() override;
+     virtual float lanzar() = 0;
+
+    float getDamage() const;
+
+    void setDamage(float damage);
+
+    ItemApilableArrojable(int numberOfElements,int damage);
+
+    ItemApilableArrojable();
+
+    virtual ~ItemApilableArrojable();
 };
 
 
