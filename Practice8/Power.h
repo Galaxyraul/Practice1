@@ -4,7 +4,7 @@
 
 #ifndef PRUEBA_POWER_H
 #define PRUEBA_POWER_H
-#include "String"
+#include <string>
 
 class Power {
 protected:
