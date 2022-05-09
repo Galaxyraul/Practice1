@@ -3,6 +3,6 @@
 //
 
 #include "Inventario.h"
-
-Inventario::Inventario(): ContenedorItem(36) {}
+template<typename T1,typename T2>
+Inventario<T1,T2>::Inventario(): ContenedorItem(36) {}
 

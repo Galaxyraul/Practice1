@@ -5,7 +5,6 @@
 #ifndef PRUEBA_CONTENEDORITEM_H
 #define PRUEBA_CONTENEDORITEM_H
 #include "Item.h"
-
 class ContenedorItem {
 private:
     int _maxItems = 0;
@@ -31,6 +30,7 @@ public:
     Item* saca(int cual);
 
 };
+
 
 
 #endif //PRUEBA_CONTENEDORITEM_H

@@ -15,6 +15,7 @@
 #include "Filete.h"
 #include "Inventario.h"
 #include "ContenedorItem.h"
+#include "EmptyContainer.h"
 
 
 using namespace std;
@@ -43,7 +44,16 @@ int inicializaItems(ContenedorItem& c) {
 void liberaItems(ContenedorItem& c) {
     c.~ContenedorItem();//Delete could have been used if I had created it on dynamic memory
 }
+template<typename T1,typename T2>
+void visualiza(Cofre<T1,T2> &c) {
+    std::cout << "CONTENIDO DEL COFRE" << std::endl
+              << "===================" << std::endl;
+    for (int i = 1; i <= c.cuantosHay(); i++) {
+        std::cout << i << ".- "
+                  << c.consulta(i).getDescripcion() << std::endl;
+    }
 
+}
 void visualiza(ContenedorItem &c) {
     std::cout << "CONTENIDO DEL COFRE" << std::endl
             << "===================" << std::endl;
@@ -86,8 +96,23 @@ int main(int argc, char** argv) {
         try {
             c.mete(&c);
         }catch(std::invalid_argument& e){
-            cerr << e.what();
+            cerr << e.what()<<endl;
         }
+        for(int i = 1; i <= numObjetos;++i){
+            try {
+                Cofre *c2 = dynamic_cast<Cofre *>(&i1.consulta(i));
+                if (c2 != nullptr) {
+                    visualiza(*c2);
+                }
+            }catch (std::bad_cast& e){
+                cerr << e.what() << endl;
+            }catch (EmptyContainer& e){
+                cerr<< e.what() << endl;
+            }catch (out_of_range& e){
+                cerr << e.what() << endl;
+            }
+        }
+
         visualiza(i1);
 
         //Liberamos recursos

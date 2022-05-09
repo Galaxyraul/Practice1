@@ -9,17 +9,18 @@
 #include <string>
 #include "ContenedorItem.h"
 #include "Item.h"
+#include "Container.h"
 
 #ifndef COFRE_H
 #define COFRE_H
-
-class Cofre: public ContenedorItem,public Item{
+template<class T1,class T2>
+class Cofre: public ContenedorItem,public Item,public Container<T1,T2>{
 public:
     Cofre();
 
     void mete(Item *item) override;
 
-    virtual std::string getDescripcion() const;
+    std::string getDescripcion() const override;
 
 
 
