@@ -83,6 +83,11 @@ int main(int argc, char** argv) {
                         << e.what() << std::endl;
         }
         i1.mete(&c);
+        try {
+            c.mete(&c);
+        }catch(std::invalid_argument& e){
+            cerr << e.what();
+        }
         visualiza(i1);
 
         //Liberamos recursos
