@@ -44,7 +44,7 @@ void liberaItems(ContenedorItem& c) {
     c.~ContenedorItem();//Delete could have been used if I had created it on dynamic memory
 }
 
-void visualiza(Cofre &c) {
+void visualiza(ContenedorItem &c) {
     std::cout << "CONTENIDO DEL COFRE" << std::endl
             << "===================" << std::endl;
     for (int i = 1; i <= c.cuantosHay(); i++) {
@@ -83,7 +83,7 @@ int main(int argc, char** argv) {
                         << e.what() << std::endl;
         }
         i1.mete(&c);
-        visualiza(c);
+        visualiza(i1);
 
         //Liberamos recursos
         liberaItems(cO1);
