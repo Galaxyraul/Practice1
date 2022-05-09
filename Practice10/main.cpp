@@ -13,6 +13,8 @@
 #include "Bloque.h"
 #include "Espada.h"
 #include "Filete.h"
+#include "Inventario.h"
+
 
 using namespace std;
 
@@ -59,7 +61,7 @@ void visualiza(Cofre &c) {
  * 
  */
 int main(int argc, char** argv) {
-
+    Inventario i1;
     const int MAXITEMS = 10;
     Item* objetos[MAXITEMS];
 
@@ -82,7 +84,7 @@ int main(int argc, char** argv) {
             std::cerr   << "Error al intentar meter un objeto en el cofre: "
                         << e.what() << std::endl;
         }
-
+        i1.mete(&c);
         visualiza(c);
 
         //Liberamos recursos
