@@ -7,7 +7,7 @@
 #include "EmptyContainer.h"
 
 int ContenedorItem::cuantosCaben() {
-    return 0;
+    return _maxItems-_numItems;
 }
 
 int ContenedorItem::cuantosHay() const {
