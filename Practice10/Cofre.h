@@ -7,25 +7,24 @@
 
 #include "Item.h"
 #include <string>
+#include "ContenedorItem.h"
+#include "Item.h"
 
 #ifndef COFRE_H
 #define COFRE_H
 
-class Cofre {
+class Cofre: public ContenedorItem,public Item{
 public:
     Cofre();
-    Cofre(int cuantosCaben);
-    Cofre(const Cofre& orig);
-    virtual ~Cofre();
-    int cuantosCaben();
-    int cuantosHay() const;
-    void mete(Item *item);
-    Item& consulta(int cual);
-    Item* saca(int cual);
-private:
-    int _maxItems = 27; ///< Tamaño del vector de punteros
-    Item* *_items = nullptr; ///< Vector de punteros creado dinámicamente
-    int _numItems = 0; ///< Primeras posiciones del vector ocupadas (máximo maxItems)
+
+    void mete(Item *item) override;
+
+    virtual std::string getDescripcion() const;
+
+
+
+
+
 };
 
 #endif /* COFRE_H */
