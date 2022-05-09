@@ -14,6 +14,7 @@
 #include "Espada.h"
 #include "Filete.h"
 #include "Inventario.h"
+#include "ContenedorItem.h"
 
 
 using namespace std;
@@ -22,29 +23,25 @@ using namespace std;
  * @pre v no contiene punteros inicializados
  * @post crea algunos objetos en el vector e inicializa el resto de elementos a 0
  * @return número de posiciones del vector con items creados*/
-int inicializaItems(Item* v[], int tamv) {
+int inicializaItems(ContenedorItem& c) {
     int numItems = 0;
 
-    v[numItems++] = new Bloque(5);
-    v[numItems++] = new Bloque(8);
-    v[numItems++] = new Bloque();
-    v[numItems++] = new Espada();
-    v[numItems++] = new Filete();
-
-    //Asigna a nullptr el resto de posiciones no ocupadas
-    for (int i = numItems; i < tamv; i++) {
-        v[i] = nullptr;
-    }
+  c.mete(new Bloque(5));
+  ++numItems;
+  c.mete(new Bloque(8));
+    ++numItems;
+  c.mete(new Bloque());
+    ++numItems;
+  c.mete(new Espada());
+    ++numItems;
+  c.mete(new Filete());
+    ++numItems;
     return numItems;
 }
 
 /**Libera los items del vector creados en memoria dinámica*/
-void liberaItems(Item* v[], int numItems) {
-    for (int i = 0; i < numItems; i++) {
-        delete v[i];
-        v[i] = nullptr;
-    }
-
+void liberaItems(ContenedorItem& c) {
+    c.~ContenedorItem();//Delete could have been used if I had created it on dynamic memory
 }
 
 void visualiza(Cofre &c) {
@@ -62,21 +59,22 @@ void visualiza(Cofre &c) {
  */
 int main(int argc, char** argv) {
     Inventario i1;
+    ContenedorItem cO1(20);
     const int MAXITEMS = 10;
     Item* objetos[MAXITEMS];
 
     try {
 
         //Inicializamos algunos objetos de prueba
-        int numObjetos = inicializaItems(objetos, MAXITEMS);
+        int numObjetos = inicializaItems(cO1);
 
         Cofre c; //Creamos un cofre con 27 posiciones
 
         //Metemos todos los objetos en el cofre
 
         try {
-            for (int i = 0; i < numObjetos; i++) {
-                c.mete(objetos[i]);
+            for (int i = 1; i < numObjetos; i++) {
+                c.mete(&cO1.consulta(i));
             }
         }catch(std::exception &e) {
             //Capturamos cualquier excepción de la jerarquía que pueda generar
@@ -88,7 +86,7 @@ int main(int argc, char** argv) {
         visualiza(c);
 
         //Liberamos recursos
-        liberaItems(objetos, numObjetos);
+        liberaItems(cO1);
         
     } catch (std::exception &e) {
         //Capturamos cualquier excepción que se haya podido escapar

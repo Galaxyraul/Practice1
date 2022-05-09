@@ -54,4 +54,5 @@ ContenedorItem::ContenedorItem():
 
 ContenedorItem::~ContenedorItem() {
     delete [] _items;
+    _items = nullptr;
 }
