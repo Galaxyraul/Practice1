@@ -44,8 +44,8 @@ int inicializaItems(ContenedorItem& c) {
 void liberaItems(ContenedorItem& c) {
     c.~ContenedorItem();//Delete could have been used if I had created it on dynamic memory
 }
-
-void visualiza(Cofre &c) {
+template<typename T1,typename T2>
+void visualiza(Cofre<T1,T2> &c) {
     std::cout << "CONTENIDO DEL COFRE" << std::endl
               << "===================" << std::endl;
     for (int i = 1; i <= c.cuantosHay(); i++) {
