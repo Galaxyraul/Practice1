@@ -13,6 +13,9 @@
 Cofre::Cofre(): ContenedorItem(27){}
 
 void Cofre::mete(Item *item) {
+    if(dynamic_cast<Cofre*>(item)){
+        throw std::invalid_argument("Cofre.cpp::Mete:You cannot put a chest into a chest");
+    }
     ContenedorItem::mete(item);
 }
 
