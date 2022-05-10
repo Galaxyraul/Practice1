@@ -15,7 +15,6 @@
 #include "Filete.h"
 #include "Inventario.h"
 #include "ContenedorItem.h"
-#include "EmptyContainer.h"
 
 
 using namespace std;
@@ -24,7 +23,7 @@ using namespace std;
  * @pre v no contiene punteros inicializados
  * @post crea algunos objetos en el vector e inicializa el resto de elementos a 0
  * @return número de posiciones del vector con items creados*/
-int inicializaItems(ContenedorItem& c) {
+int inicializaItems(Container<int,Item>& c) {
     int numItems = 0;
 
   c.mete(new Bloque(5));
@@ -41,20 +40,11 @@ int inicializaItems(ContenedorItem& c) {
 }
 
 /**Libera los items del vector creados en memoria dinámica*/
-void liberaItems(ContenedorItem& c) {
-    c.~ContenedorItem();//Delete could have been used if I had created it on dynamic memory
+void liberaItems(Container<int,Item>& c) {
+    c.~Container();//Delete could have been used if I had created it on dynamic memory
 }
-template<typename T1,typename T2>
-void visualiza(Cofre<T1,T2> &c) {
-    std::cout << "CONTENIDO DEL COFRE" << std::endl
-              << "===================" << std::endl;
-    for (int i = 1; i <= c.cuantosHay(); i++) {
-        std::cout << i << ".- "
-                  << c.consulta(i).getDescripcion() << std::endl;
-    }
 
-}
-void visualiza(ContenedorItem &c) {
+void visualiza(Container<int,Item> &c) {
     std::cout << "CONTENIDO DEL COFRE" << std::endl
             << "===================" << std::endl;
     for (int i = 1; i <= c.cuantosHay(); i++) {
@@ -69,7 +59,7 @@ void visualiza(ContenedorItem &c) {
  */
 int main(int argc, char** argv) {
     Inventario i1;
-    ContenedorItem cO1(20);
+    Container<int,Item> cO1(20);
     const int MAXITEMS = 10;
     Item* objetos[MAXITEMS];
 
@@ -96,23 +86,8 @@ int main(int argc, char** argv) {
         try {
             c.mete(&c);
         }catch(std::invalid_argument& e){
-            cerr << e.what()<<endl;
+            cerr << e.what();
         }
-        for(int i = 1; i <= numObjetos;++i){
-            try {
-                Cofre *c2 = dynamic_cast<Cofre *>(&i1.consulta(i));
-                if (c2 != nullptr) {
-                    visualiza(*c2);
-                }
-            }catch (std::bad_cast& e){
-                cerr << e.what() << endl;
-            }catch (EmptyContainer& e){
-                cerr<< e.what() << endl;
-            }catch (out_of_range& e){
-                cerr << e.what() << endl;
-            }
-        }
-
         visualiza(i1);
 
         //Liberamos recursos

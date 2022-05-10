@@ -19,12 +19,16 @@ private:
 public:
     Container() = default;
 
-    Container(int maxItems);
+    Container(T1 maxItems) : _maxItems(maxItems) {
+        _items=new T2*[maxItems];
+        for(int i = 0; i < maxItems;++i){
+            _items[i] = nullptr;
+        }
+    }
 
-    Container(T1 maxItems) : _maxItems(maxItems) {}
-
-    virtual ~ContenedorItem(){
+    virtual ~Container(){
         delete [] _items;
+        _items = nullptr;
     }
 
     T1 cuantosCaben(){
@@ -36,10 +40,12 @@ public:
     }
 
     virtual void mete(T2 *item){
-        if (!item)
+        if (item == nullptr){
             throw std::invalid_argument ("[Cofre::mete] Intento de asignar puntero 0");
-        if (_numItems==_maxItems)
+        }
+        if (_numItems==_maxItems) {
             throw std::out_of_range("[Cofre::mete] No caben más elementos en el cofre");
+        }
         _items[_numItems++]=item;
     }
 

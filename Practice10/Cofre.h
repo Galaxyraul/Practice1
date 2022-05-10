@@ -13,8 +13,8 @@
 
 #ifndef COFRE_H
 #define COFRE_H
-template<class T1,class T2>
-class Cofre: public ContenedorItem,public Item,public Container<T1,T2>{
+
+class Cofre:public Item,public Container<int,Item>{
 public:
     Cofre();
 
