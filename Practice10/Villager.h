@@ -15,6 +15,8 @@ private:
 public:
     std::string sell(Item* item,int offer);
 
+    std::string sell(int pos,int offer);
+
     std::string buy(Item* item,int value);
 
     int getEmeralds() const;

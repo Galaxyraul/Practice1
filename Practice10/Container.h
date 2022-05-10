@@ -60,10 +60,10 @@ T1 Container<T1, T2>::cuantosHay() const {
 template<typename T1,typename T2>
 void Container<T1,T2>::mete(T2 *item){
     if (item == nullptr){
-        throw std::invalid_argument ("[Cofre::mete] Intento de asignar puntero 0");
+        throw std::invalid_argument ("[Container<T>::mete] Intento de asignar puntero 0");
     }
     if (_numItems==_maxItems) {
-        throw std::out_of_range("[Cofre::mete] No caben más elementos en el cofre");
+        throw std::out_of_range("[Container<T>::mete] No caben más elementos en el cofre");
     }
     _items[_numItems++]=item;
 }
@@ -71,18 +71,18 @@ void Container<T1,T2>::mete(T2 *item){
 template<typename T1,typename T2>
 T2& Container<T1,T2>::consulta(T1 cual) {
     if (_numItems==0)
-        throw EmptyContainer("[Cofre::consulta] El cofre está vacío");
+        throw EmptyContainer("[Container<T>::consulta] El container está vacío");
     if (cual<=0 || cual >_numItems)
-        throw std::out_of_range("[Cofre::consulta] El elemento indicado no existe");
+        throw std::out_of_range("[Container<T>::consulta] El elemento indicado no existe");
     return *_items[cual-1];
 }
 
 template<typename T1,typename T2>
 T2* Container<T1,T2>::saca(T1 cual){
     if (_numItems==0)
-        throw EmptyContainer("[Cofre::saca] El cofre está vacío");
+        throw EmptyContainer("[Container<T>::saca] El container está vacío");
     if (cual<=0 || cual >_numItems)
-        throw std::out_of_range("[Cofre::mete] El elemento indicado no existe");
+        throw std::out_of_range("[Container<T>::mete] El elemento indicado no existe");
     T2* elemento = _items[cual-1];
     _numItems--;
     if (_numItems>0)
