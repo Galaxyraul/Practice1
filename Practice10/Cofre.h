@@ -22,6 +22,8 @@ public:
 
     std::string getDescripcion() const override;
 
+    bool operator==(Item& i1) const override;
+
 
 
 

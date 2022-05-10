@@ -25,3 +25,7 @@ std::string Cofre::getDescripcion() const {
     return ss.str();
 }
 
+bool Cofre::operator==(Item &i1) const {
+    return true;
+}
+

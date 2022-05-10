@@ -18,10 +18,15 @@
 class Espada: public Item {
 public:
     Espada() = default;
+
     Espada(const Espada& orig);
+
     virtual ~Espada();
 
-    virtual std::string getDescripcion() const;
+    std::string getDescripcion() const override;
+
+    bool operator==(Item& i1) const override;
+
 
 private:
 };

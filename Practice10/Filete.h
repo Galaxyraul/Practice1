@@ -18,6 +18,8 @@ public:
 
     virtual std::string getDescripcion() const;
 
+    bool operator==(Item& i1) const override;
+
 private:
 
 };

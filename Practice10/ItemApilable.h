@@ -22,6 +22,8 @@ public:
     void decrementaNumElementos(unsigned int cantidad);
     unsigned int getNumElementos() const;
 
+    virtual bool operator==(ItemApilable& i1) const = 0;
+
     //Heredada de Item pero implementable en derivadas
     virtual std::string getDescripcion() const=0;
 

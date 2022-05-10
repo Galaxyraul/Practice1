@@ -18,6 +18,8 @@ public:
     Bloque(const Bloque& orig);
     virtual ~Bloque();
     virtual std::string getDescripcion() const;
+
+    bool operator==(ItemApilable& i1) const override;
 private:
     
 

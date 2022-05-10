@@ -33,3 +33,7 @@ std::string Bloque::getDescripcion() const {
     
     return ss.str();
 }
+
+bool Bloque::operator==(ItemApilable &i1) const {
+    return true;
+}

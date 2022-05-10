@@ -14,6 +14,7 @@
 class Item {
 public:
     virtual std::string getDescripcion() const=0;
+    virtual bool operator==(Item& i1) const = 0;
     virtual ~Item() {};
 };
 

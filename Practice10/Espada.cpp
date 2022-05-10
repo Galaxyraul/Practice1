@@ -16,3 +16,7 @@ Espada::~Espada() {
 std::string Espada::getDescripcion() const {
     return "Espada";
 }
+
+bool Espada::operator==(Item &i1) const {
+    return true;
+}
